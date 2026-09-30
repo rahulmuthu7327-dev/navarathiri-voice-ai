@@ -1,0 +1,1513 @@
+{
+  "project": "Navarathiri Voice AI Chatbot",
+  "version": "2.0",
+  "note": "Expanded original knowledge summaries. Nine-day associations and festival practices can vary by regional and textual tradition. Ramayana and Mahabharata entries are structured summaries, not complete reproductions of any single text.",
+  "entry_count": 99,
+  "entries": [
+    {
+      "id": "nav_001",
+      "category": "Navarathiri",
+      "title": "What is Navarathiri",
+      "keywords": [
+        "navarathiri",
+        "navratri",
+        "navaratri",
+        "நவராத்திரி"
+      ],
+      "tamil": "நவராத்திரி என்பது சக்தி வழிபாட்டை மையமாகக் கொண்ட ஒன்பது இரவுகளின் திருவிழா. இந்தியாவின் பல பகுதிகளில் இது வெவ்வேறு மரபுகளுடன் கொண்டாடப்படுகிறது.",
+      "english": "Navarathiri is a festival centered on the worship of the Divine Feminine and is traditionally observed over nine nights, with regional traditions differing across India.",
+      "visual_type": "festival_overview"
+    },
+    {
+      "id": "nav_002",
+      "category": "Navarathiri",
+      "title": "Golu",
+      "keywords": [
+        "golu",
+        "kolu",
+        "bommai golu",
+        "கொலு",
+        "கோலு"
+      ],
+      "tamil": "தமிழ்நாட்டில் நவராத்திரியின் முக்கிய மரபுகளில் கொலு ஒன்றாகும். பொம்மைகளை படிகளில் அலங்கரித்து வைத்து விருந்தினர்களை வரவேற்பது வழக்கம்.",
+      "english": "Golu, or Kolu, is a well-known South Indian Navarathiri tradition in which families arrange dolls on steps and welcome visitors.",
+      "visual_type": "tradition"
+    },
+    {
+      "id": "nav_003",
+      "category": "Navarathiri",
+      "title": "Saraswati Pooja",
+      "keywords": [
+        "saraswati pooja",
+        "saraswathi pooja",
+        "books",
+        "education",
+        "சரஸ்வதி பூஜை"
+      ],
+      "tamil": "சரஸ்வதி பூஜை கல்வி, அறிவு மற்றும் கலைகளுடன் தொடர்புடைய வழிபாட்டு நாளாக பல தென்னிந்திய மரபுகளில் கடைப்பிடிக்கப்படுகிறது.",
+      "english": "Saraswati Pooja is associated in many South Indian traditions with learning, knowledge and the arts.",
+      "visual_type": "tradition"
+    },
+    {
+      "id": "nav_004",
+      "category": "Navarathiri",
+      "title": "Ayudha Pooja",
+      "keywords": [
+        "ayudha pooja",
+        "tools",
+        "vehicles",
+        "ஆயுத பூஜை"
+      ],
+      "tamil": "ஆயுத பூஜையில் வேலை மற்றும் தொழிலுடன் தொடர்புடைய கருவிகள், உபகரணங்கள் மற்றும் வாகனங்களை சுத்தம் செய்து மரியாதையுடன் வழிபடும் மரபு உள்ளது.",
+      "english": "Ayudha Pooja is a tradition in which tools, equipment and vehicles connected with work are cleaned and honored through worship.",
+      "visual_type": "tradition"
+    },
+    {
+      "id": "nav_005",
+      "category": "Navarathiri",
+      "title": "Vijayadashami",
+      "keywords": [
+        "vijayadashami",
+        "vijaya dasami",
+        "dussehra",
+        "விஜயதசமி"
+      ],
+      "tamil": "விஜயதசமி நவராத்திரி காலத்தின் நிறைவு நாளாக பல மரபுகளில் கருதப்படுகிறது. வெற்றி மற்றும் நல்ல தொடக்கம் போன்ற கருத்துகளுடன் இது தொடர்புடையது.",
+      "english": "Vijayadashami is observed at the conclusion of Navarathiri in many traditions and is associated with victory and auspicious new beginnings.",
+      "visual_type": "festival_day"
+    },
+    {
+      "id": "nav_006",
+      "category": "Navarathiri",
+      "title": "Durga and Mahishasura",
+      "keywords": [
+        "durga",
+        "mahishasura",
+        "mahishasuran",
+        "மகிஷாசுரன்"
+      ],
+      "tamil": "ஒரு பரவலான நவராத்திரி மரபில், தேவி துர்கை மகிஷாசுரனை வெல்வது நன்மை தீமையை வெல்வதற்கான அடையாளமாகக் கூறப்படுகிறது.",
+      "english": "In a widely shared Navarathiri tradition, Goddess Durga defeats Mahishasura, symbolizing the victory of good over evil.",
+      "visual_type": "story"
+    },
+    {
+      "id": "nav_day_01",
+      "category": "Navarathiri - Day 1",
+      "title": "Navarathiri Day 1 - Shailaputri",
+      "keywords": [
+        "day 1 navarathiri",
+        "navarathiri day 1",
+        "day 1",
+        "shailaputri",
+        "ஷைலபுத்ரி",
+        "navadurga day 1"
+      ],
+      "tamil": "முதல் நாள் பொதுவாக நவதுர்கையின் முதல் வடிவமாகக் கூறப்படும் ஷைலபுத்ரி தேவியுடன் தொடர்புடையது. இது நவராத்திரி ஆன்மிகப் பயணத்தின் தொடக்கமாகக் கருதப்படுகிறது.",
+      "english": "The first day is traditionally associated with Goddess Shailaputri, the first form in the commonly described Navadurga sequence. It represents the beginning of the spiritual journey.",
+      "visual_type": "nine_day",
+      "day": 1,
+      "goddess": "Shailaputri",
+      "goddess_tamil": "ஷைலபுத்ரி"
+    },
+    {
+      "id": "nav_day_02",
+      "category": "Navarathiri - Day 2",
+      "title": "Navarathiri Day 2 - Brahmacharini",
+      "keywords": [
+        "day 2 navarathiri",
+        "navarathiri day 2",
+        "day 2",
+        "brahmacharini",
+        "பிரம்மசாரிணி",
+        "navadurga day 2"
+      ],
+      "tamil": "இரண்டாம் நாள் பொதுவாக பிரம்மசாரிணி தேவியுடன் தொடர்புடையது. பக்தி, ஒழுக்கம் மற்றும் ஆன்மிக முயற்சி போன்ற கருத்துகளுடன் இந்த வடிவம் இணைக்கப்படுகிறது.",
+      "english": "The second day is traditionally associated with Brahmacharini, representing devotion, discipline and spiritual practice.",
+      "visual_type": "nine_day",
+      "day": 2,
+      "goddess": "Brahmacharini",
+      "goddess_tamil": "பிரம்மசாரிணி"
+    },
+    {
+      "id": "nav_day_03",
+      "category": "Navarathiri - Day 3",
+      "title": "Navarathiri Day 3 - Chandraghanta",
+      "keywords": [
+        "day 3 navarathiri",
+        "navarathiri day 3",
+        "day 3",
+        "chandraghanta",
+        "சந்திரகண்டா",
+        "navadurga day 3"
+      ],
+      "tamil": "மூன்றாம் நாள் பொதுவாக சந்திரகண்டா தேவியுடன் தொடர்புடையது. தைரியம், பாதுகாப்பு மற்றும் உள்ளார்ந்த வலிமை போன்ற கருத்துகளுடன் இந்த வடிவம் இணைக்கப்படுகிறது.",
+      "english": "The third day is traditionally associated with Chandraghanta, connected with courage, protection and inner strength.",
+      "visual_type": "nine_day",
+      "day": 3,
+      "goddess": "Chandraghanta",
+      "goddess_tamil": "சந்திரகண்டா"
+    },
+    {
+      "id": "nav_day_04",
+      "category": "Navarathiri - Day 4",
+      "title": "Navarathiri Day 4 - Kushmanda",
+      "keywords": [
+        "day 4 navarathiri",
+        "navarathiri day 4",
+        "day 4",
+        "kushmanda",
+        "குஷ்மாண்டா",
+        "navadurga day 4"
+      ],
+      "tamil": "நான்காம் நாள் பொதுவாக குஷ்மாண்டா தேவியுடன் தொடர்புடையது. படைப்பாற்றல் மற்றும் பிரபஞ்ச சக்தி போன்ற கருத்துகளுடன் இந்த வடிவம் தொடர்புபடுத்தப்படுகிறது.",
+      "english": "The fourth day is traditionally associated with Kushmanda, connected in tradition with creative energy and cosmic vitality.",
+      "visual_type": "nine_day",
+      "day": 4,
+      "goddess": "Kushmanda",
+      "goddess_tamil": "குஷ்மாண்டா"
+    },
+    {
+      "id": "nav_day_05",
+      "category": "Navarathiri - Day 5",
+      "title": "Navarathiri Day 5 - Skandamata",
+      "keywords": [
+        "day 5 navarathiri",
+        "navarathiri day 5",
+        "day 5",
+        "skandamata",
+        "ஸ்கந்தமாதா",
+        "navadurga day 5"
+      ],
+      "tamil": "ஐந்தாம் நாள் பொதுவாக ஸ்கந்தமாதா தேவியுடன் தொடர்புடையது. தாய்மை, அன்பு மற்றும் கருணை போன்ற கருத்துகளுடன் இந்த வடிவம் இணைக்கப்படுகிறது.",
+      "english": "The fifth day is traditionally associated with Skandamata, the mother of Skanda, and is connected with motherhood and compassion.",
+      "visual_type": "nine_day",
+      "day": 5,
+      "goddess": "Skandamata",
+      "goddess_tamil": "ஸ்கந்தமாதா"
+    },
+    {
+      "id": "nav_day_06",
+      "category": "Navarathiri - Day 6",
+      "title": "Navarathiri Day 6 - Katyayani",
+      "keywords": [
+        "day 6 navarathiri",
+        "navarathiri day 6",
+        "day 6",
+        "katyayani",
+        "காத்யாயனி",
+        "navadurga day 6"
+      ],
+      "tamil": "ஆறாம் நாள் பொதுவாக காத்யாயனி தேவியுடன் தொடர்புடையது. தைரியம், உறுதி மற்றும் தீய சக்திகளை எதிர்க்கும் ஆற்றல் போன்ற கருத்துகளுடன் இந்த வடிவம் இணைக்கப்படுகிறது.",
+      "english": "The sixth day is traditionally associated with Katyayani, connected with courage, determination and overcoming harmful forces.",
+      "visual_type": "nine_day",
+      "day": 6,
+      "goddess": "Katyayani",
+      "goddess_tamil": "காத்யாயனி"
+    },
+    {
+      "id": "nav_day_07",
+      "category": "Navarathiri - Day 7",
+      "title": "Navarathiri Day 7 - Kalaratri",
+      "keywords": [
+        "day 7 navarathiri",
+        "navarathiri day 7",
+        "day 7",
+        "kalaratri",
+        "காலராத்திரி",
+        "navadurga day 7"
+      ],
+      "tamil": "ஏழாம் நாள் பொதுவாக காலராத்திரி தேவியுடன் தொடர்புடையது. பாதுகாப்பு, அச்சத்தை கடத்தல் மற்றும் தீமையை எதிர்கொள்ளும் சக்தி போன்ற கருத்துகளுடன் இந்த வடிவம் இணைக்கப்படுகிறது.",
+      "english": "The seventh day is traditionally associated with Kalaratri, a fierce form symbolizing protection and overcoming fear.",
+      "visual_type": "nine_day",
+      "day": 7,
+      "goddess": "Kalaratri",
+      "goddess_tamil": "காலராத்திரி"
+    },
+    {
+      "id": "nav_day_08",
+      "category": "Navarathiri - Day 8",
+      "title": "Navarathiri Day 8 - Mahagauri",
+      "keywords": [
+        "day 8 navarathiri",
+        "navarathiri day 8",
+        "day 8",
+        "mahagauri",
+        "மகாகௌரி",
+        "navadurga day 8"
+      ],
+      "tamil": "எட்டாம் நாள் பொதுவாக மகாகௌரி தேவியுடன் தொடர்புடையது. தூய்மை, அமைதி மற்றும் ஆன்மிகத் தெளிவு போன்ற கருத்துகளுடன் இந்த வடிவம் இணைக்கப்படுகிறது.",
+      "english": "The eighth day is traditionally associated with Mahagauri, connected with purity, peace and spiritual clarity.",
+      "visual_type": "nine_day",
+      "day": 8,
+      "goddess": "Mahagauri",
+      "goddess_tamil": "மகாகௌரி"
+    },
+    {
+      "id": "nav_day_09",
+      "category": "Navarathiri - Day 9",
+      "title": "Navarathiri Day 9 - Siddhidatri",
+      "keywords": [
+        "day 9 navarathiri",
+        "navarathiri day 9",
+        "day 9",
+        "siddhidatri",
+        "சித்திதாத்ரி",
+        "navadurga day 9"
+      ],
+      "tamil": "ஒன்பதாம் நாள் பொதுவாக நவதுர்கையின் ஒன்பதாவது வடிவமாகக் கூறப்படும் சித்திதாத்ரி தேவியுடன் தொடர்புடையது. ஆன்மிக நிறைவு மற்றும் சாதனை போன்ற கருத்துகளுடன் இந்த வடிவம் இணைக்கப்படுகிறது.",
+      "english": "The ninth day is traditionally associated with Siddhidatri, the ninth form in the commonly described Navadurga sequence, connected with spiritual accomplishment.",
+      "visual_type": "nine_day",
+      "day": 9,
+      "goddess": "Siddhidatri",
+      "goddess_tamil": "சித்திதாத்ரி"
+    },
+    {
+      "id": "ram_story_01",
+      "category": "Ramayana Story",
+      "title": "Origins and Ayodhya",
+      "keywords": [
+        "origins and ayodhya",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "ராமாயணத்தின் தொடக்கக் கதை அயோத்தி, தசரதர் மற்றும் அவரது மகன்களை அறிமுகப்படுத்துகிறது. ராமர் மூத்த இளவரசராகவும் தர்மத்துடன் தொடர்புடைய கதாநாயகனாகவும் வருகிறார்.",
+      "english": "The opening narrative introduces Ayodhya, Dasharatha and his sons. Rama is presented as the eldest prince and a central figure associated with dharma.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 1
+    },
+    {
+      "id": "ram_story_02",
+      "category": "Ramayana Story",
+      "title": "Rama and Sita",
+      "keywords": [
+        "rama and sita",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "ராமரும் சீதையும் திருமணம் செய்வது ராமாயணத்தின் முக்கிய ஆரம்ப நிகழ்வுகளில் ஒன்று. சீதை மிதிலையின் அரசர் ஜனகருடன் தொடர்புடையவர்.",
+      "english": "Rama's marriage to Sita is a major early event. Sita is associated with King Janaka of Mithila.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 2
+    },
+    {
+      "id": "ram_story_03",
+      "category": "Ramayana Story",
+      "title": "Kaikeyi's Boons",
+      "keywords": [
+        "kaikeyi's boons",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "கைகேயிக்கு தசரதர் அளித்த வாக்குறுதிகளின் விளைவாக ராமரின் பட்டாபிஷேகம் நிறுத்தப்பட்டு வனவாசம் ஏற்படுகிறது.",
+      "english": "As a result of Dasharatha's promises to Kaikeyi, Rama's planned coronation is stopped and his forest exile follows.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 3
+    },
+    {
+      "id": "ram_story_04",
+      "category": "Ramayana Story",
+      "title": "Fourteen-Year Exile",
+      "keywords": [
+        "fourteen-year exile",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "ராமர் பதினான்கு ஆண்டுகள் வனவாசம் செல்கிறார். சீதையும் லட்சுமணனும் அவருடன் செல்கின்றனர்.",
+      "english": "Rama enters a fourteen-year forest exile, accompanied by Sita and Lakshmana.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 4
+    },
+    {
+      "id": "ram_story_05",
+      "category": "Ramayana Story",
+      "title": "Forest Life",
+      "keywords": [
+        "forest life",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "வனவாச காலத்தில் ராமர், சீதை மற்றும் லட்சுமணர் பல முனிவர்கள் மற்றும் வனவாசிகளுடன் சந்திப்புகளை எதிர்கொள்கின்றனர்.",
+      "english": "During the exile, Rama, Sita and Lakshmana encounter sages and forest communities.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 5
+    },
+    {
+      "id": "ram_story_06",
+      "category": "Ramayana Story",
+      "title": "Surpanakha Episode",
+      "keywords": [
+        "surpanakha episode",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "சூர்ப்பணகை சம்பவம் ராமாயணத்தின் முக்கிய திருப்பங்களுள் ஒன்றாகும். இதன் பின்னர் ராவணனுடன் மோதல் தீவிரமடைகிறது.",
+      "english": "The Surpanakha episode is an important turning point, after which the conflict involving Ravana intensifies.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 6
+    },
+    {
+      "id": "ram_story_07",
+      "category": "Ramayana Story",
+      "title": "Sita's Abduction",
+      "keywords": [
+        "sita's abduction",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "ராவணன் சீதையை இலங்கைக்கு அழைத்துச் செல்கிறான். சீதையைத் தேடுவது ராமரின் முக்கிய இலக்காகிறது.",
+      "english": "Ravana takes Sita to Lanka. Finding and rescuing Sita becomes Rama's central objective.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 7
+    },
+    {
+      "id": "ram_story_08",
+      "category": "Ramayana Story",
+      "title": "Rama Meets Hanuman",
+      "keywords": [
+        "rama meets hanuman",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "சீதையைத் தேடும் போது ராமர் அனுமன் மற்றும் சுக்ரீவன் தலைமையிலான வானரக் கூட்டத்துடன் இணைகிறார்.",
+      "english": "While searching for Sita, Rama meets Hanuman and becomes connected with Sugriva and the Vanara alliance.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 8
+    },
+    {
+      "id": "ram_story_09",
+      "category": "Ramayana Story",
+      "title": "Sugriva and Vali",
+      "keywords": [
+        "sugriva and vali",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "சுக்ரீவன் மற்றும் வாலி இடையிலான மோதலில் ராமர் தலையிடுகிறார். பின்னர் சுக்ரீவன் ராமருக்கு உதவுகிறார்.",
+      "english": "Rama becomes involved in the conflict between Sugriva and Vali. Sugriva later supports Rama's search.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 9
+    },
+    {
+      "id": "ram_story_10",
+      "category": "Ramayana Story",
+      "title": "Hanuman Finds Sita",
+      "keywords": [
+        "hanuman finds sita",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "அனுமன் கடலைத் தாண்டி இலங்கைக்குச் சென்று அசோக வனத்தில் சீதையை கண்டுபிடிக்கிறார். அவர் ராமரின் செய்தியைத் தெரிவிக்கிறார்.",
+      "english": "Hanuman crosses the sea to Lanka, finds Sita in the Ashoka grove and conveys Rama's message.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 10
+    },
+    {
+      "id": "ram_story_11",
+      "category": "Ramayana Story",
+      "title": "Return from Lanka",
+      "keywords": [
+        "return from lanka",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "அனுமன் ராமரிடம் திரும்பி சீதையை கண்டுபிடித்த செய்தியை வழங்குகிறார். இது அடுத்த கட்ட போர்த் திட்டத்திற்கு வழிவகுக்கிறது.",
+      "english": "Hanuman returns to Rama with news of Sita, enabling the next stage of the rescue effort.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 11
+    },
+    {
+      "id": "ram_story_12",
+      "category": "Ramayana Story",
+      "title": "Bridge to Lanka",
+      "keywords": [
+        "bridge to lanka",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "ராமரின் கூட்டணி இலங்கையை அடைய கடலுக்கு மேல் பாலம் அமைக்கப்பட்டதாக ராமாயண மரபு கூறுகிறது.",
+      "english": "Ramayana tradition describes a bridge being built across the sea to reach Lanka.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 12
+    },
+    {
+      "id": "ram_story_13",
+      "category": "Ramayana Story",
+      "title": "Battle of Lanka",
+      "keywords": [
+        "battle of lanka",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "ராமரின் கூட்டணியும் ராவணனின் படைகளும் இலங்கையில் போரிடுகின்றன. பல முக்கிய வீரர்கள் இதில் பங்கேற்கின்றனர்.",
+      "english": "Rama's alliance and Ravana's forces fight in Lanka, with many major warriors participating.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 13
+    },
+    {
+      "id": "ram_story_14",
+      "category": "Ramayana Story",
+      "title": "Kumbhakarna and Indrajit",
+      "keywords": [
+        "kumbhakarna and indrajit",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "கும்பகர்ணன் மற்றும் இந்திரஜித் ராவணனின் முக்கிய வீரர்களாக வருகின்றனர். அவர்களின் போர்கள் இலங்கைப் போரின் முக்கிய பகுதிகள்.",
+      "english": "Kumbhakarna and Indrajit are major warriors on Ravana's side and their battles form important parts of the Lanka war.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 14
+    },
+    {
+      "id": "ram_story_15",
+      "category": "Ramayana Story",
+      "title": "Rama Defeats Ravana",
+      "keywords": [
+        "rama defeats ravana",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "ராமரும் ராவணனும் இறுதியில் மோதுகின்றனர். ராவணனின் வீழ்ச்சி பல மரபுகளில் தர்மத்தின் வெற்றியாக விளக்கப்படுகிறது.",
+      "english": "Rama and Ravana eventually face each other. Ravana's defeat is interpreted in many traditions as a victory of dharma.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 15
+    },
+    {
+      "id": "ram_story_16",
+      "category": "Ramayana Story",
+      "title": "Return to Ayodhya",
+      "keywords": [
+        "return to ayodhya",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "வனவாசமும் இலங்கைப் போரின் நிகழ்வுகளும் முடிந்த பிறகு ராமர், சீதை மற்றும் லட்சுமணர் அயோத்திக்குத் திரும்புகின்றனர்.",
+      "english": "After the exile and the events in Lanka, Rama, Sita and Lakshmana return to Ayodhya.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 16
+    },
+    {
+      "id": "ram_story_17",
+      "category": "Ramayana Story",
+      "title": "Rama's Coronation",
+      "keywords": [
+        "rama's coronation",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "அயோத்திக்குத் திரும்பிய பின் ராமரின் பட்டாபிஷேகம் நடைபெறுகிறது. அவரது ஆட்சி நீதி மற்றும் நலனுடன் தொடர்புபடுத்தப்படுகிறது.",
+      "english": "After returning to Ayodhya, Rama's coronation takes place. His rule is commonly associated with justice and welfare.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 17
+    },
+    {
+      "id": "ram_story_18",
+      "category": "Ramayana Story",
+      "title": "Lava and Kusha",
+      "keywords": [
+        "lava and kusha",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "சில ராமாயணப் பதிப்புகளில் லவனும் குசனும் சீதையுடன் தொடர்புடைய முக்கிய பிற்காலக் கதாபாத்திரங்களாக வருகின்றனர்.",
+      "english": "In some Ramayana traditions, Lava and Kusha are important later characters associated with Sita.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 18
+    },
+    {
+      "id": "ram_story_19",
+      "category": "Ramayana Story",
+      "title": "Ramayana Themes",
+      "keywords": [
+        "ramayana themes",
+        "ramayana",
+        "ramayanam"
+      ],
+      "tamil": "ராமாயணம் தர்மம், கடமை, குடும்ப உறவுகள், பக்தி, நட்பு, தலைமைத்துவம் மற்றும் நன்மை-தீமை பற்றிய பல கருத்துகளை முன்வைக்கிறது.",
+      "english": "The Ramayana explores dharma, duty, family relationships, devotion, friendship, leadership and the struggle between good and harmful forces.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "sequence": 19
+    },
+    {
+      "id": "ram_char_01",
+      "category": "Ramayana Character",
+      "title": "Rama",
+      "keywords": [
+        "rama",
+        "ram",
+        "ramayana",
+        "ராமர்"
+      ],
+      "tamil": "ராமர் ராமாயணத்தின் மையக் கதாபாத்திரம். அயோத்தியின் இளவரசராகவும் தர்மம் மற்றும் கடமைக்கு முக்கியத்துவம் அளிப்பவராகவும் சித்தரிக்கப்படுகிறார்.",
+      "english": "Rama is the central figure of the Ramayana, portrayed as the prince of Ayodhya and a figure associated with dharma and duty.",
+      "visual_type": "character",
+      "epic": "Ramayana"
+    },
+    {
+      "id": "ram_char_02",
+      "category": "Ramayana Character",
+      "title": "Sita",
+      "keywords": [
+        "sita",
+        "seetha",
+        "ramayana",
+        "சீதை"
+      ],
+      "tamil": "சீதை ராமரின் மனைவி மற்றும் ராமாயணத்தின் முக்கிய கதாபாத்திரம். அவரது வாழ்க்கை கதையின் பல முக்கிய நிகழ்வுகளுடன் இணைகிறது.",
+      "english": "Sita is Rama's wife and a central Ramayana character whose story connects with many major events.",
+      "visual_type": "character",
+      "epic": "Ramayana"
+    },
+    {
+      "id": "ram_char_03",
+      "category": "Ramayana Character",
+      "title": "Lakshmana",
+      "keywords": [
+        "lakshmana",
+        "ramayana",
+        "லட்சுமணர்"
+      ],
+      "tamil": "லட்சுமணர் ராமரின் சகோதரர். அவர் ராமருடன் வனவாசத்திற்குச் செல்கிறார்.",
+      "english": "Lakshmana is Rama's brother and accompanies him during the exile.",
+      "visual_type": "character",
+      "epic": "Ramayana"
+    },
+    {
+      "id": "ram_char_04",
+      "category": "Ramayana Character",
+      "title": "Bharata",
+      "keywords": [
+        "bharata",
+        "ramayana",
+        "பரதன்"
+      ],
+      "tamil": "பரதன் ராமரின் சகோதரர். ராமரின் வனவாச காலத்தில் அயோத்தியின் கதையில் முக்கிய பங்கு வகிக்கிறார்.",
+      "english": "Bharata is Rama's brother and plays an important role in Ayodhya during Rama's exile.",
+      "visual_type": "character",
+      "epic": "Ramayana"
+    },
+    {
+      "id": "ram_char_05",
+      "category": "Ramayana Character",
+      "title": "Hanuman",
+      "keywords": [
+        "hanuman",
+        "anjaneya",
+        "அனுமன்",
+        "ramayana"
+      ],
+      "tamil": "அனுமன் ராமரின் முக்கிய துணை மற்றும் பக்தராக வருகிறார். சீதையைத் தேடுவதில் அவர் முக்கிய பங்கு வகிக்கிறார்.",
+      "english": "Hanuman is a major ally and devotee of Rama and plays a key role in finding Sita.",
+      "visual_type": "character",
+      "epic": "Ramayana"
+    },
+    {
+      "id": "ram_char_06",
+      "category": "Ramayana Character",
+      "title": "Ravana",
+      "keywords": [
+        "ravana",
+        "ravan",
+        "ராவணன்",
+        "ramayana"
+      ],
+      "tamil": "ராவணன் இலங்கையின் அரசன். சீதையை இலங்கைக்கு அழைத்துச் சென்ற சம்பவம் போருக்கான முக்கிய காரணமாகிறது.",
+      "english": "Ravana is the king of Lanka. His taking of Sita is a major cause of the later conflict.",
+      "visual_type": "character",
+      "epic": "Ramayana"
+    },
+    {
+      "id": "ram_char_07",
+      "category": "Ramayana Character",
+      "title": "Dasharatha",
+      "keywords": [
+        "dasharatha",
+        "ramayana",
+        "தசரதர்"
+      ],
+      "tamil": "தசரதர் அயோத்தியின் அரசரும் ராமரின் தந்தையும் ஆவார். அவரது வாக்குறுதிகள் ராமரின் வனவாசத்துடன் தொடர்புடையவை.",
+      "english": "Dasharatha is the king of Ayodhya and Rama's father. His promises are connected with Rama's exile.",
+      "visual_type": "character",
+      "epic": "Ramayana"
+    },
+    {
+      "id": "ram_char_08",
+      "category": "Ramayana Character",
+      "title": "Kaikeyi",
+      "keywords": [
+        "kaikeyi",
+        "ramayana",
+        "கைகேயி"
+      ],
+      "tamil": "கைகேயி தசரதரின் மனைவிகளில் ஒருவர். அவர் பெற்ற வரங்களின் விளைவாக ராமரின் வனவாசம் ஏற்படுகிறது.",
+      "english": "Kaikeyi is one of Dasharatha's queens. The boons she claims lead to Rama's exile.",
+      "visual_type": "character",
+      "epic": "Ramayana"
+    },
+    {
+      "id": "ram_char_09",
+      "category": "Ramayana Character",
+      "title": "Sugriva",
+      "keywords": [
+        "sugriva",
+        "ramayana",
+        "சுக்ரீவன்"
+      ],
+      "tamil": "சுக்ரீவன் வானரத் தலைவராகவும் ராமரின் கூட்டாளியாகவும் வருகிறார்.",
+      "english": "Sugriva is a Vanara leader who becomes an ally of Rama.",
+      "visual_type": "character",
+      "epic": "Ramayana"
+    },
+    {
+      "id": "ram_char_10",
+      "category": "Ramayana Character",
+      "title": "Vali",
+      "keywords": [
+        "vali",
+        "vaali",
+        "ramayana",
+        "வாலி"
+      ],
+      "tamil": "வாலி சுக்ரீவனின் சகோதரரும் வலிமையான வானர வீரருமாக வருகிறார்.",
+      "english": "Vali is Sugriva's brother and a powerful Vanara warrior.",
+      "visual_type": "character",
+      "epic": "Ramayana"
+    },
+    {
+      "id": "ram_char_11",
+      "category": "Ramayana Character",
+      "title": "Jatayu",
+      "keywords": [
+        "jatayu",
+        "jadayu",
+        "ramayana",
+        "ஜடாயு"
+      ],
+      "tamil": "ஜடாயு சீதையைப் பாதுகாக்க முயலும் கழுகு அரசராக வருகிறார். அவரது செயல்கள் ராமருக்கு தகவல் வழங்குகின்றன.",
+      "english": "Jatayu is portrayed as a noble bird king who tries to protect Sita and provides Rama with information.",
+      "visual_type": "character",
+      "epic": "Ramayana"
+    },
+    {
+      "id": "ram_char_12",
+      "category": "Ramayana Character",
+      "title": "Vibhishana",
+      "keywords": [
+        "vibhishana",
+        "ramayana",
+        "விபீஷணன்"
+      ],
+      "tamil": "விபீஷணன் ராவணனின் சகோதரர். அவர் ராமருடன் இணைந்து தர்மத்தை ஆதரிக்கிறார்.",
+      "english": "Vibhishana is Ravana's brother who joins Rama and supports dharma.",
+      "visual_type": "character",
+      "epic": "Ramayana"
+    },
+    {
+      "id": "ram_char_13",
+      "category": "Ramayana Character",
+      "title": "Kumbhakarna",
+      "keywords": [
+        "kumbhakarna",
+        "ramayana",
+        "கும்பகர்ணன்"
+      ],
+      "tamil": "கும்பகர்ணன் ராவணனின் சகோதரரும் இலங்கைப் போரின் முக்கிய வீரருமாக வருகிறார்.",
+      "english": "Kumbhakarna is Ravana's brother and a major warrior in the Lanka conflict.",
+      "visual_type": "character",
+      "epic": "Ramayana"
+    },
+    {
+      "id": "ram_char_14",
+      "category": "Ramayana Character",
+      "title": "Indrajit",
+      "keywords": [
+        "indrajit",
+        "meghanada",
+        "meghanad",
+        "ramayana",
+        "இந்திரஜித்"
+      ],
+      "tamil": "இந்திரஜித் அல்லது மேகநாதன் ராவணனின் மகனும் திறமையான போர்வீரருமாக வருகிறார்.",
+      "english": "Indrajit, also known as Meghanada, is Ravana's son and a powerful warrior.",
+      "visual_type": "character",
+      "epic": "Ramayana"
+    },
+    {
+      "id": "mah_story_01",
+      "category": "Mahabharata Story",
+      "title": "Kuru Dynasty",
+      "keywords": [
+        "kuru dynasty",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "ஹஸ்தினாபுரம் மற்றும் குரு வம்சத்தின் பின்னணி மகாபாரதத்தின் முக்கிய அடித்தளமாகும். பல தலைமுறைகளின் உறவுகள் பின்னர் பாண்டவர்கள் மற்றும் கௌரவர்களின் மோதலுக்கு வழிவகுக்கின்றன.",
+      "english": "Hastinapura and the Kuru dynasty form the background of the Mahabharata. Family relationships lead to the later Pandava-Kaurava conflict.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 1
+    },
+    {
+      "id": "mah_story_02",
+      "category": "Mahabharata Story",
+      "title": "Birth of Pandavas and Kauravas",
+      "keywords": [
+        "birth of pandavas and kauravas",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "பாண்டவர்கள் மற்றும் கௌரவர்கள் பிறப்பு மகாபாரதக் கதையின் முக்கிய தொடக்க நிகழ்வுகளாகும்.",
+      "english": "The births of the Pandavas and Kauravas form an important part of the early narrative.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 2
+    },
+    {
+      "id": "mah_story_03",
+      "category": "Mahabharata Story",
+      "title": "Princes' Education",
+      "keywords": [
+        "princes' education",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "பாண்டவர்கள் மற்றும் கௌரவர்கள் துரோணரிடம் ஆயுதப் பயிற்சி பெறுகின்றனர். அர்ஜுனனின் வில்வித்தை திறமை முக்கியமாக சித்தரிக்கப்படுகிறது.",
+      "english": "The Pandavas and Kauravas train under Drona, with Arjuna's archery becoming especially prominent.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 3
+    },
+    {
+      "id": "mah_story_04",
+      "category": "Mahabharata Story",
+      "title": "Karna",
+      "keywords": [
+        "karna",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "கர்ணன் மகாபாரதத்தின் முக்கிய வீரர். அவரது பிறப்பு, குந்தியுடனான தொடர்பு மற்றும் துரியோதனனுடனான நட்பு அவரது கதையில் முக்கியமானவை.",
+      "english": "Karna is a major warrior. His birth, connection with Kunti and friendship with Duryodhana are central to his story.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 4
+    },
+    {
+      "id": "mah_story_05",
+      "category": "Mahabharata Story",
+      "title": "Lac House",
+      "keywords": [
+        "lac house",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "பாண்டவர்களை அழிக்க முயன்ற லட்சகிரக சம்பவத்தில் அவர்கள் தப்பிக்கிறார்கள். பின்னர் மறைமுகமாக வாழ்கின்றனர்.",
+      "english": "The Pandavas escape the plot involving the Lac House and later live in disguise.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 5
+    },
+    {
+      "id": "mah_story_06",
+      "category": "Mahabharata Story",
+      "title": "Draupadi's Swayamvara",
+      "keywords": [
+        "draupadi's swayamvara",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "திரௌபதியின் சுயம்வரத்தில் அர்ஜுனன் முக்கிய பங்கு வகிக்கிறார். பின்னர் திரௌபதி பாண்டவர்களுடன் இணைகிறார்.",
+      "english": "Arjuna plays a key role in Draupadi's swayamvara, after which Draupadi becomes closely connected with the Pandavas.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 6
+    },
+    {
+      "id": "mah_story_07",
+      "category": "Mahabharata Story",
+      "title": "Indraprastha",
+      "keywords": [
+        "indraprastha",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "பாண்டவர்கள் இந்திரபிரஸ்தத்தை அமைத்து ஆட்சி செய்கின்றனர். அவர்களின் வளர்ந்து வரும் செல்வாக்கு அரசியல் போட்டியை அதிகரிக்கிறது.",
+      "english": "The Pandavas establish Indraprastha and their growing influence increases the political rivalry.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 7
+    },
+    {
+      "id": "mah_story_08",
+      "category": "Mahabharata Story",
+      "title": "Rajasuya",
+      "keywords": [
+        "rajasuya",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "யுதிஷ்டிரரின் ராஜசூய யாகம் ஒரு முக்கிய அரசியல் நிகழ்வாகும். சிசுபாலன் சம்பவமும் இதனுடன் தொடர்புடையது.",
+      "english": "Yudhishthira's Rajasuya is an important political event, including the episode involving Shishupala.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 8
+    },
+    {
+      "id": "mah_story_09",
+      "category": "Mahabharata Story",
+      "title": "Dice Game",
+      "keywords": [
+        "dice game",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "சகுனியின் திட்டத்தில் சூதாட்டம் நடைபெறுகிறது. யுதிஷ்டிரர் தனது செல்வம் மற்றும் அரசாட்சியை இழக்கிறார்.",
+      "english": "A dice game takes place through Shakuni's strategy. Yudhishthira loses wealth and political power.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 9
+    },
+    {
+      "id": "mah_story_10",
+      "category": "Mahabharata Story",
+      "title": "Draupadi in the Assembly",
+      "keywords": [
+        "draupadi in the assembly",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "சபையில் திரௌபதிக்கு ஏற்பட்ட அவமான முயற்சி மகாபாரதத்தின் முக்கிய திருப்பமாகிறது. இதன் பின்னர் வனவாசம் ஏற்படுகிறது.",
+      "english": "The attempt to humiliate Draupadi in the assembly becomes a major turning point, followed by exile.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 10
+    },
+    {
+      "id": "mah_story_11",
+      "category": "Mahabharata Story",
+      "title": "Thirteen Years of Exile",
+      "keywords": [
+        "thirteen years of exile",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "பாண்டவர்கள் பன்னிரண்டு ஆண்டுகள் வனவாசமும் ஒரு ஆண்டு அஞ்ஞாதவாசமும் மேற்கொள்கிறார்கள்.",
+      "english": "The Pandavas undergo twelve years of forest exile followed by one year in disguise.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 11
+    },
+    {
+      "id": "mah_story_12",
+      "category": "Mahabharata Story",
+      "title": "Arjuna's Quest",
+      "keywords": [
+        "arjuna's quest",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "அர்ஜுனன் பல்வேறு ஆயுதங்களைப் பெறுவதற்கான தவம் மற்றும் பயணங்களை மேற்கொள்கிறார் என்று மகாபாரத மரபு கூறுகிறது.",
+      "english": "Mahabharata tradition describes Arjuna undertaking austerities and journeys to obtain powerful weapons.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 12
+    },
+    {
+      "id": "mah_story_13",
+      "category": "Mahabharata Story",
+      "title": "Virata Year",
+      "keywords": [
+        "virata year",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "அஞ்ஞாதவாசத்தின் போது பாண்டவர்கள் விராட மன்னனின் நாட்டில் வெவ்வேறு அடையாளங்களில் வாழ்கிறார்கள்.",
+      "english": "During the final year in disguise, the Pandavas live in King Virata's kingdom under assumed identities.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 13
+    },
+    {
+      "id": "mah_story_14",
+      "category": "Mahabharata Story",
+      "title": "Peace Attempts",
+      "keywords": [
+        "peace attempts",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "போர் தொடங்குவதற்கு முன் சமாதான முயற்சிகள் நடைபெறுகின்றன. கிருஷ்ணர் தூதராகச் சென்று சமாதானத்தை முயற்சிக்கிறார்.",
+      "english": "Before the war, peace negotiations are attempted, including Krishna's role as an envoy.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 14
+    },
+    {
+      "id": "mah_story_15",
+      "category": "Mahabharata Story",
+      "title": "Arjuna's Dilemma",
+      "keywords": [
+        "arjuna's dilemma",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "குருக்ஷேத்திரப் போரின் தொடக்கத்தில் உறவினர்கள் மற்றும் ஆசான்களுக்கு எதிராகப் போரிடுவது குறித்து அர்ஜுனன் மனக்குழப்பம் அடைகிறார்.",
+      "english": "At the beginning of the war, Arjuna struggles with fighting relatives and teachers.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 15
+    },
+    {
+      "id": "mah_story_16",
+      "category": "Mahabharata Story",
+      "title": "Bhagavad Gita",
+      "keywords": [
+        "bhagavad gita",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "கிருஷ்ணர் அர்ஜுனனுக்கு கடமை, தர்மம், செயல், அறிவு, பக்தி மற்றும் ஆன்மிகப் புரிதல் குறித்து உபதேசம் வழங்குகிறார்.",
+      "english": "Krishna teaches Arjuna about duty, dharma, action, knowledge, devotion and spiritual understanding.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 16
+    },
+    {
+      "id": "mah_story_17",
+      "category": "Mahabharata Story",
+      "title": "Kurukshetra War",
+      "keywords": [
+        "kurukshetra war",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "பாண்டவர்கள் மற்றும் கௌரவர்கள் இடையே குருக்ஷேத்திரத்தில் பெரிய போர் நடைபெறுகிறது. பல அரசர்களும் வீரர்களும் பங்கேற்கின்றனர்.",
+      "english": "A major war takes place at Kurukshetra between the Pandavas and Kauravas, with many rulers and warriors participating.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 17
+    },
+    {
+      "id": "mah_story_18",
+      "category": "Mahabharata Story",
+      "title": "Bhishma's Fall",
+      "keywords": [
+        "bhishma's fall",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "பீஷ்மர் கௌரவர் தரப்பின் முக்கிய தளபதியாக இருக்கிறார். அவரது வீழ்ச்சி போரின் முக்கிய திருப்பமாகிறது.",
+      "english": "Bhishma is a major Kaurava commander, and his fall becomes a major turning point.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 18
+    },
+    {
+      "id": "mah_story_19",
+      "category": "Mahabharata Story",
+      "title": "Drona's Command",
+      "keywords": [
+        "drona's command",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "பீஷ்மருக்குப் பிறகு துரோணர் தளபதியாகிறார். அபிமன்யு மற்றும் சக்கரவியூகம் தொடர்பான நிகழ்வுகள் இந்தக் கட்டத்தில் இடம்பெறுகின்றன.",
+      "english": "After Bhishma, Drona becomes commander. The episodes involving Abhimanyu and the Chakravyuha occur in this phase.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 19
+    },
+    {
+      "id": "mah_story_20",
+      "category": "Mahabharata Story",
+      "title": "Abhimanyu",
+      "keywords": [
+        "abhimanyu",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "அபிமன்யு சக்கரவியூகத்திற்குள் நுழையும் சம்பவம் மகாபாரதத்தின் முக்கிய போர்க் கதைகளில் ஒன்றாகும்.",
+      "english": "Abhimanyu's entry into the Chakravyuha is one of the Mahabharata's notable battle episodes.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 20
+    },
+    {
+      "id": "mah_story_21",
+      "category": "Mahabharata Story",
+      "title": "Karna's Final Battle",
+      "keywords": [
+        "karna's final battle",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "கர்ணன் போரின் பிற்காலத்தில் கௌரவர் தரப்பின் முக்கிய வீரராகிறார். அர்ஜுனனுடன் அவரது இறுதி மோதல் முக்கிய நிகழ்வாகிறது.",
+      "english": "Karna becomes a major Kaurava warrior later in the war. His final confrontation with Arjuna is a major event.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 21
+    },
+    {
+      "id": "mah_story_22",
+      "category": "Mahabharata Story",
+      "title": "Duryodhana's Fall",
+      "keywords": [
+        "duryodhana's fall",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "போரின் இறுதிக்கட்டத்தில் பீமரும் துரியோதனனும் மோதுகின்றனர். துரியோதனனின் வீழ்ச்சி கௌரவர் தரப்பின் முடிவை நோக்கிச் செல்கிறது.",
+      "english": "In the final phase, Bhima and Duryodhana fight. Duryodhana's fall marks the collapse of the Kaurava side.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 22
+    },
+    {
+      "id": "mah_story_23",
+      "category": "Mahabharata Story",
+      "title": "After the War",
+      "keywords": [
+        "after the war",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "போர் முடிந்தபின் பாண்டவர்கள் வெற்றி பெற்றாலும் பெரும் இழப்புகளைச் சந்திக்கிறார்கள். யுதிஷ்டிரர் ஆட்சியை ஏற்கிறார்.",
+      "english": "After the war the Pandavas are victorious but suffer enormous losses, and Yudhishthira assumes the throne.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 23
+    },
+    {
+      "id": "mah_story_24",
+      "category": "Mahabharata Story",
+      "title": "Final Journey",
+      "keywords": [
+        "final journey",
+        "mahabharata",
+        "mahabharatham",
+        "மகாபாரதம்"
+      ],
+      "tamil": "இறுதியில் பாண்டவர்கள் அரசை விட்டு இறுதி பயணத்தை மேற்கொள்கிறார்கள். இது வாழ்க்கையின் நிலையாமை மற்றும் ஆன்மிகப் பொருள் பற்றிய கதையாக விளக்கப்படுகிறது.",
+      "english": "Eventually the Pandavas leave their kingdom for a final journey, presented as a reflection on impermanence and spiritual meaning.",
+      "visual_type": "story_timeline",
+      "epic": "Mahabharata",
+      "sequence": 24
+    },
+    {
+      "id": "mah_char_01",
+      "category": "Mahabharata Character",
+      "title": "Krishna",
+      "keywords": [
+        "krishna",
+        "krishnan",
+        "கிருஷ்ணர்",
+        "mahabharata"
+      ],
+      "tamil": "கிருஷ்ணர் மகாபாரதத்தில் வழிகாட்டி, தூதர் மற்றும் அர்ஜுனனின் சாரதியாக முக்கிய பங்கு வகிக்கிறார். பகவத் கீதையின் உபதேசகராகவும் அறியப்படுகிறார்.",
+      "english": "Krishna is a guide, envoy and Arjuna's charioteer in the Mahabharata. He is the speaker of the Bhagavad Gita.",
+      "visual_type": "character",
+      "epic": "Mahabharata"
+    },
+    {
+      "id": "mah_char_02",
+      "category": "Mahabharata Character",
+      "title": "Arjuna",
+      "keywords": [
+        "arjuna",
+        "அர்ஜுனன்",
+        "mahabharata",
+        "அர்ஜுனர்"
+      ],
+      "tamil": "அர்ஜுனர் பாண்டவர்களில் ஒருவரும் சிறந்த வில்லாளியும் ஆவார். போருக்கு முன் கிருஷ்ணரிடமிருந்து பகவத் கீதையின் உபதேசத்தைப் பெறுகிறார்.",
+      "english": "Arjuna is one of the Pandavas and a renowned archer. Before the war, he receives Krishna's teaching.",
+      "visual_type": "character",
+      "epic": "Mahabharata"
+    },
+    {
+      "id": "mah_char_03",
+      "category": "Mahabharata Character",
+      "title": "Yudhishthira",
+      "keywords": [
+        "yudhishthira",
+        "dharmar",
+        "mahabharata",
+        "யுதிஷ்டிரர்"
+      ],
+      "tamil": "யுதிஷ்டிரர் பாண்டவர்களில் மூத்தவர். தர்மம் மற்றும் நேர்மையுடன் அவரது கதாபாத்திரம் தொடர்புடையது.",
+      "english": "Yudhishthira is the eldest Pandava and is strongly associated with dharma and truthfulness.",
+      "visual_type": "character",
+      "epic": "Mahabharata"
+    },
+    {
+      "id": "mah_char_04",
+      "category": "Mahabharata Character",
+      "title": "Bhima",
+      "keywords": [
+        "bhima",
+        "bheema",
+        "mahabharata",
+        "பீமர்"
+      ],
+      "tamil": "பீமர் பாண்டவர்களில் இரண்டாவது சகோதரர். உடல் வலிமை மற்றும் போர்திறனுக்காக குறிப்பிடப்படுகிறார்.",
+      "english": "Bhima is the second Pandava brother and is known for physical strength and martial ability.",
+      "visual_type": "character",
+      "epic": "Mahabharata"
+    },
+    {
+      "id": "mah_char_05",
+      "category": "Mahabharata Character",
+      "title": "Nakula",
+      "keywords": [
+        "nakula",
+        "mahabharata",
+        "நகுலர்"
+      ],
+      "tamil": "நகுலர் பாண்டவர்களில் நான்காவது சகோதரர். குதிரை அறிவு மற்றும் போர்திறனுடன் தொடர்புடையவர்.",
+      "english": "Nakula is the fourth Pandava brother and is associated with horse knowledge and martial skill.",
+      "visual_type": "character",
+      "epic": "Mahabharata"
+    },
+    {
+      "id": "mah_char_06",
+      "category": "Mahabharata Character",
+      "title": "Sahadeva",
+      "keywords": [
+        "sahadeva",
+        "mahabharata",
+        "சகதேவர்"
+      ],
+      "tamil": "சகதேவர் பாண்டவர்களில் இளையவர். அறிவும் ஆலோசனையும் கொண்டவராக சித்தரிக்கப்படுகிறார்.",
+      "english": "Sahadeva is the youngest Pandava and is portrayed as knowledgeable and thoughtful.",
+      "visual_type": "character",
+      "epic": "Mahabharata"
+    },
+    {
+      "id": "mah_char_07",
+      "category": "Mahabharata Character",
+      "title": "Draupadi",
+      "keywords": [
+        "draupadi",
+        "panchali",
+        "துரௌபதி",
+        "பாஞ்சாலி",
+        "mahabharata",
+        "திரௌபதி"
+      ],
+      "tamil": "திரௌபதி மகாபாரதத்தின் மையக் கதாபாத்திரங்களில் ஒருவர். பாண்டவர்களுடன் அவரது வாழ்க்கை பல முக்கிய நிகழ்வுகளுடன் இணைகிறது.",
+      "english": "Draupadi is a central Mahabharata character whose life is closely connected to many major events involving the Pandavas.",
+      "visual_type": "character",
+      "epic": "Mahabharata"
+    },
+    {
+      "id": "mah_char_08",
+      "category": "Mahabharata Character",
+      "title": "Duryodhana",
+      "keywords": [
+        "duryodhana",
+        "துரியோதனன்",
+        "mahabharata"
+      ],
+      "tamil": "துரியோதனன் கௌரவர்களின் முக்கிய தலைவராக வருகிறார். பாண்டவர்களுடனான அவரது போட்டி மோதலின் முக்கிய காரணியாகிறது.",
+      "english": "Duryodhana is the leading figure among the Kauravas, and his rivalry with the Pandavas is central to the conflict.",
+      "visual_type": "character",
+      "epic": "Mahabharata"
+    },
+    {
+      "id": "mah_char_09",
+      "category": "Mahabharata Character",
+      "title": "Karna",
+      "keywords": [
+        "karna",
+        "கர்ணன்",
+        "mahabharata"
+      ],
+      "tamil": "கர்ணன் மகாபாரதத்தின் முக்கிய வீரர். குந்தியுடனான பிறப்புத் தொடர்பும் துரியோதனனுடனான நட்பும் அவரது கதையில் முக்கியமானவை.",
+      "english": "Karna is a major warrior. His birth connection with Kunti and friendship with Duryodhana are central to his story.",
+      "visual_type": "character",
+      "epic": "Mahabharata"
+    },
+    {
+      "id": "mah_char_10",
+      "category": "Mahabharata Character",
+      "title": "Bhishma",
+      "keywords": [
+        "bhishma",
+        "பீஷ்மர்",
+        "mahabharata"
+      ],
+      "tamil": "பீஷ்மர் குரு வம்சத்தின் மூத்த வீரரும் ஆலோசகருமாக வருகிறார். போரின் ஆரம்பத்தில் கௌரவர் படைக்கு தலைமை வகிக்கிறார்.",
+      "english": "Bhishma is an elder warrior and adviser of the Kuru dynasty and commands the Kaurava army early in the war.",
+      "visual_type": "character",
+      "epic": "Mahabharata"
+    },
+    {
+      "id": "mah_char_11",
+      "category": "Mahabharata Character",
+      "title": "Drona",
+      "keywords": [
+        "drona",
+        "துரோணர்",
+        "mahabharata"
+      ],
+      "tamil": "துரோணர் பாண்டவர்கள் மற்றும் கௌரவர்களின் ஆயுத ஆசிரியர். போரின் ஒரு கட்டத்தில் கௌரவர் படையின் தளபதியாகிறார்.",
+      "english": "Drona is the martial teacher of the Pandavas and Kauravas and later becomes a Kaurava commander.",
+      "visual_type": "character",
+      "epic": "Mahabharata"
+    },
+    {
+      "id": "mah_char_12",
+      "category": "Mahabharata Character",
+      "title": "Shakuni",
+      "keywords": [
+        "shakuni",
+        "சகுனி",
+        "mahabharata"
+      ],
+      "tamil": "சகுனி துரியோதனனின் அரசியல் கூட்டாளியாகவும் சூதாட்ட நிகழ்வுடன் தொடர்புடையவராகவும் வருகிறார்.",
+      "english": "Shakuni is a political ally of Duryodhana and is especially associated with the dice game.",
+      "visual_type": "character",
+      "epic": "Mahabharata"
+    },
+    {
+      "id": "mah_char_13",
+      "category": "Mahabharata Character",
+      "title": "Abhimanyu",
+      "keywords": [
+        "abhimanyu",
+        "அபிமன்யு",
+        "mahabharata"
+      ],
+      "tamil": "அபிமன்யு அர்ஜுனனின் மகன். குருக்ஷேத்திரப் போரில் இளம் வீரராக முக்கிய பங்கு வகிக்கிறார்.",
+      "english": "Abhimanyu is Arjuna's son and plays an important role as a young warrior in the Kurukshetra War.",
+      "visual_type": "character",
+      "epic": "Mahabharata"
+    },
+    {
+      "id": "mah_char_14",
+      "category": "Mahabharata Character",
+      "title": "Gandhari",
+      "keywords": [
+        "gandhari",
+        "காந்தாரி",
+        "mahabharata"
+      ],
+      "tamil": "காந்தாரி திருதராஷ்டிரரின் மனைவியும் கௌரவர்களின் தாயும் ஆவார்.",
+      "english": "Gandhari is Dhritarashtra's wife and the mother of the Kauravas.",
+      "visual_type": "character",
+      "epic": "Mahabharata"
+    },
+    {
+      "id": "mah_char_15",
+      "category": "Mahabharata Character",
+      "title": "Kunti",
+      "keywords": [
+        "kunti",
+        "குந்தி",
+        "mahabharata"
+      ],
+      "tamil": "குந்தி பல பாண்டவர்களின் தாயும் கர்ணனின் பிறப்புத் தாயும் ஆவார்.",
+      "english": "Kunti is the mother of several Pandavas and the birth mother of Karna.",
+      "visual_type": "character",
+      "epic": "Mahabharata"
+    },
+    {
+      "id": "gita_01",
+      "category": "Bhagavad Gita",
+      "title": "What is the Bhagavad Gita?",
+      "keywords": [
+        "bhagavad gita",
+        "gita",
+        "geetha",
+        "பகவத் கீதை"
+      ],
+      "tamil": "பகவத் கீதை மகாபாரதத்தின் ஒரு முக்கியமான பகுதியாகும். இது கிருஷ்ணர் மற்றும் அர்ஜுனரின் உரையாடலாக அறியப்படுகிறது.",
+      "english": "The Bhagavad Gita is a major part of the Mahabharata, known as the dialogue between Krishna and Arjuna.",
+      "visual_type": "gita_topic"
+    },
+    {
+      "id": "gita_02",
+      "category": "Bhagavad Gita",
+      "title": "Arjuna's Dilemma",
+      "keywords": [
+        "arjuna dilemma",
+        "arjuna confusion",
+        "அர்ஜுனன் குழப்பம்"
+      ],
+      "tamil": "போர்க்களத்தில் உறவினர்கள் மற்றும் ஆசான்களுக்கு எதிராகப் போரிடுவது குறித்து அர்ஜுனன் மனக்குழப்பம் அடைகிறார்.",
+      "english": "Arjuna experiences a moral and emotional dilemma about fighting relatives and teachers.",
+      "visual_type": "gita_topic"
+    },
+    {
+      "id": "gita_03",
+      "category": "Bhagavad Gita",
+      "title": "Dharma",
+      "keywords": [
+        "dharma",
+        "duty",
+        "தர்மம்"
+      ],
+      "tamil": "கீதை கடமை மற்றும் தர்மம் பற்றிய பல்வேறு கருத்துகளை முன்வைக்கிறது.",
+      "english": "The Gita presents ideas about duty and dharma.",
+      "visual_type": "gita_topic"
+    },
+    {
+      "id": "gita_04",
+      "category": "Bhagavad Gita",
+      "title": "Karma Yoga",
+      "keywords": [
+        "karma yoga",
+        "karma",
+        "கர்மயோகம்"
+      ],
+      "tamil": "கர்மயோகம் கடமையைச் செய்வதும் அதன் பலனில் அதிக பற்றைக் கொள்ளாதிருப்பதும் போன்ற கருத்துகளுடன் தொடர்புடையது.",
+      "english": "Karma Yoga is associated with performing one's duty without excessive attachment to the fruits of action.",
+      "visual_type": "gita_topic"
+    },
+    {
+      "id": "gita_05",
+      "category": "Bhagavad Gita",
+      "title": "Jnana Yoga",
+      "keywords": [
+        "jnana yoga",
+        "knowledge",
+        "ஞானயோகம்"
+      ],
+      "tamil": "ஞானயோகம் அறிவு மற்றும் உண்மையைப் பற்றிய ஆழமான புரிதலுடன் தொடர்புடையது.",
+      "english": "Jnana Yoga is associated with knowledge and deeper understanding of reality.",
+      "visual_type": "gita_topic"
+    },
+    {
+      "id": "gita_06",
+      "category": "Bhagavad Gita",
+      "title": "Bhakti Yoga",
+      "keywords": [
+        "bhakti yoga",
+        "devotion",
+        "பக்தியோகம்"
+      ],
+      "tamil": "பக்தியோகம் இறை பக்தி மற்றும் சரணாகதி போன்ற கருத்துகளுடன் தொடர்புடையது.",
+      "english": "Bhakti Yoga is associated with devotion and surrender.",
+      "visual_type": "gita_topic"
+    },
+    {
+      "id": "gita_07",
+      "category": "Bhagavad Gita",
+      "title": "Equanimity",
+      "keywords": [
+        "equanimity",
+        "balance",
+        "samathuvam"
+      ],
+      "tamil": "வெற்றி மற்றும் தோல்வி போன்ற நிலைகளில் மனநிலையை சமமாக வைத்திருப்பது கீதையின் முக்கிய கருத்துகளில் ஒன்றாகும்.",
+      "english": "Maintaining steadiness in success and failure is an important idea associated with the Gita.",
+      "visual_type": "gita_topic"
+    },
+    {
+      "id": "gita_08",
+      "category": "Bhagavad Gita",
+      "title": "Self Discipline",
+      "keywords": [
+        "self discipline",
+        "mind control",
+        "ஒழுக்கம்"
+      ],
+      "tamil": "கீதை மனக்கட்டுப்பாடு, சுய ஒழுக்கம் மற்றும் உள்ளார்ந்த நிலைத்தன்மை பற்றியும் பேசுகிறது.",
+      "english": "The Gita discusses self-discipline, control of the mind and inner steadiness.",
+      "visual_type": "gita_topic"
+    },
+    {
+      "id": "cross_001",
+      "category": "Connection",
+      "title": "Ramayana and Navarathiri",
+      "keywords": [
+        "ramayana navarathiri",
+        "rama navratri",
+        "ramayana",
+        "navarathiri"
+      ],
+      "tamil": "சில பிராந்திய தசரா மரபுகளில் ராமர் ராவணனை வென்ற கதை நவராத்திரி மற்றும் விஜயதசமி காலத்துடன் தொடர்புபடுத்தப்படுகிறது.",
+      "english": "Some regional Dussehra traditions connect Rama's victory over Ravana with the Navarathiri and Vijayadashami period.",
+      "visual_type": "connection"
+    },
+    {
+      "id": "cross_002",
+      "category": "Connection",
+      "title": "Navarathiri and Shakti",
+      "keywords": [
+        "shakti",
+        "divine feminine",
+        "navarathiri"
+      ],
+      "tamil": "நவராத்திரி பல மரபுகளில் சக்தி அல்லது தெய்வீக பெண் சக்தியை வழிபடும் காலமாகக் கருதப்படுகிறது.",
+      "english": "Navarathiri is observed in many traditions as a period centered on Shakti, the Divine Feminine.",
+      "visual_type": "connection"
+    },
+    {
+      "id": "cross_003",
+      "category": "Connection",
+      "title": "Navarathiri and Education",
+      "keywords": [
+        "education navarathiri",
+        "saraswati",
+        "vidyarambham"
+      ],
+      "tamil": "சரஸ்வதி பூஜை மற்றும் விஜயதசமி சில தென்னிந்திய மரபுகளில் கல்வி, அறிவு மற்றும் கற்றல் தொடக்கத்துடன் தொடர்புடையவை.",
+      "english": "Saraswati Pooja and Vijayadashami are associated in some South Indian traditions with learning, knowledge and beginning education.",
+      "visual_type": "connection"
+    },
+    {
+      "id": "cross_004",
+      "category": "Connection",
+      "title": "Navarathiri and Work",
+      "keywords": [
+        "work pooja",
+        "tools pooja",
+        "ayudha pooja"
+      ],
+      "tamil": "ஆயுத பூஜை வேலைக்குப் பயன்படும் கருவிகள், உபகரணங்கள் மற்றும் வாகனங்களை மதிக்கும் மரபுடன் தொடர்புடையது.",
+      "english": "Ayudha Pooja is associated with honoring tools, equipment and vehicles used for work.",
+      "visual_type": "connection"
+    }
+  ]
+}

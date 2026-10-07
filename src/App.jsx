@@ -1,681 +1,902 @@
-import { Fragment, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
 import "./App.css";
 import "./sundarakanda.css";
-import dataset from "./data/navarathiri_voice_ai_dataset.json";
+
+import navarathiriDataset from "./data/navarathiri_voice_ai_dataset.json";
 import sundarakandaDataset from "./data/sundarakanda_dataset.json";
+import expandedDataset from "./data/navarathiri_voice_ai_expanded_epics_dataset.json";
 
-// =====================================================
-// CONSTANTS
-// =====================================================
+/* =========================================================
+   BASIC TEXT HELPERS
+========================================================= */
 
-const SK_CATEGORY = "sundarakanda";
-
-const ALL_ENTRIES = [
-  ...sundarakandaDataset.entries,
-  ...dataset.entries,
-];
-
-// =====================================================
-// SUNDARAKANDA VISUAL STAGES
-// =====================================================
-
-const SK_STAGES = [
-  {
-    icon: "🌊",
-    en: "Ocean",
-    ta: "கடல்",
-    enNote: "The great leap",
-    taNote: "பெரும் பாய்ச்சல்",
-  },
-  {
-    icon: "🙏",
-    en: "Hanuman",
-    ta: "அனுமன்",
-    enNote: "Devoted messenger",
-    taNote: "பக்தியுள்ள தூதர்",
-  },
-  {
-    icon: "🏰",
-    en: "Lanka",
-    ta: "இலங்கை",
-    enNote: "The search begins",
-    taNote: "தேடல் தொடக்கம்",
-  },
-  {
-    icon: "🌸",
-    en: "Sita",
-    ta: "சீதை",
-    enNote: "Hope in Ashoka Vatika",
-    taNote: "அசோகவனத்தில் நம்பிக்கை",
-  },
-  {
-    icon: "🔥",
-    en: "Lanka Burns",
-    ta: "இலங்கை எரிகிறது",
-    enNote: "Courage before Ravana",
-    taNote: "ராவணன் முன் துணிவு",
-  },
-  {
-    icon: "🏹",
-    en: "Rama",
-    ta: "ராமர்",
-    enNote: "News of success",
-    taNote: "செய்தியுடன் திரும்புதல்",
-  },
-];
-
-// =====================================================
-// TAMIL STEM RULES
-// =====================================================
-
-const TAMIL_STEM_RULES = [
-  [/சுந்தர\s*காண்ட[\u0B80-\u0BFF]*/g, " sundarakanda "],
-  [/அசோக\s*வன[\u0B80-\u0BFF]*/g, " ashoka vatika "],
-  [
-    /ராவண[\u0B80-\u0BFF]*\s*(சபை|அவை)[\u0B80-\u0BFF]*/g,
-    " ravana court ",
-  ],
-  [
-    /இலங்கை[\u0B80-\u0BFF]*\s*எரி[\u0B80-\u0BFF]*/g,
-    " lanka burning ",
-  ],
-  [/இலங்கை[\u0B80-\u0BFF]*/g, " lanka "],
-  [/சீதை[\u0B80-\u0BFF]*/g, " sita "],
-  [/அனும[\u0B80-\u0BFF]*/g, " hanuman "],
-  [
-    /இராமனின்\s*மோதிர[\u0B80-\u0BFF]*/g,
-    " rama ring ",
-  ],
-  [/சூடாமணி[\u0B80-\u0BFF]*/g, " chudamani "],
-  [
-    /சீதை[\u0B80-\u0BFF]*\s*(எங்கே|காண்|கண்ட)[\u0B80-\u0BFF]*/g,
-    " sita found ",
-  ],
-  [/இராவண[\u0B80-\u0BFF]*/g, " ravana "],
-];
-
-// =====================================================
-// SUGGESTIONS
-// =====================================================
-
-const SUGGESTIONS = [
-  {
-    label: "🪔 What is Navarathiri?",
-    query: "What is Navarathiri?",
-  },
-
-  ...Array.from({ length: 9 }, (_, index) => ({
-    label: `${
-      index === 8 ? "🌺" : "🌸"
-    } Navarathiri Day ${index + 1}`,
-    query: `What is Day ${index + 1} of Navarathiri?`,
-  })),
-
-  {
-    label: "🏹 Ramayana",
-    query: "Tell me about Ramayana",
-  },
-
-  {
-    label: "🙏 Sundarakanda",
-    query: "Tell me about Sundarakanda",
-  },
-
-  {
-    label: "🌊 Hanuman's Great Leap",
-    query: "Tell me about Hanuman's great leap",
-  },
-
-  {
-    label: "🌸 Finding Sita",
-    query: "Where did Hanuman find Sita?",
-  },
-
-  {
-    label: "🔥 Burning of Lanka",
-    query: "Tell me about the burning of Lanka",
-  },
-
-  {
-    label: "💎 Sita's Chudamani",
-    query: "What did Sita give Hanuman?",
-  },
-
-  {
-    label: "🙏 Sundarakanda Significance",
-    query: "What is the significance of Sundarakanda?",
-  },
-
-  {
-    label: "⚔️ Mahabharata",
-    query: "Tell me about Mahabharata",
-  },
-
-  {
-    label: "🙏 Who is Hanuman?",
-    query: "Who is Hanuman?",
-  },
-
-  {
-    label: "🏹 Who are the Pandavas?",
-    query: "Who are the Pandavas?",
-  },
-
-  {
-    label: "📖 Bhagavad Gita",
-    query: "What is Bhagavad Gita?",
-  },
-
-  {
-    label: "🌺 Vijayadashami",
-    query: "Tell me about Vijayadashami",
-  },
-];
-
-// =====================================================
-// CLEAN TEXT
-// =====================================================
-
-const cleanText = (text) =>
-  (text || "")
+const cleanText = (value = "") =>
+  String(value)
     .toLowerCase()
     .replace(/[?!.,:;'"`’‘“”]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 
+const escapeRegExp = (value = "") =>
+  value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+/*
+  IMPORTANT:
+  English/Tanglish words use whole-word matching.
+  So "rama" will NOT match "ramayana".
+*/
+const containsTerm = (text, term) => {
+  const source = cleanText(text);
+  const target = cleanText(term);
+
+  if (!target) return false;
+
+  if (/^[a-z0-9 ]+$/i.test(target)) {
+    const pattern = new RegExp(
+      `(^|\\s)${escapeRegExp(target)}(?=\\s|$)`,
+      "i"
+    );
+
+    return pattern.test(` ${source} `);
+  }
+
+  // Tamil does not always have whitespace boundaries.
+  return source.includes(target);
+};
+
+/* =========================================================
+   SUNDARAKANDA DATA NORMALIZATION
+========================================================= */
+
+const rawSundarakandaEntries = Array.isArray(
+  sundarakandaDataset.entries
+)
+  ? sundarakandaDataset.entries
+  : Array.isArray(
+      sundarakandaDataset.narratives
+    )
+  ? sundarakandaDataset.narratives
+  : [];
+
+const sundarakandaEntries =
+  rawSundarakandaEntries.map(
+    (entry, index) => ({
+      ...entry,
+
+      id: `sundarakanda_${
+        entry.id ?? index + 1
+      }`,
+
+      title:
+        entry.title ||
+        entry.section ||
+        `Sundarakanda Episode ${
+          index + 1
+        }`,
+
+      category:
+        entry.category ||
+        "Sundarakanda",
+
+      epic:
+        entry.epic ||
+        "Ramayana",
+
+      visual_type:
+        entry.visual_type ||
+        "sundarakanda",
+
+      keywords: [
+        ...(Array.isArray(
+          entry.keywords
+        )
+          ? entry.keywords
+          : []),
+
+        ...(Array.isArray(
+          entry.keyCharacters
+        )
+          ? entry.keyCharacters
+          : []),
+
+        "sundarakanda",
+        "sundarakandam",
+        "sundara kanda",
+      ],
+    })
+  );
+
+/* =========================================================
+   COMBINE ALL DATASETS
+========================================================= */
+
+const ALL_ENTRIES = [
+  ...sundarakandaEntries,
+
+  ...(navarathiriDataset.entries ||
+    []),
+
+  ...(expandedDataset.entries ||
+    []),
+].filter(
+  (entry, index, array) =>
+    index ===
+    array.findIndex(
+      (item) =>
+        String(item.id) ===
+        String(entry.id)
+    )
+);
+
+/* =========================================================
+   CHARACTER ALIASES
+========================================================= */
+
+const CHARACTER_ALIASES = {
+  arjuna: [
+    "arjuna",
+    "arjun",
+    "அர்ஜுனன்",
+    "அர்ஜுனர்",
+  ],
+
+  bhima: [
+    "bhima",
+    "bheema",
+    "பீமன்",
+  ],
+
+  yudhishthira: [
+    "yudhishthira",
+    "yudhishtran",
+    "யுதிஷ்டிரர்",
+    "யுதிஷ்டிரன்",
+  ],
+
+  nakula: [
+    "nakula",
+    "நகுலன்",
+  ],
+
+  sahadeva: [
+    "sahadeva",
+    "சகதேவன்",
+  ],
+
+  draupadi: [
+    "draupadi",
+    "droupadi",
+    "திரௌபதி",
+    "துரௌபதி",
+    "பாஞ்சாலி",
+  ],
+
+  duryodhana: [
+    "duryodhana",
+    "துரியோதனன்",
+  ],
+
+  karna: [
+    "karna",
+    "கர்ணன்",
+  ],
+
+  bhishma: [
+    "bhishma",
+    "பீஷ்மர்",
+  ],
+
+  drona: [
+    "drona",
+    "துரோணர்",
+  ],
+
+  kunti: [
+    "kunti",
+    "குந்தி",
+  ],
+
+  gandhari: [
+    "gandhari",
+    "காந்தாரி",
+  ],
+
+  krishna: [
+    "krishna",
+    "கிருஷ்ணர்",
+    "கிருஷ்ணா",
+  ],
+
+  rama: [
+    "rama",
+    "ஸ்ரீராமர்",
+    "ராமர்",
+  ],
+
+  sita: [
+    "sita",
+    "சீதை",
+  ],
+
+  lakshmana: [
+    "lakshmana",
+    "லட்சுமணன்",
+    "லட்சுமணர்",
+  ],
+
+  hanuman: [
+    "hanuman",
+    "anjaneya",
+    "maruti",
+    "ஹனுமான்",
+    "அனுமன்",
+    "ஆஞ்சநேயர்",
+    "மாருதி",
+  ],
+
+  ravana: [
+    "ravana",
+    "ravanan",
+    "ராவணன்",
+    "இராவணன்",
+  ],
+
+  bharata: [
+    "bharata",
+    "பரதன்",
+  ],
+
+  sugreeva: [
+    "sugriva",
+    "sugreeva",
+    "சுக்ரீவன்",
+  ],
+
+  vali: [
+    "vali",
+    "வாலி",
+  ],
+
+  vibhishana: [
+    "vibhishana",
+    "விபீஷணன்",
+  ],
+};
+
+/* =========================================================
+   TAMIL ALIASES
+========================================================= */
+
+const TAMIL_ALIASES = {
+  "நவராத்திரி":
+    "navarathiri",
+
+  "நவராத்திரி பற்றி":
+    "navarathiri",
+
+  "நவராத்திரி என்ன":
+    "what is navarathiri",
+
+  "கொலு":
+    "golu",
+
+  "கோலு":
+    "golu",
+
+  "முதல் நாள்":
+    "day 1",
+
+  "முதலாம் நாள்":
+    "day 1",
+
+  "நாள் ஒன்று":
+    "day 1",
+
+  "நாள் 1":
+    "day 1",
+
+  "இரண்டாம் நாள்":
+    "day 2",
+
+  "இரண்டாவது நாள்":
+    "day 2",
+
+  "நாள் இரண்டு":
+    "day 2",
+
+  "நாள் 2":
+    "day 2",
+
+  "மூன்றாம் நாள்":
+    "day 3",
+
+  "மூன்றாவது நாள்":
+    "day 3",
+
+  "நாள் மூன்று":
+    "day 3",
+
+  "நாள் 3":
+    "day 3",
+
+  "நான்காம் நாள்":
+    "day 4",
+
+  "நான்காவது நாள்":
+    "day 4",
+
+  "நாள் நான்கு":
+    "day 4",
+
+  "நாள் 4":
+    "day 4",
+
+  "ஐந்தாம் நாள்":
+    "day 5",
+
+  "ஐந்தாவது நாள்":
+    "day 5",
+
+  "நாள் ஐந்து":
+    "day 5",
+
+  "நாள் 5":
+    "day 5",
+
+  "ஆறாம் நாள்":
+    "day 6",
+
+  "ஆறாவது நாள்":
+    "day 6",
+
+  "நாள் ஆறு":
+    "day 6",
+
+  "நாள் 6":
+    "day 6",
+
+  "ஏழாம் நாள்":
+    "day 7",
+
+  "ஏழாவது நாள்":
+    "day 7",
+
+  "நாள் ஏழு":
+    "day 7",
+
+  "நாள் 7":
+    "day 7",
+
+  "எட்டாம் நாள்":
+    "day 8",
+
+  "எட்டாவது நாள்":
+    "day 8",
+
+  "நாள் எட்டு":
+    "day 8",
+
+  "நாள் 8":
+    "day 8",
+
+  "ஒன்பதாம் நாள்":
+    "day 9",
+
+  "ஒன்பதாவது நாள்":
+    "day 9",
+
+  "நாள் ஒன்பது":
+    "day 9",
+
+  "நாள் 9":
+    "day 9",
+
+  /* RAMAYANA */
+
+  "ராமாயணம்":
+    "ramayana",
+
+  "ராமாயணம் பற்றி":
+    "ramayana",
+
+  "ராமர்":
+    "rama",
+
+  "ஸ்ரீராமர்":
+    "rama",
+
+  "சீதை":
+    "sita",
+
+  "லட்சுமணன்":
+    "lakshmana",
+
+  "லட்சுமணர்":
+    "lakshmana",
+
+  "பரதன்":
+    "bharata",
+
+  "அனுமன்":
+    "hanuman",
+
+  "அனுமன் யார்":
+    "hanuman",
+
+  "ஹனுமான்":
+    "hanuman",
+
+  "ராவணன்":
+    "ravana",
+
+  "ராவணன் யார்":
+    "ravana",
+
+  "வாலி":
+    "vali",
+
+  "சுக்ரீவன்":
+    "sugriva",
+
+  "விபீஷணன்":
+    "vibhishana",
+
+  /* SUNDARAKANDA */
+
+  "சுந்தரகாண்டம்":
+    "sundarakanda",
+
+  "சுந்தர காண்டம்":
+    "sundarakanda",
+
+  "சுந்தரகாண்டத்தைப் பற்றி":
+    "sundarakanda",
+
+  "சுந்தரகாண்டத்தின் முக்கியத்துவம்":
+    "sundarakanda significance",
+
+  "சுந்தரகாண்டம் முக்கியத்துவம்":
+    "sundarakanda significance",
+
+  "அனுமனின் பெரும் பாய்ச்சல்":
+    "hanuman great leap",
+
+  "அனுமன் கடலைத் தாண்டியது":
+    "hanuman ocean crossing",
+
+  "அனுமன் கடலை தாண்டியது":
+    "hanuman ocean crossing",
+
+  "அனுமன் சீதையை எங்கே கண்டார்":
+    "where hanuman found sita",
+
+  "சீதை எங்கே":
+    "where sita",
+
+  "அசோகவனம்":
+    "ashoka vatika",
+
+  "அசோக வனம்":
+    "ashoka vatika",
+
+  "இலங்கை எரிப்பு":
+    "burning lanka",
+
+  "இலங்கை எரிந்தது":
+    "burning lanka",
+
+  "சூடாமணி":
+    "chudamani",
+
+  "சீதையின் சூடாமணி":
+    "chudamani",
+
+  "இராமனின் மோதிரம்":
+    "rama ring",
+
+  "ராமனின் மோதிரம்":
+    "rama ring",
+
+  "ராவணன் அவை":
+    "ravana court",
+
+  "இராவணன் அவை":
+    "ravana court",
+
+  "லங்கினி":
+    "lankini",
+
+  "லங்கிணி":
+    "lankini",
+
+  "சுரசா":
+    "surasa",
+
+  "சிம்ஹிகா":
+    "simhika",
+
+  "மைநாகன்":
+    "mainaka",
+
+  "இந்திரஜித்":
+    "indrajit",
+
+  /* MAHABHARATA */
+
+  "மகாபாரதம்":
+    "mahabharata",
+
+  "மகாபாரதம் பற்றி":
+    "mahabharata",
+
+  "பாண்டவர்கள்":
+    "pandavas",
+
+  "பாண்டவர்கள் யார்":
+    "pandavas",
+
+  "கௌரவர்கள்":
+    "kauravas",
+
+  "கௌரவர்கள் யார்":
+    "kauravas",
+
+  "குருக்ஷேத்திரம்":
+    "kurukshetra",
+
+  /* GITA */
+
+  "பகவத் கீதை":
+    "bhagavad gita",
+
+  "பகவத் கீதை என்ன":
+    "bhagavad gita",
+
+  "கீதை":
+    "gita",
+
+  /* QUESTION WORDS */
+
+  "முக்கியத்துவம்":
+    "significance",
+
+  "சிறப்பு":
+    "importance",
+
+  "எங்கே":
+    "where",
+
+  "யார்":
+    "who",
+
+  "யாரு":
+    "who",
+
+  "பற்றி":
+    "about",
+
+  "சொல்லு":
+    "tell",
+
+  "சொல்லுங்க":
+    "tell",
+
+  "என்ன":
+    "what",
+
+  "வாட் இஸ்":
+    "what is",
+
+  "வாட்":
+    "what",
+
+  "இஸ்":
+    "is",
+
+  "ஹூ இஸ்":
+    "who is",
+
+  "ஹூ":
+    "who",
+
+  "அபவுட்":
+    "about",
+
+  "டெல்":
+    "tell",
+};
+
+/* =========================================================
+   NORMALIZE QUESTION
+========================================================= */
+
+const normalizeQuestion = (
+  question
+) => {
+  let result = cleanText(
+    question
+  );
+
+  const aliases =
+    Object.keys(
+      TAMIL_ALIASES
+    ).sort(
+      (a, b) =>
+        b.length - a.length
+    );
+
+  aliases.forEach(
+    (alias) => {
+      const escaped =
+        escapeRegExp(alias);
+
+      result =
+        result.replace(
+          new RegExp(
+            escaped,
+            "gi"
+          ),
+          ` ${TAMIL_ALIASES[alias]} `
+        );
+    }
+  );
+
+  return cleanText(
+    result
+  );
+};
+
+/* =========================================================
+   ENTRY SEARCH TEXT
+========================================================= */
+
+const getEntrySearchText = (
+  entry
+) => {
+  return cleanText(
+    [
+      entry.title,
+      entry.category,
+      entry.epic,
+      entry.book,
+      entry.section,
+
+      ...(Array.isArray(
+        entry.keywords
+      )
+        ? entry.keywords
+        : []),
+
+      ...(Array.isArray(
+        entry.keyCharacters
+      )
+        ? entry.keyCharacters
+        : []),
+
+      entry.goddess,
+      entry.goddess_tamil,
+    ]
+      .filter(Boolean)
+      .join(" ")
+  );
+};
+
+/* =========================================================
+   SUNDARAKANDA CHECK
+========================================================= */
+
+const isSundarakandaEntry =
+  (entry) => {
+    const text =
+      getEntrySearchText(
+        entry
+      );
+
+    return (
+      text.includes(
+        "sundarakanda"
+      ) ||
+      text.includes(
+        "sundara kanda"
+      ) ||
+      entry.category
+        ?.toLowerCase()
+        .includes(
+          "sundarakanda"
+        ) ||
+      entry.visual_type
+        ?.toLowerCase()
+        .includes(
+          "sundarakanda"
+        )
+    );
+  };
+
+/* =========================================================
+   CHARACTER MATCH
+========================================================= */
+
+const entryMatchesCharacter =
+  (
+    entry,
+    character
+  ) => {
+    const aliases =
+      CHARACTER_ALIASES[
+        character
+      ] || [];
+
+    const text =
+      getEntrySearchText(
+        entry
+      );
+
+    return aliases.some(
+      (alias) =>
+        containsTerm(
+          text,
+          alias
+        )
+    );
+  };
+
+/* =========================================================
+   APP
+========================================================= */
+
 function App() {
-  // =====================================================
-  // STATE
-  // =====================================================
+  const [
+    language,
+    setLanguage,
+  ] = useState("tamil");
 
-  const [language, setLanguage] = useState("tamil");
-  const [question, setQuestion] = useState("");
-  const [answer, setAnswer] = useState("");
-  const [isListening, setIsListening] = useState(false);
-  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [
+    question,
+    setQuestion,
+  ] = useState("");
 
-  const [chartData, setChartData] = useState(null);
+  const [
+    answer,
+    setAnswer,
+  ] = useState("");
 
-  const [conversation, setConversation] = useState([]);
+  const [
+    isListening,
+    setIsListening,
+  ] = useState(false);
 
-  const [selectedConversationId, setSelectedConversationId] =
-    useState(null);
+  const [
+    isSpeaking,
+    setIsSpeaking,
+  ] = useState(false);
 
-  const [speakingConversationId, setSpeakingConversationId] =
-    useState(null);
+  const [
+    conversation,
+    setConversation,
+  ] = useState([]);
 
-  const conversationEndRef = useRef(null);
+  const [
+    selectedConversationId,
+    setSelectedConversationId,
+  ] = useState(null);
 
-  // =====================================================
-  // AUTO SCROLL
-  // =====================================================
+  const [
+    speakingConversationId,
+    setSpeakingConversationId,
+  ] = useState(null);
+
+  const [
+    chartData,
+    setChartData,
+  ] = useState(null);
+
+  const conversationEndRef =
+    useRef(null);
+
+  /* =======================================================
+     AUTO SCROLL
+  ======================================================= */
 
   useEffect(() => {
-    conversationEndRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-    });
-  }, [conversation, selectedConversationId]);
-
-  // =====================================================
-  // TAMIL ALIASES
-  // =====================================================
-
-  const tamilAliases = {
-    "நவராத்திரி பற்றி": "navarathiri",
-    "நவராத்திரி": "navarathiri",
-    "நவராத்திரி என்ன": "what is navarathiri",
-
-    "முதல் நாள்": "day 1",
-    "முதலாம் நாள்": "day 1",
-    "நாள் ஒன்று": "day 1",
-    "நாள் 1": "day 1",
-
-    "இரண்டாம் நாள்": "day 2",
-    "இரண்டாவது நாள்": "day 2",
-    "நாள் இரண்டு": "day 2",
-    "நாள் 2": "day 2",
-
-    "மூன்றாம் நாள்": "day 3",
-    "மூன்றாவது நாள்": "day 3",
-    "நாள் மூன்று": "day 3",
-    "நாள் 3": "day 3",
-
-    "நான்காம் நாள்": "day 4",
-    "நான்காவது நாள்": "day 4",
-    "நாள் நான்கு": "day 4",
-    "நாள் 4": "day 4",
-
-    "ஐந்தாம் நாள்": "day 5",
-    "ஐந்தாவது நாள்": "day 5",
-    "நாள் ஐந்து": "day 5",
-    "நாள் 5": "day 5",
-
-    "ஆறாம் நாள்": "day 6",
-    "ஆறாவது நாள்": "day 6",
-    "நாள் ஆறு": "day 6",
-    "நாள் 6": "day 6",
-
-    "ஏழாம் நாள்": "day 7",
-    "ஏழாவது நாள்": "day 7",
-    "நாள் ஏழு": "day 7",
-    "நாள் 7": "day 7",
-
-    "எட்டாம் நாள்": "day 8",
-    "எட்டாவது நாள்": "day 8",
-    "நாள் எட்டு": "day 8",
-    "நாள் 8": "day 8",
-
-    "ஒன்பதாம் நாள்": "day 9",
-    "ஒன்பதாவது நாள்": "day 9",
-    "நாள் ஒன்பது": "day 9",
-    "நாள் 9": "day 9",
-
-    "துர்கை": "durga",
-    "துர்கா": "durga",
-    "பார்வதி": "parvati",
-    "சக்தி": "shakti",
-
-    "ராமாயணம் பற்றி": "ramayana",
-    "ராமாயணம்": "ramayana",
-    "ராமர்": "rama",
-    "ஸ்ரீராமர்": "rama",
-    "சீதை": "sita",
-    "லட்சுமணன்": "lakshmana",
-    "லட்சுமணர்": "lakshmana",
-    "பரதன்": "bharata",
-    "சத்ருக்னன்": "shatrughna",
-    "அனுமன் யார்": "hanuman",
-    "அனுமன்": "hanuman",
-    "ஹனுமான்": "hanuman",
-    "ராவணன் யார்": "ravana",
-    "ராவணன்": "ravana",
-    "இலங்கை": "lanka",
-    "அயோத்தி": "ayodhya",
-    "வனவாசம்": "exile",
-    "வாலி": "vali",
-    "சுக்ரீவன்": "sugriva",
-
-    "மகாபாரதம் பற்றி": "mahabharata",
-    "மகாபாரதம்": "mahabharata",
-    "பாண்டவர்கள் யார்": "pandavas",
-    "பாண்டவர்கள்": "pandavas",
-    "கௌரவர்கள் யார்": "kauravas",
-    "கௌரவர்கள்": "kauravas",
-    "கிருஷ்ணர்": "krishna",
-    "கிருஷ்ணா": "krishna",
-    "அர்ஜுனன்": "arjuna",
-    "அர்ஜுனர்": "arjuna",
-    "பீமன்": "bhima",
-    "யுதிஷ்டிரர்": "yudhishthira",
-    "நகுலன்": "nakula",
-    "சகதேவன்": "sahadeva",
-    "திரௌபதி": "draupadi",
-    "துரௌபதி": "draupadi",
-    "பாஞ்சாலி": "draupadi",
-    "துரியோதனன்": "duryodhana",
-    "கர்ணன்": "karna",
-    "பீஷ்மர்": "bhishma",
-    "துரோணர்": "drona",
-    "காந்தாரி": "gandhari",
-    "குந்தி": "kunti",
-    "குருக்ஷேத்திரம்": "kurukshetra",
-    "பகவத் கீதை": "bhagavad gita",
-    "பகவத் கீதை என்ன": "bhagavad gita",
-
-    "சுந்தரகாண்டம்": "sundarakanda",
-    "சுந்தர காண்டம்": "sundarakanda",
-    "சுந்தரகாண்டத்தைப் பற்றி": "sundarakanda",
-    "சுந்தரகாண்டத்தின் முக்கியத்துவம்":
-      "sundarakanda significance",
-    "சுந்தரகாண்டம் முக்கியத்துவம்":
-      "sundarakanda significance",
-
-    "அனுமனின் பெரும் பாய்ச்சல்":
-      "hanuman great leap",
-    "அனுமன் கடலைத் தாண்டியது":
-      "hanuman ocean crossing",
-    "சீதை எங்கே": "where sita",
-    "அனுமன் சீதையை எங்கே கண்டார்":
-      "where hanuman found sita",
-    "அசோகவனம்": "ashoka vatika",
-    "இலங்கை எரிப்பு": "burning lanka",
-    "இலங்கை எரிந்தது": "burning lanka",
-    "சூடாமணி": "chudamani",
-    "இராமனின் மோதிரம்": "rama ring",
-    "இராவணன் அவை": "ravana court",
-    "லங்கினி": "lankini",
-    "சுரசா": "surasa",
-    "சிம்ஹிகா": "simhika",
-    "இந்திரஜித்": "indrajit",
-    "முக்கியத்துவம்": "significance",
-    "எங்கே": "where",
-    "எப்படி": "how",
-
-    "வாட் இஸ்": "what is",
-    "வாட்": "what",
-    "இஸ்": "is",
-    "ஹூ இஸ்": "who is",
-    "ஹூ": "who",
-    "யார்": "who",
-    "யாரு": "who",
-    "வாட் ஆர்": "what are",
-    "ஆர்": "are",
-    "அபவுட்": "about",
-    "பற்றி": "about",
-    "டெல்": "tell",
-    "சொல்லு": "tell",
-    "சொல்லுங்க": "tell",
-    "என்ன": "what",
-  };
-
-  // =====================================================
-  // NORMALIZE QUESTION
-  // =====================================================
-
-  const normalizeQuestion = (userQuestion) => {
-    let normalizedText = userQuestion.toLowerCase().trim();
-
-    TAMIL_STEM_RULES.forEach(([pattern, replacement]) => {
-      normalizedText = normalizedText.replace(
-        pattern,
-        replacement
-      );
-    });
-
-    const aliases = Object.keys(tamilAliases).sort(
-      (a, b) => b.length - a.length
+    conversationEndRef.current?.scrollIntoView(
+      {
+        behavior: "smooth",
+        block: "end",
+      }
     );
+  }, [
+    conversation,
+    selectedConversationId,
+  ]);
 
-    aliases.forEach((alias) => {
-      normalizedText = normalizedText.replace(
-        new RegExp(alias, "gi"),
-        ` ${tamilAliases[alias]} `
+  /* =======================================================
+     SPEECH
+  ======================================================= */
+
+  const stopSpeaking =
+    () => {
+      if (
+        window.speechSynthesis
+      ) {
+        window.speechSynthesis.cancel();
+      }
+
+      setIsSpeaking(false);
+      setSpeakingConversationId(
+        null
       );
-    });
-
-    normalizedText = normalizedText.replace(
-      /[?!.,:;'"`’‘“”]/g,
-      " "
-    );
-
-    normalizedText = normalizedText.replace(
-      /\s+/g,
-      " "
-    );
-
-    return normalizedText.trim();
-  };
-
-  // =====================================================
-  // GET NAVARATHIRI DAYS
-  // =====================================================
-
-  const getNavarathiriDays = () => {
-    return dataset.entries
-      .filter(
-        (entry) =>
-          entry.category
-            ?.toLowerCase()
-            .includes("navarathiri") &&
-          Number(entry.day) >= 1 &&
-          Number(entry.day) <= 9
-      )
-      .sort(
-        (a, b) =>
-          Number(a.day) - Number(b.day)
-      );
-  };
-
-  // =====================================================
-  // CREATE VISUAL DATA
-  // =====================================================
-
-  const createChartData = (entry) => {
-    if (!entry) return null;
-
-    const category =
-      entry.category?.toLowerCase() || "";
-
-    const title =
-      entry.title?.toLowerCase() || "";
-
-    const visualType =
-      entry.visual_type?.toLowerCase() || "";
-
-    // SUNDARAKANDA
-
-    if (
-      category.includes(SK_CATEGORY) ||
-      visualType.includes("sundarakanda") ||
-      (entry.epic?.toLowerCase() === "ramayana" &&
-        entry.book?.toLowerCase() ===
-          "sundarakanda")
-    ) {
-      return {
-        type: "sundarakanda",
-        title: entry.title,
-        category: entry.category,
-        stage:
-          typeof entry.stage === "number"
-            ? entry.stage
-            : null,
-        keywords: entry.keywords || [],
-        visualType: entry.visual_type,
-      };
-    }
-
-    // NAVARATHIRI DAY
-
-    if (
-      Number(entry.day) >= 1 &&
-      Number(entry.day) <= 9
-    ) {
-      return {
-        type: "navarathiri-day",
-        title: entry.title,
-        category: entry.category,
-        day: entry.day,
-        goddess: entry.goddess,
-        goddessTamil: entry.goddess_tamil,
-        tamil: entry.tamil,
-        english: entry.english,
-        visualType: entry.visual_type,
-      };
-    }
-
-    // NAVARATHIRI OVERVIEW
-
-    if (
-      visualType.includes("navarathiri") ||
-      visualType.includes("nine") ||
-      visualType.includes("day") ||
-      category.includes("navarathiri") ||
-      title.includes("navarathiri")
-    ) {
-      return {
-        type: "navarathiri",
-        title: entry.title,
-        category: entry.category,
-        keywords: entry.keywords || [],
-        visualType: entry.visual_type,
-        days: getNavarathiriDays(),
-      };
-    }
-
-    // RAMAYANA
-
-    if (
-      category.includes("ramayana") ||
-      title.includes("ramayana") ||
-      visualType.includes("ram")
-    ) {
-      return {
-        type: "ramayana",
-        title: entry.title,
-        category: entry.category,
-        keywords: entry.keywords || [],
-        visualType: entry.visual_type,
-      };
-    }
-
-    // MAHABHARATA
-
-    if (
-      category.includes("mahabharata") ||
-      title.includes("mahabharata") ||
-      visualType.includes("maha")
-    ) {
-      return {
-        type: "mahabharata",
-        title: entry.title,
-        category: entry.category,
-        keywords: entry.keywords || [],
-        visualType: entry.visual_type,
-      };
-    }
-
-    return {
-      type: "topic",
-      title: entry.title,
-      category: entry.category,
-      keywords: entry.keywords || [],
-      visualType: entry.visual_type,
     };
-  };
-
-  // =====================================================
-  // HISTORY ICON
-  // =====================================================
-
-  const getHistoryIcon = (item) => {
-    const text =
-      item.question?.toLowerCase() || "";
-
-    const chartType =
-      item.chart?.type || "";
-
-    if (
-      chartType === "navarathiri-day"
-    ) {
-      return Number(item.chart.day) === 9
-        ? "🌺"
-        : "🌸";
-    }
-
-    if (
-      chartType === "navarathiri"
-    ) {
-      return "🪔";
-    }
-
-    if (
-      chartType === "sundarakanda" ||
-      text.includes("sundara") ||
-      text.includes("சுந்தர")
-    ) {
-      return "🙏";
-    }
-
-    if (
-      text.includes("ramayana") ||
-      text.includes("rama") ||
-      text.includes("ராம")
-    ) {
-      return "🏹";
-    }
-
-    if (
-      text.includes("hanuman") ||
-      text.includes("அனுமன்")
-    ) {
-      return "🙏";
-    }
-
-    if (
-      text.includes("mahabharata") ||
-      text.includes("pandava") ||
-      text.includes("kaurava") ||
-      text.includes("மகாபாரத")
-    ) {
-      return "⚔️";
-    }
-
-    if (
-      text.includes("gita") ||
-      text.includes("கீதை")
-    ) {
-      return "📖";
-    }
-
-    return "✦";
-  };
-
-  // =====================================================
-  // TEXT TO SPEECH
-  // =====================================================
 
   const speakAnswer = (
     text,
-    selectedLanguage,
     conversationId = null
   ) => {
-    if (!window.speechSynthesis) {
-      console.log(
-        "Speech Synthesis is not supported."
-      );
+    if (
+      !window.speechSynthesis
+    ) {
       return;
     }
 
     window.speechSynthesis.cancel();
 
     setIsSpeaking(false);
-    setSpeakingConversationId(null);
+    setSpeakingConversationId(
+      null
+    );
 
     const speak = () => {
       const voices =
         window.speechSynthesis.getVoices();
 
       const speech =
-        new SpeechSynthesisUtterance(text);
+        new SpeechSynthesisUtterance(
+          text
+        );
 
-      if (selectedLanguage === "tamil") {
+      if (
+        language === "tamil"
+      ) {
         const tamilVoice =
           voices.find(
             (voice) =>
-              voice.lang &&
               voice.lang
-                .toLowerCase()
+                ?.toLowerCase()
                 .startsWith("ta")
           );
 
         if (tamilVoice) {
-          speech.voice = tamilVoice;
-          speech.lang = tamilVoice.lang;
+          speech.voice =
+            tamilVoice;
+          speech.lang =
+            tamilVoice.lang;
         } else {
-          speech.lang = "ta-IN";
+          speech.lang =
+            "ta-IN";
         }
       } else {
         const englishVoice =
           voices.find(
             (voice) =>
-              voice.lang &&
               voice.lang
-                .toLowerCase() === "en-in"
+                ?.toLowerCase() ===
+              "en-in"
           ) ||
           voices.find(
             (voice) =>
-              voice.lang &&
               voice.lang
-                .toLowerCase()
+                ?.toLowerCase()
                 .startsWith("en")
           );
 
         if (englishVoice) {
-          speech.voice = englishVoice;
-          speech.lang = englishVoice.lang;
+          speech.voice =
+            englishVoice;
+          speech.lang =
+            englishVoice.lang;
         } else {
-          speech.lang = "en-IN";
+          speech.lang =
+            "en-IN";
         }
       }
 
@@ -692,29 +913,31 @@ function App() {
 
       speech.onend = () => {
         setIsSpeaking(false);
-        setSpeakingConversationId(null);
-      };
-
-      speech.onerror = (event) => {
-        console.log(
-          "Speech error:",
-          event.error
+        setSpeakingConversationId(
+          null
         );
-
-        setIsSpeaking(false);
-        setSpeakingConversationId(null);
       };
 
-      window.speechSynthesis.speak(speech);
+      speech.onerror = () => {
+        setIsSpeaking(false);
+        setSpeakingConversationId(
+          null
+        );
+      };
+
+      window.speechSynthesis.speak(
+        speech
+      );
     };
 
-    const voices =
-      window.speechSynthesis.getVoices();
-
-    if (voices.length === 0) {
+    if (
+      window.speechSynthesis.getVoices()
+        .length === 0
+    ) {
       window.speechSynthesis.onvoiceschanged =
         () => {
           speak();
+
           window.speechSynthesis.onvoiceschanged =
             null;
         };
@@ -723,867 +946,1688 @@ function App() {
     }
   };
 
-  // =====================================================
-  // LISTEN TO ANSWER
-  // =====================================================
+  /* =======================================================
+     CREATE VISUAL
+  ======================================================= */
 
-  const handleAnswerVoice = (item) => {
-    if (!item) return;
+  const createVisual =
+    (entry) => {
+      if (!entry) {
+        return null;
+      }
 
-    const isCurrentSpeaking =
-      isSpeaking &&
-      speakingConversationId === item.id;
+      if (
+        Number(entry.day) >= 1 &&
+        Number(entry.day) <= 9
+      ) {
+        return {
+          type:
+            "navarathiri-day",
 
-    if (isCurrentSpeaking) {
-      stopSpeaking();
-      return;
-    }
+          day: entry.day,
 
-    speakAnswer(
-      item.answer,
-      item.language,
-      item.id
-    );
-  };
+          goddess:
+            entry.goddess,
 
-  // =====================================================
-  // FIND ANSWER
-  // =====================================================
+          goddessTamil:
+            entry.goddess_tamil,
 
-  const findAnswer = (userQuestion) => {
-    const originalText =
-      userQuestion.toLowerCase().trim();
+          tamil:
+            entry.tamil,
 
-    if (!originalText) return;
+          english:
+            entry.english,
+        };
+      }
 
-    const normalizedText =
-      normalizeQuestion(originalText);
+      if (
+        isSundarakandaEntry(
+          entry
+        )
+      ) {
+        return {
+          type:
+            "sundarakanda",
 
-    const scoredEntries =
-      ALL_ENTRIES
-        .map((entry) => {
-          let score = 0;
+          title:
+            entry.title,
 
-          const isSundarakanda =
-            entry.category
-              ?.toLowerCase()
-              .includes(SK_CATEGORY) ||
-            entry.book
-              ?.toLowerCase() === SK_CATEGORY ||
-            entry.visual_type
-              ?.toLowerCase()
-              .includes(SK_CATEGORY);
+          sequence:
+            entry.sequence,
+        };
+      }
 
-          let multiWordHit = false;
+      const category =
+        entry.category
+          ?.toLowerCase() ||
+        "";
 
-          const title =
-            entry.title?.toLowerCase() || "";
+      const epic =
+        entry.epic
+          ?.toLowerCase() ||
+        "";
 
-          const keywords =
-            entry.keywords || [];
+      if (
+        category.includes(
+          "navarathiri"
+        )
+      ) {
+        return {
+          type:
+            "navarathiri",
+        };
+      }
 
-          if (
-            normalizedText.includes(title) &&
-            title.length > 2
-          ) {
-            score += 20;
-          }
+      if (
+        epic === "ramayana" ||
+        category.includes(
+          "ramayana"
+        )
+      ) {
+        return {
+          type:
+            "ramayana",
+        };
+      }
 
-          keywords.forEach((keyword) => {
-            const normalizedKeyword =
-              cleanText(keyword);
+      if (
+        epic ===
+          "mahabharata" ||
+        category.includes(
+          "mahabharata"
+        )
+      ) {
+        return {
+          type:
+            "mahabharata",
+        };
+      }
 
-            if (!normalizedKeyword) return;
+      if (
+        category.includes(
+          "gita"
+        ) ||
+        entry.title
+          ?.toLowerCase()
+          .includes("gita")
+      ) {
+        return {
+          type: "gita",
+        };
+      }
 
-            const wordCount =
-              normalizedKeyword.split(" ")
-                .length;
+      return {
+        type: "topic",
+        title:
+          entry.title,
+        category:
+          entry.category,
+      };
+    };
 
-            const isPhrase =
-              isSundarakanda &&
-              wordCount > 1;
+  /* =======================================================
+     STRICT QUESTION RESOLVER
+  ======================================================= */
 
-            const weight = isPhrase
-              ? 12 +
-                8 * (wordCount - 1)
-              : 10;
+  const findAnswer =
+    (
+      userQuestion
+    ) => {
+      const originalText =
+        String(
+          userQuestion || ""
+        ).trim();
 
-            const originalWeight =
-              isPhrase
-                ? weight - 2
-                : 8;
+      if (
+        !originalText
+      ) {
+        return;
+      }
+
+      const normalized =
+        normalizeQuestion(
+          originalText
+        );
+
+      const lowerOriginal =
+        cleanText(
+          originalText
+        );
+
+      /*
+        -----------------------------------------------------
+        STEP 1
+        Detect exact Sundarakanda EVENT intent first.
+        -----------------------------------------------------
+      */
+
+      let eventIntent =
+        null;
+
+      if (
+        normalized.includes(
+          "sundarakanda significance"
+        ) ||
+        (
+          normalized.includes(
+            "sundarakanda"
+          ) &&
+          (
+            normalized.includes(
+              "significance"
+            ) ||
+            normalized.includes(
+              "importance"
+            ) ||
+            normalized.includes(
+              "meaning"
+            )
+          )
+        )
+      ) {
+        eventIntent =
+          "sk_significance";
+      }
+
+      else if (
+        normalized.includes(
+          "chudamani"
+        ) ||
+        (
+          normalized.includes(
+            "what did sita give"
+          ) &&
+          normalized.includes(
+            "hanuman"
+          )
+        ) ||
+        (
+          normalized.includes(
+            "sita"
+          ) &&
+          normalized.includes(
+            "give"
+          ) &&
+          normalized.includes(
+            "hanuman"
+          )
+        )
+      ) {
+        eventIntent =
+          "sk_chudamani";
+      }
+
+      else if (
+        normalized.includes(
+          "burning lanka"
+        ) ||
+        (
+          normalized.includes(
+            "burn"
+          ) &&
+          normalized.includes(
+            "lanka"
+          )
+        )
+      ) {
+        eventIntent =
+          "sk_burning";
+      }
+
+      else if (
+        normalized.includes(
+          "where did hanuman find sita"
+        ) ||
+        (
+          normalized.includes(
+            "where"
+          ) &&
+          normalized.includes(
+            "hanuman"
+          ) &&
+          normalized.includes(
+            "sita"
+          )
+        )
+      ) {
+        eventIntent =
+          "sk_sita";
+      }
+
+      else if (
+        normalized.includes(
+          "great leap"
+        ) ||
+        (
+          normalized.includes(
+            "hanuman"
+          ) &&
+          normalized.includes(
+            "ocean"
+          ) &&
+          (
+            normalized.includes(
+              "cross"
+            ) ||
+            normalized.includes(
+              "crossing"
+            ) ||
+            normalized.includes(
+              "leap"
+            ) ||
+            normalized.includes(
+              "jump"
+            )
+          )
+        )
+      ) {
+        eventIntent =
+          "sk_leap";
+      }
+
+      else if (
+        normalized.includes(
+          "rama ring"
+        )
+      ) {
+        eventIntent =
+          "sk_ring";
+      }
+
+      else if (
+        normalized.includes(
+          "ravana court"
+        )
+      ) {
+        eventIntent =
+          "sk_court";
+      }
+
+      /*
+        -----------------------------------------------------
+        STEP 2
+        Detect character.
+        -----------------------------------------------------
+      */
+
+      let matchedCharacter =
+        null;
+
+      for (
+        const [
+          character,
+          aliases,
+        ] of Object.entries(
+          CHARACTER_ALIASES
+        )
+      ) {
+        if (
+          aliases.some(
+            (alias) =>
+              containsTerm(
+                normalized,
+                alias
+              ) ||
+              containsTerm(
+                lowerOriginal,
+                alias
+              )
+          )
+        ) {
+          matchedCharacter =
+            character;
+
+          break;
+        }
+      }
+
+      /*
+        -----------------------------------------------------
+        STEP 3
+        Detect broad topic.
+        -----------------------------------------------------
+      */
+
+      let topic =
+        null;
+
+      if (
+        eventIntent
+      ) {
+        topic =
+          "sundarakanda";
+      }
+
+      else if (
+        normalized.includes(
+          "sundarakanda"
+        )
+      ) {
+        topic =
+          "sundarakanda";
+      }
+
+      else if (
+        normalized.includes(
+          "ramayana"
+        )
+      ) {
+        topic =
+          "ramayana";
+      }
+
+      else if (
+        normalized.includes(
+          "mahabharata"
+        ) ||
+        normalized.includes(
+          "kurukshetra"
+        )
+      ) {
+        topic =
+          "mahabharata";
+      }
+
+      else if (
+        normalized.includes(
+          "pandavas"
+        )
+      ) {
+        topic =
+          "pandavas";
+      }
+
+      else if (
+        normalized.includes(
+          "bhagavad gita"
+        ) ||
+        normalized === "gita"
+      ) {
+        topic =
+          "gita";
+      }
+
+      else if (
+        normalized.includes(
+          "navarathiri"
+        ) ||
+        normalized.includes(
+          "golu"
+        ) ||
+        normalized.includes(
+          "kolu"
+        )
+      ) {
+        topic =
+          "navarathiri";
+      }
+
+      /*
+        -----------------------------------------------------
+        STEP 4
+        If nothing specific was identified:
+        NEVER GUESS.
+        -----------------------------------------------------
+      */
+
+      if (
+        !topic &&
+        !matchedCharacter
+      ) {
+        const fallback =
+          language === "tamil"
+            ? "மன்னிக்கவும், இந்த கேள்வியில் எந்த குறிப்பிட்ட தலைப்பு அல்லது கதாபாத்திரம் என்று தெளிவாக தெரியவில்லை. நவராத்திரி, சுந்தரகாண்டம், ராமாயணம், மகாபாரதம், பாண்டவர்கள் அல்லது பகவத் கீதை என்று குறிப்பிட்டு கேளுங்கள்."
+            : "I don't want to guess and give you the wrong answer. Please mention the exact topic or character, such as Navarathiri, Sundarakanda, Ramayana, Mahabharata, Pandavas or Bhagavad Gita.";
+
+        addConversation(
+          originalText,
+          fallback,
+          null
+        );
+
+        return;
+      }
+
+      /*
+        -----------------------------------------------------
+        STEP 5
+        TOPIC FILTER FIRST.
+        
+        This is VERY important.
+        
+        Example:
+        "Where did Hanuman find Sita?"
+        
+        We first select Sundarakanda.
+        Only after that we look for Hanuman.
+        
+        So generic Hanuman character entry cannot win.
+        -----------------------------------------------------
+      */
+
+      let candidates =
+        ALL_ENTRIES;
+
+      if (topic) {
+        candidates =
+          candidates.filter(
+            (entry) => {
+              const text =
+                getEntrySearchText(
+                  entry
+                );
+
+              const category =
+                entry.category
+                  ?.toLowerCase() ||
+                "";
+
+              const epic =
+                entry.epic
+                  ?.toLowerCase() ||
+                "";
+
+              if (
+                topic ===
+                "sundarakanda"
+              ) {
+                return isSundarakandaEntry(
+                  entry
+                );
+              }
+
+              if (
+                topic ===
+                "ramayana"
+              ) {
+                return (
+                  text.includes(
+                    "ramayana"
+                  ) ||
+                  text.includes(
+                    "ramayanam"
+                  ) ||
+                  epic ===
+                    "ramayana" ||
+                  category.includes(
+                    "ramayana"
+                  )
+                );
+              }
+
+              if (
+                topic ===
+                "mahabharata"
+              ) {
+                return (
+                  text.includes(
+                    "mahabharata"
+                  ) ||
+                  text.includes(
+                    "mahabharatham"
+                  ) ||
+                  epic ===
+                    "mahabharata" ||
+                  category.includes(
+                    "mahabharata"
+                  )
+                );
+              }
+
+              if (
+                topic ===
+                "pandavas"
+              ) {
+                return (
+                  text.includes(
+                    "pandava"
+                  ) ||
+                  epic ===
+                    "mahabharata" ||
+                  category.includes(
+                    "mahabharata"
+                  )
+                );
+              }
+
+              if (
+                topic ===
+                "gita"
+              ) {
+                return (
+                  text.includes(
+                    "gita"
+                  ) ||
+                  text.includes(
+                    "bhagavad"
+                  )
+                );
+              }
+
+              if (
+                topic ===
+                "navarathiri"
+              ) {
+                return (
+                  text.includes(
+                    "navarathiri"
+                  ) ||
+                  text.includes(
+                    "navaratri"
+                  ) ||
+                  text.includes(
+                    "navratri"
+                  ) ||
+                  text.includes(
+                    "golu"
+                  ) ||
+                  category.includes(
+                    "navarathiri"
+                  )
+                );
+              }
+
+              return false;
+            }
+          );
+      }
+
+      /*
+        -----------------------------------------------------
+        Character filter INSIDE selected topic.
+        -----------------------------------------------------
+      */
+
+      if (
+        matchedCharacter
+      ) {
+        const characterCandidates =
+          candidates.filter(
+            (entry) =>
+              entryMatchesCharacter(
+                entry,
+                matchedCharacter
+              )
+          );
+
+        /*
+          Only replace the candidate set if the character
+          actually exists inside the selected topic.
+
+          This prevents:
+          Sundarakanda + Hanuman
+          from falling back to generic Hanuman character.
+        */
+
+        if (
+          characterCandidates.length >
+          0
+        ) {
+          candidates =
+            characterCandidates;
+        }
+      }
+
+      /*
+        -----------------------------------------------------
+        STEP 6
+        Score ONLY relevant candidates.
+        -----------------------------------------------------
+      */
+
+      const scored =
+        candidates
+          .map((entry) => {
+            const searchable =
+              getEntrySearchText(
+                entry
+              );
+
+            const title =
+              cleanText(
+                entry.title ||
+                  ""
+              );
+
+            const visualType =
+              cleanText(
+                entry.visual_type ||
+                  ""
+              );
+
+            const keywords =
+              Array.isArray(
+                entry.keywords
+              )
+                ? entry.keywords.map(
+                    cleanText
+                  )
+                : [];
+
+            let score = 0;
+
+            /*
+              Exact title = strongest match.
+            */
 
             if (
-              normalizedText.includes(
-                normalizedKeyword
+              title &&
+              containsTerm(
+                normalized,
+                title
               )
             ) {
-              score += weight;
+              score += 200;
+            }
 
-              if (isPhrase) {
-                multiWordHit = true;
+            /*
+              Exact character.
+            */
+
+            if (
+              matchedCharacter &&
+              entryMatchesCharacter(
+                entry,
+                matchedCharacter
+              )
+            ) {
+              score += 120;
+
+              if (
+                visualType ===
+                "character"
+              ) {
+                score += 120;
+              }
+            }
+
+            /*
+              Keywords.
+            */
+
+            keywords.forEach(
+              (keyword) => {
+                if (
+                  containsTerm(
+                    normalized,
+                    keyword
+                  )
+                ) {
+                  const words =
+                    keyword.split(
+                      " "
+                    ).length;
+
+                  score +=
+                    30 +
+                    words * 15;
+                }
+              }
+            );
+
+            /*
+              Topic reinforcement.
+            */
+
+            if (topic) {
+              score += 30;
+            }
+
+            /*
+              Navarathiri day.
+            */
+
+            if (
+              entry.day &&
+              normalized.includes(
+                `day ${entry.day}`
+              )
+            ) {
+              score += 180;
+            }
+
+            /*
+              Goddess.
+            */
+
+            if (
+              entry.goddess &&
+              containsTerm(
+                normalized,
+                entry.goddess
+              )
+            ) {
+              score += 140;
+            }
+
+            /*
+              ---------------------------------------------
+              SUNDARAKANDA EVENT SCORING
+              ---------------------------------------------
+            */
+
+            if (
+              topic ===
+                "sundarakanda" &&
+              isSundarakandaEntry(
+                entry
+              )
+            ) {
+              score += 50;
+            }
+
+            if (
+              eventIntent ===
+              "sk_significance"
+            ) {
+              if (
+                searchable.includes(
+                  "significance"
+                ) ||
+                searchable.includes(
+                  "importance"
+                ) ||
+                searchable.includes(
+                  "முக்கியத்துவம்"
+                )
+              ) {
+                score += 300;
               }
             }
 
             if (
-              originalText.includes(
-                normalizedKeyword
-              )
+              eventIntent ===
+              "sk_leap"
             ) {
-              score += originalWeight;
+              if (
+                searchable.includes(
+                  "great leap"
+                ) ||
+                searchable.includes(
+                  "ocean"
+                ) ||
+                searchable.includes(
+                  "leap"
+                ) ||
+                searchable.includes(
+                  "கடல் தாண்டல்"
+                )
+              ) {
+                score += 260;
+              }
             }
-          });
 
-          if (
-            entry.day &&
-            normalizedText.includes(
-              `day ${entry.day}`
-            )
-          ) {
-            score += 25;
-          }
+            if (
+              eventIntent ===
+              "sk_sita"
+            ) {
+              if (
+                searchable.includes(
+                  "finding sita"
+                ) ||
+                searchable.includes(
+                  "ashoka"
+                ) ||
+                searchable.includes(
+                  "sita"
+                )
+              ) {
+                score += 260;
+              }
+            }
 
-          if (
-            entry.goddess &&
-            normalizedText.includes(
-              entry.goddess.toLowerCase()
-            )
-          ) {
-            score += 20;
-          }
+            if (
+              eventIntent ===
+              "sk_burning"
+            ) {
+              if (
+                searchable.includes(
+                  "burn"
+                ) ||
+                searchable.includes(
+                  "lanka"
+                )
+              ) {
+                score += 260;
+              }
+            }
 
-          const category =
-            entry.category?.toLowerCase() ||
-            "";
+            if (
+              eventIntent ===
+              "sk_chudamani"
+            ) {
+              if (
+                searchable.includes(
+                  "chudamani"
+                )
+              ) {
+                score += 320;
+              }
+            }
 
-          if (
-            category &&
-            normalizedText.includes(category)
-          ) {
-            score += 4;
-          }
+            if (
+              eventIntent ===
+              "sk_ring"
+            ) {
+              if (
+                searchable.includes(
+                  "ring"
+                )
+              ) {
+                score += 260;
+              }
+            }
 
-          if (
-            isSundarakanda &&
-            multiWordHit
-          ) {
-            score += 10;
-          }
+            if (
+              eventIntent ===
+              "sk_court"
+            ) {
+              if (
+                searchable.includes(
+                  "ravana"
+                ) &&
+                searchable.includes(
+                  "court"
+                )
+              ) {
+                score += 260;
+              }
+            }
 
-          return {
-            entry,
-            score,
-          };
-        })
-        .filter(
-          (item) => item.score > 0
-        )
-        .sort(
-          (a, b) =>
-            b.score - a.score
+            return {
+              entry,
+              score,
+            };
+          })
+          .filter(
+            (item) =>
+              item.score > 0
+          )
+          .sort(
+            (a, b) =>
+              b.score - a.score
+          );
+
+      /*
+        -----------------------------------------------------
+        STEP 7
+        Confidence check.
+        -----------------------------------------------------
+      */
+
+      const best =
+        scored[0];
+
+      if (
+        !best ||
+        best.score < 50
+      ) {
+        const fallback =
+          language === "tamil"
+            ? "இந்த கேள்விக்கு சரியான dataset entry கிடைக்கவில்லை. தயவுசெய்து தலைப்பு அல்லது கதாபாத்திரத்தின் பெயரை இன்னும் தெளிவாக குறிப்பிடுங்கள்."
+            : "I couldn't find a reliable matching entry. Please mention the exact topic or character name.";
+
+        addConversation(
+          originalText,
+          fallback,
+          null
         );
 
-    const matchedEntry =
-      scoredEntries.length > 0
-        ? scoredEntries[0].entry
-        : null;
+        return;
+      }
 
-    // =================================================
-    // ANSWER FOUND
-    // =================================================
+      /*
+        -----------------------------------------------------
+        STEP 8
+        FINAL ANSWER
+        -----------------------------------------------------
+      */
 
-    if (matchedEntry) {
+      const matchedEntry =
+        best.entry;
+
       const responseText =
-        language === "tamil"
+        language ===
+        "tamil"
           ? matchedEntry.tamil
           : matchedEntry.english;
 
-      const newChartData =
-        createChartData(
+      if (
+        !responseText
+      ) {
+        const fallback =
+          language ===
+          "tamil"
+            ? "இந்த entry-க்கு தேர்ந்தெடுத்த மொழியில் பதில் இல்லை."
+            : "This entry does not contain an answer in the selected language.";
+
+        addConversation(
+          originalText,
+          fallback,
+          null
+        );
+
+        return;
+      }
+
+      const visual =
+        createVisual(
           matchedEntry
         );
 
-      const newId =
+      addConversation(
+        originalText,
+        responseText,
+        visual
+      );
+    };
+
+  /* =======================================================
+     ADD CONVERSATION
+  ======================================================= */
+
+  const addConversation =
+    (
+      userQuestion,
+      responseText,
+      visual
+    ) => {
+      const id =
         `${Date.now()}-${Math.random()}`;
 
-      setQuestion(userQuestion);
-      setAnswer(responseText);
-      setChartData(newChartData);
+      setQuestion(
+        userQuestion
+      );
 
-      setConversation((previous) => [
-        ...previous,
-        {
-          id: newId,
-          question: userQuestion,
-          answer: responseText,
-          chart: newChartData,
-          language,
-        },
-      ]);
+      setAnswer(
+        responseText
+      );
+
+      setChartData(
+        visual
+      );
+
+      setConversation(
+        (previous) => [
+          ...previous,
+          {
+            id,
+            question:
+              userQuestion,
+            answer:
+              responseText,
+            chart:
+              visual,
+            language,
+          },
+        ]
+      );
 
       setSelectedConversationId(
-        newId
+        id
       );
 
       speakAnswer(
         responseText,
-        language,
-        newId
+        id
+      );
+    };
+
+  /* =======================================================
+     MICROPHONE
+  ======================================================= */
+
+  const startListening =
+    () => {
+      const SpeechRecognition =
+        window.SpeechRecognition ||
+        window.webkitSpeechRecognition;
+
+      if (
+        !SpeechRecognition
+      ) {
+        const message =
+          language ===
+          "tamil"
+            ? "இந்த browser-ல் voice recognition support இல்லை."
+            : "Voice recognition is not supported in this browser.";
+
+        setAnswer(
+          message
+        );
+
+        return;
+      }
+
+      stopSpeaking();
+
+      const recognition =
+        new SpeechRecognition();
+
+      recognition.lang =
+        language ===
+        "tamil"
+          ? "ta-IN"
+          : "en-IN";
+
+      recognition.interimResults =
+        false;
+
+      recognition.continuous =
+        false;
+
+      recognition.maxAlternatives =
+        1;
+
+      setIsListening(
+        true
       );
 
-      return;
-    }
+      recognition.start();
 
-    // =================================================
-    // ANSWER NOT FOUND
-    // =================================================
+      recognition.onresult =
+        (event) => {
+          const spokenText =
+            event.results[0][0]
+              .transcript;
 
-    const responseText =
-      language === "tamil"
-        ? "மன்னிக்கவும், இந்த கேள்விக்கான தகவல் தற்போது என் dataset-ல் இல்லை. நவராத்திரி, ராமாயணம், சுந்தரகாண்டம் அல்லது மகாபாரதம் தொடர்பான கேள்வியை கேளுங்கள்."
-        : "Sorry, I don't have information about this question yet. Try asking about Navarathiri, Ramayana, Sundarakanda or Mahabharata.";
+          findAnswer(
+            spokenText
+          );
+        };
 
-    const newId =
-      `${Date.now()}-${Math.random()}`;
+      recognition.onerror =
+        () => {
+          setIsListening(
+            false
+          );
 
-    setQuestion(userQuestion);
-    setAnswer(responseText);
-    setChartData(null);
+          setAnswer(
+            language ===
+            "tamil"
+              ? "Voice கேட்கும்போது ஒரு பிரச்சனை ஏற்பட்டது. மீண்டும் முயற்சி செய்."
+              : "There was a problem with voice recognition. Please try again."
+          );
+        };
 
-    setConversation((previous) => [
-      ...previous,
-      {
-        id: newId,
-        question: userQuestion,
-        answer: responseText,
-        chart: null,
-        language,
-      },
-    ]);
-
-    setSelectedConversationId(newId);
-
-    speakAnswer(
-      responseText,
-      language,
-      newId
-    );
-  };
-
-  // =====================================================
-  // SUGGESTION
-  // =====================================================
-
-  const handleSuggestion = (text) => {
-    findAnswer(text);
-  };
-
-  // =====================================================
-  // MICROPHONE
-  // =====================================================
-
-  const startListening = () => {
-    const SpeechRecognition =
-      window.SpeechRecognition ||
-      window.webkitSpeechRecognition;
-
-    if (!SpeechRecognition) {
-      const responseText =
-        language === "tamil"
-          ? "இந்த browser-ல் voice recognition support இல்லை."
-          : "Voice recognition is not supported in this browser.";
-
-      setAnswer(responseText);
-      return;
-    }
-
-    if (window.speechSynthesis) {
-      window.speechSynthesis.cancel();
-
-      setIsSpeaking(false);
-      setSpeakingConversationId(null);
-    }
-
-    const recognition =
-      new SpeechRecognition();
-
-    recognition.lang =
-      language === "tamil"
-        ? "ta-IN"
-        : "en-IN";
-
-    recognition.interimResults = false;
-    recognition.continuous = false;
-
-    setIsListening(true);
-
-    setQuestion("");
-    setAnswer("");
-    setChartData(null);
-
-    recognition.start();
-
-    recognition.onresult = (event) => {
-      const spokenText =
-        event.results[0][0]
-          .transcript;
-
-      findAnswer(spokenText);
+      recognition.onend =
+        () => {
+          setIsListening(
+            false
+          );
+        };
     };
 
-    recognition.onerror = (event) => {
-      console.log(
-        "Recognition error:",
-        event.error
-      );
+  /* =======================================================
+     SUGGESTIONS
+  ======================================================= */
 
-      setIsListening(false);
+  const suggestions = [
+    [
+      "🪔",
+      "What is Navarathiri?",
+    ],
 
-      const responseText =
-        language === "tamil"
-          ? "Voice கேட்கும்போது ஒரு பிரச்சனை ஏற்பட்டது. மீண்டும் முயற்சி செய்."
-          : "There was a problem with voice recognition. Please try again.";
+    [
+      "🌸",
+      "What is Day 1 of Navarathiri?",
+    ],
 
-      setAnswer(responseText);
-    };
+    [
+      "🌸",
+      "What is Day 2 of Navarathiri?",
+    ],
 
-    recognition.onend = () => {
-      setIsListening(false);
-    };
-  };
+    [
+      "🌸",
+      "What is Day 3 of Navarathiri?",
+    ],
 
-  // =====================================================
-  // STOP SPEAKING
-  // =====================================================
+    [
+      "🌸",
+      "What is Day 4 of Navarathiri?",
+    ],
 
-  const stopSpeaking = () => {
-    if (window.speechSynthesis) {
-      window.speechSynthesis.cancel();
+    [
+      "🌸",
+      "What is Day 5 of Navarathiri?",
+    ],
 
-      setIsSpeaking(false);
-      setSpeakingConversationId(null);
-    }
-  };
+    [
+      "🌸",
+      "What is Day 6 of Navarathiri?",
+    ],
 
-  // =====================================================
-  // CLEAR HISTORY
-  // =====================================================
+    [
+      "🌸",
+      "What is Day 7 of Navarathiri?",
+    ],
 
-  const clearHistory = () => {
-    stopSpeaking();
+    [
+      "🌸",
+      "What is Day 8 of Navarathiri?",
+    ],
 
-    setConversation([]);
-    setSelectedConversationId(null);
+    [
+      "🌺",
+      "What is Day 9 of Navarathiri?",
+    ],
 
-    setQuestion("");
-    setAnswer("");
-    setChartData(null);
-  };
+    [
+      "🏹",
+      "Tell me about Ramayana",
+    ],
 
-  // =====================================================
-  // SELECT HISTORY
-  // =====================================================
+    [
+      "🙏",
+      "Tell me about Sundarakanda",
+    ],
 
-  const selectConversation = (item) => {
-    stopSpeaking();
+    [
+      "🌊",
+      "Tell me about Hanuman's great leap",
+    ],
 
-    setSelectedConversationId(
-      item.id
-    );
+    [
+      "🌸",
+      "Where did Hanuman find Sita?",
+    ],
 
-    setQuestion(item.question);
-    setAnswer(item.answer);
-    setChartData(item.chart);
-  };
+    [
+      "🔥",
+      "Tell me about the burning of Lanka",
+    ],
 
-  // =====================================================
-  // CHANGE LANGUAGE
-  // =====================================================
+    [
+      "💎",
+      "What did Sita give Hanuman?",
+    ],
 
-  const changeLanguage = (lang) => {
-    stopSpeaking();
+    [
+      "🙏",
+      "What is the significance of Sundarakanda?",
+    ],
 
-    setLanguage(lang);
+    [
+      "⚔️",
+      "Tell me about Mahabharata",
+    ],
 
-    setQuestion("");
-    setAnswer("");
-    setChartData(null);
-  };
+    [
+      "🙏",
+      "Who is Hanuman?",
+    ],
 
-  // =====================================================
-  // SELECTED CONVERSATION
-  // =====================================================
+    [
+      "🏹",
+      "Who is Arjuna?",
+    ],
+
+    [
+      "⚔️",
+      "Who is Karna?",
+    ],
+
+    [
+      "🛡️",
+      "Who is Bhishma?",
+    ],
+
+    [
+      "🛡️",
+      "Who is Drona?",
+    ],
+
+    [
+      "👑",
+      "Who is Draupadi?",
+    ],
+
+    [
+      "👑",
+      "Who is Kunti?",
+    ],
+
+    [
+      "🪷",
+      "Who is Krishna?",
+    ],
+
+    [
+      "🏹",
+      "Who are the Pandavas?",
+    ],
+
+    [
+      "📖",
+      "What is Bhagavad Gita?",
+    ],
+  ];
+
+  /* =======================================================
+     SELECTED CONVERSATION
+  ======================================================= */
 
   const selectedConversation =
     conversation.find(
       (item) =>
         item.id ===
         selectedConversationId
-    ) || null;
+    );
 
-  // =====================================================
-  // RENDER VISUAL
-  // =====================================================
+  /* =======================================================
+     HISTORY ICON
+  ======================================================= */
 
-  const renderChart = (
-    chart,
-    displayLanguage = language
-  ) => {
-    if (!chart) return null;
+  const getHistoryIcon =
+    (item) => {
+      const text =
+        cleanText(
+          item.question
+        );
 
-    return (
-      <div className="visual-card">
+      if (
+        text.includes(
+          "sundarakanda"
+        )
+      )
+        return "🙏";
 
-        <div className="visual-header">
-          <span>📊</span>
+      if (
+        text.includes(
+          "ramayana"
+        )
+      )
+        return "🏹";
 
-          <span>
-            {displayLanguage === "tamil"
-              ? "தலைப்பு சுருக்கம்"
-              : "Topic Overview"}
-          </span>
-        </div>
+      if (
+        text.includes(
+          "mahabharata"
+        ) ||
+        text.includes(
+          "pandava"
+        )
+      )
+        return "⚔️";
 
-        {/* NAVARATHIRI */}
+      if (
+        text.includes(
+          "gita"
+        )
+      )
+        return "📖";
 
-        {chart.type ===
-          "navarathiri" && (
-          <>
-            <div className="visual-main">
+      if (
+        text.includes(
+          "navarathiri"
+        )
+      )
+        return "🪔";
 
-              <div className="visual-icon">
-                🪔
-              </div>
+      return "✦";
+    };
 
-              <div>
-                <h3>
-                  {displayLanguage ===
-                  "tamil"
-                    ? "நவராத்திரி"
-                    : "Navarathiri"}
-                </h3>
+  /* =======================================================
+     RENDER VISUAL
+  ======================================================= */
 
-                <p>
-                  {displayLanguage ===
-                  "tamil"
-                    ? "9 நாட்கள் • பாரம்பரியம் • ஆன்மீகம்"
-                    : "9 Days • Tradition • Spirituality"}
-                </p>
-              </div>
+  const renderVisual =
+    (
+      visual
+    ) => {
+      if (!visual)
+        return null;
 
-            </div>
+      /* NAVARATHIRI DAY */
 
-            <div className="nine-day-preview">
-
-              {chart.days?.map(
-                (day) => (
-                  <div
-                    className="day-item"
-                    key={`${day.day}-${day.goddess}`}
-                  >
-
-                    <span>
-                      {day.day}
-                    </span>
-
-                    <strong>
-                      {displayLanguage ===
-                      "tamil"
-                        ? day.goddess_tamil
-                        : day.goddess}
-                    </strong>
-
-                    <small>
-                      {displayLanguage ===
-                      "tamil"
-                        ? `நாள் ${day.day}`
-                        : `Day ${day.day}`}
-                    </small>
-
-                    <p>
-                      {displayLanguage ===
-                      "tamil"
-                        ? day.tamil
-                        : day.english}
-                    </p>
-
-                  </div>
-                )
-              )}
-
-            </div>
-          </>
-        )}
-
-        {/* SINGLE DAY */}
-
-        {chart.type ===
-          "navarathiri-day" && (
-          <div className="single-day-visual">
-
-            <div className="single-day-number">
-              {chart.day}
-            </div>
-
-            <div className="single-day-content">
-
-              <span className="single-day-label">
-                {displayLanguage ===
+      if (
+        visual.type ===
+        "navarathiri-day"
+      ) {
+        return (
+          <div className="visual-card">
+            <div className="visual-header">
+              <span>🌸</span>
+              <span>
+                {language ===
                 "tamil"
-                  ? `நவராத்திரி நாள் ${chart.day}`
-                  : `Navarathiri Day ${chart.day}`}
+                  ? "நவராத்திரி நாள்"
+                  : "Navarathiri Day"}
               </span>
+            </div>
 
-              <h3>
-                {displayLanguage ===
-                "tamil"
-                  ? chart.goddessTamil
-                  : chart.goddess}
-              </h3>
+            <div className="single-day-visual">
+              <div className="single-day-number">
+                {
+                  visual.day
+                }
+              </div>
 
-              <p className="day-description">
-                {displayLanguage ===
-                "tamil"
-                  ? "நவதுர்கை மரபில் தொடர்புடைய தேவி"
-                  : "Goddess associated with the commonly described Navadurga sequence"}
-              </p>
-
-              <div className="day-significance">
-
-                <span>
-                  ✦{" "}
-                  {displayLanguage ===
+              <div className="single-day-content">
+                <span className="single-day-label">
+                  {language ===
                   "tamil"
-                    ? "சிறப்பு"
-                    : "Special Significance"}
+                    ? `நாள் ${visual.day}`
+                    : `Day ${visual.day}`}
                 </span>
 
-                <p>
-                  {displayLanguage ===
+                <h3>
+                  {language ===
                   "tamil"
-                    ? chart.tamil
-                    : chart.english}
+                    ? visual.goddessTamil
+                    : visual.goddess}
+                </h3>
+
+                <p className="day-description">
+                  {language ===
+                  "tamil"
+                    ? visual.tamil
+                    : visual.english}
                 </p>
-
               </div>
+            </div>
+          </div>
+        );
+      }
 
+      /* SUNDARAKANDA */
+
+      if (
+        visual.type ===
+        "sundarakanda"
+      ) {
+        return (
+          <div className="visual-card">
+            <div className="visual-header">
+              <span>🙏</span>
+              <span>
+                Sundarakanda
+              </span>
             </div>
 
-          </div>
-        )}
-
-        {/* SUNDARAKANDA */}
-
-        {chart.type ===
-          "sundarakanda" && (
-          <div className="sk-visual">
-
-            <div className="sk-visual-head">
-
-              <div className="sk-visual-icon">
+            <div className="epic-visual">
+              <div className="epic-icon">
                 🙏
               </div>
 
-              <div>
+              <div className="epic-content">
                 <h3>
-                  {displayLanguage ===
-                  "tamil"
-                    ? "சுந்தரகாண்டம்"
-                    : "Sundarakanda"}
+                  Sundarakanda
                 </h3>
 
+                <div className="epic-flow">
+                  <span>
+                    🌊 Ocean
+                  </span>
+
+                  <b>→</b>
+
+                  <span>
+                    🙏 Hanuman
+                  </span>
+
+                  <b>→</b>
+
+                  <span>
+                    🌸 Sita
+                  </span>
+
+                  <b>→</b>
+
+                  <span>
+                    🔥 Lanka
+                  </span>
+
+                  <b>→</b>
+
+                  <span>
+                    💎 Chudamani
+                  </span>
+                </div>
+
                 <p>
-                  {displayLanguage ===
+                  {language ===
                   "tamil"
-                    ? "அனுமனின் இலங்கைப் பயணம்"
-                    : "Hanuman's journey to Lanka"}
+                    ? "அனுமனின் பக்தி, அறிவு, துணிவு மற்றும் தூதுப் பயணத்தை மையமாகக் கொண்ட சுந்தரகாண்டம்."
+                    : "A visual summary of Hanuman's mission, devotion, courage and major Sundarakanda events."}
                 </p>
               </div>
-
             </div>
-
-            <div className="sk-flow">
-
-              {SK_STAGES.map(
-                (stage, index) => (
-                  <Fragment
-                    key={stage.en}
-                  >
-
-                    <div
-                      className={`sk-stage ${
-                        chart.stage ===
-                        null
-                          ? "sk-stage-all"
-                          : ""
-                      } ${
-                        chart.stage ===
-                        index
-                          ? "sk-stage-active"
-                          : ""
-                      }`}
-                    >
-
-                      <span className="sk-stage-icon">
-                        {stage.icon}
-                      </span>
-
-                      <div className="sk-stage-text">
-
-                        <strong>
-                          {displayLanguage ===
-                          "tamil"
-                            ? stage.ta
-                            : stage.en}
-                        </strong>
-
-                        <small>
-                          {displayLanguage ===
-                          "tamil"
-                            ? stage.taNote
-                            : stage.enNote}
-                        </small>
-
-                      </div>
-
-                    </div>
-
-                    {index <
-                      SK_STAGES.length -
-                        1 && (
-                      <span className="sk-arrow">
-                        →
-                      </span>
-                    )}
-
-                  </Fragment>
-                )
-              )}
-
-            </div>
-
-            <div className="sk-themes">
-
-              {(displayLanguage ===
-              "tamil"
-                ? [
-                    "பக்தி",
-                    "துணிவு",
-                    "அறிவு",
-                    "நம்பிக்கை",
-                    "தர்மம்",
-                  ]
-                : [
-                    "Devotion",
-                    "Courage",
-                    "Intelligence",
-                    "Hope",
-                    "Dharma",
-                  ]
-              ).map((theme) => (
-                <span key={theme}>
-                  {theme}
-                </span>
-              ))}
-
-            </div>
-
           </div>
-        )}
+        );
+      }
 
-        {/* RAMAYANA */}
+      /* RAMAYANA */
 
-        {chart.type ===
-          "ramayana" && (
-          <div className="epic-visual">
-
-            <div className="epic-icon">
-              🏹
-            </div>
-
-            <div className="epic-content">
-
-              <h3>
+      if (
+        visual.type ===
+        "ramayana"
+      ) {
+        return (
+          <div className="visual-card">
+            <div className="visual-header">
+              <span>🏹</span>
+              <span>
                 Ramayana
-              </h3>
-
-              <div className="epic-flow">
-
-                <span>
-                  👑 Rama
-                </span>
-
-                <b>→</b>
-
-                <span>
-                  🌳 Exile
-                </span>
-
-                <b>→</b>
-
-                <span>
-                  🙏 Hanuman
-                </span>
-
-                <b>→</b>
-
-                <span>
-                  🏰 Lanka
-                </span>
-
-                <b>→</b>
-
-                <span>
-                  ✨ Return
-                </span>
-
-              </div>
-
-              <p>
-                {displayLanguage ===
-                "tamil"
-                  ? "ராமரின் வாழ்க்கைப் பயணத்தின் முக்கிய நிகழ்வுகள்"
-                  : "Major events in Rama's journey"}
-              </p>
-
+              </span>
             </div>
 
-          </div>
-        )}
-
-        {/* MAHABHARATA */}
-
-        {chart.type ===
-          "mahabharata" && (
-          <div className="epic-visual">
-
-            <div className="epic-icon">
-              ⚔️
-            </div>
-
-            <div className="epic-content">
-
-              <h3>
-                Mahabharata
-              </h3>
-
-              <div className="epic-flow">
-
-                <span>
-                  👑 Pandavas
-                </span>
-
-                <b>VS</b>
-
-                <span>
-                  👑 Kauravas
-                </span>
-
-                <b>→</b>
-
-                <span>
-                  ⚔️ Kurukshetra
-                </span>
-
-                <b>→</b>
-
-                <span>
-                  📖 Gita
-                </span>
-
+            <div className="epic-visual">
+              <div className="epic-icon">
+                🏹
               </div>
 
-              <p>
-                {displayLanguage ===
-                "tamil"
-                  ? "மகாபாரதத்தின் முக்கிய கதைக்களம்"
-                  : "Major storyline of the Mahabharata"}
-              </p>
-
-            </div>
-
-          </div>
-        )}
-
-        {/* DEFAULT TOPIC */}
-
-        {chart.type === "topic" && (
-          <>
-            <div className="visual-main">
-
-              <div className="visual-icon">
-                ✦
-              </div>
-
-              <div>
-
+              <div className="epic-content">
                 <h3>
-                  {chart.title}
+                  Ramayana
                 </h3>
 
+                <div className="epic-flow">
+                  <span>
+                    👑 Rama
+                  </span>
+
+                  <b>→</b>
+
+                  <span>
+                    🌳 Exile
+                  </span>
+
+                  <b>→</b>
+
+                  <span>
+                    🙏 Hanuman
+                  </span>
+
+                  <b>→</b>
+
+                  <span>
+                    🏰 Lanka
+                  </span>
+                </div>
+
                 <p>
-                  {chart.category}
+                  {language ===
+                  "tamil"
+                    ? "ராமாயணத்தின் முக்கிய கதாபாத்திரங்கள் மற்றும் நிகழ்வுகளின் சுருக்கம்."
+                    : "A visual summary of the major Ramayana characters and events."}
                 </p>
-
               </div>
+            </div>
+          </div>
+        );
+      }
 
+      /* MAHABHARATA */
+
+      if (
+        visual.type ===
+        "mahabharata"
+      ) {
+        return (
+          <div className="visual-card">
+            <div className="visual-header">
+              <span>⚔️</span>
+              <span>
+                Mahabharata
+              </span>
             </div>
 
-            <div className="visual-stats">
-
-              <div className="stat">
-
-                <strong>
-                  {chart.keywords.length}
-                </strong>
-
-                <span>
-                  Keywords
-                </span>
-
+            <div className="epic-visual">
+              <div className="epic-icon">
+                ⚔️
               </div>
 
-              <div className="stat">
+              <div className="epic-content">
+                <h3>
+                  Mahabharata
+                </h3>
 
-                <strong>
-                  {chart.category}
-                </strong>
+                <div className="epic-flow">
+                  <span>
+                    👑 Pandavas
+                  </span>
 
-                <span>
-                  Category
-                </span>
+                  <b>VS</b>
 
+                  <span>
+                    👑 Kauravas
+                  </span>
+
+                  <b>→</b>
+
+                  <span>
+                    ⚔️ Kurukshetra
+                  </span>
+
+                  <b>→</b>
+
+                  <span>
+                    📖 Gita
+                  </span>
+                </div>
+
+                <p>
+                  {language ===
+                  "tamil"
+                    ? "மகாபாரதத்தின் முக்கிய கதைக்களம்."
+                    : "A visual summary of the major Mahabharata storyline."}
+                </p>
               </div>
-
             </div>
-          </>
-        )}
+          </div>
+        );
+      }
 
-      </div>
-    );
-  };
+      /* GITA */
 
-  // =====================================================
-  // UI
-  // =====================================================
+      if (
+        visual.type ===
+        "gita"
+      ) {
+        return (
+          <div className="visual-card">
+            <div className="visual-header">
+              <span>📖</span>
+              <span>
+                Bhagavad Gita
+              </span>
+            </div>
+
+            <div className="epic-visual">
+              <div className="epic-icon">
+                📖
+              </div>
+
+              <div className="epic-content">
+                <h3>
+                  Bhagavad Gita
+                </h3>
+
+                <div className="epic-flow">
+                  <span>
+                    🏹 Arjuna
+                  </span>
+
+                  <b>↔</b>
+
+                  <span>
+                    🪷 Krishna
+                  </span>
+
+                  <b>→</b>
+
+                  <span>
+                    📖 Dharma
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      return null;
+    };
+
+  /* =======================================================
+     CLEAR HISTORY
+  ======================================================= */
+
+  const clearHistory =
+    () => {
+      stopSpeaking();
+
+      setConversation(
+        []
+      );
+
+      setSelectedConversationId(
+        null
+      );
+
+      setQuestion("");
+      setAnswer("");
+      setChartData(
+        null
+      );
+    };
+
+  /* =======================================================
+     LANGUAGE
+  ======================================================= */
+
+  const changeLanguage =
+    (newLanguage) => {
+      stopSpeaking();
+
+      setLanguage(
+        newLanguage
+      );
+    };
+
+  /* =======================================================
+     UI
+  ======================================================= */
 
   return (
     <div className="app">
 
-      {/* =================================================
-          PREMIUM GOLU BACKGROUND
-          Rendered by App.css pseudo-elements and lamp layers.
-      ================================================= */}
-      <div className="glow glow-one" aria-hidden="true"></div>
-      <div className="glow glow-two" aria-hidden="true"></div>
+      <div
+        className="glow glow-one"
+        aria-hidden="true"
+      />
 
-      {/* =================================================
-          APP LAYOUT
-      ================================================= */}
+      <div
+        className="glow glow-two"
+        aria-hidden="true"
+      />
 
       <div className="app-layout">
 
-        {/* SIDEBAR */}
+        {/* =================================================
+            SIDEBAR
+        ================================================= */}
 
         <aside className="history-sidebar">
 
@@ -1612,7 +2656,9 @@ function App() {
             </span>
 
             <span className="history-count">
-              {conversation.length}
+              {
+                conversation.length
+              }
             </span>
 
           </div>
@@ -1621,7 +2667,6 @@ function App() {
 
             {conversation.length ===
             0 ? (
-
               <div className="empty-history">
 
                 <div className="empty-history-icon">
@@ -1636,25 +2681,38 @@ function App() {
                 </p>
 
               </div>
-
             ) : (
-
               conversation.map(
                 (item) => (
-
                   <button
-                    key={item.id}
+                    key={
+                      item.id
+                    }
                     className={`history-item ${
                       selectedConversationId ===
                       item.id
                         ? "history-active"
                         : ""
                     }`}
-                    onClick={() =>
-                      selectConversation(
-                        item
-                      )
-                    }
+                    onClick={() => {
+                      stopSpeaking();
+
+                      setSelectedConversationId(
+                        item.id
+                      );
+
+                      setQuestion(
+                        item.question
+                      );
+
+                      setAnswer(
+                        item.answer
+                      );
+
+                      setChartData(
+                        item.chart
+                      );
+                    }}
                   >
 
                     <span className="history-item-icon">
@@ -1664,14 +2722,14 @@ function App() {
                     </span>
 
                     <span className="history-item-text">
-                      {item.question}
+                      {
+                        item.question
+                      }
                     </span>
 
                   </button>
-
                 )
               )
-
             )}
 
           </div>
@@ -1752,8 +2810,6 @@ function App() {
 
         <div className="main-area">
 
-          {/* HEADER */}
-
           <header className="main-header">
 
             <div>
@@ -1770,15 +2826,13 @@ function App() {
 
             <div className="header-status">
 
-              <span className="status-dot"></span>
+              <span className="status-dot" />
 
               AI Ready
 
             </div>
 
           </header>
-
-          {/* MAIN */}
 
           <main className="main">
 
@@ -1794,13 +2848,10 @@ function App() {
                   ? "Your Conversation"
                   : (
                     <>
-                      Your Personal
-
+                      Your Personal{" "}
                       <span>
-                        {" "}
-                        Navarathiri{" "}
-                      </span>
-
+                        Navarathiri
+                      </span>{" "}
                       Assistant
                     </>
                   )}
@@ -1810,12 +2861,12 @@ function App() {
               <p>
                 {language ===
                 "tamil"
-                  ? "நவராத்திரி, ராமாயணம், சுந்தரகாண்டம் மற்றும் மகாபாரதம் பற்றி கேளுங்கள்."
-                  : "Ask anything about Navarathiri, Ramayana, Sundarakanda and Mahabharata."}
+                  ? "நவராத்திரி, சுந்தரகாண்டம், ராமாயணம், மகாபாரதம் மற்றும் பகவத் கீதை பற்றி கேளுங்கள்."
+                  : "Ask anything about Navarathiri, Sundarakanda, Ramayana, Mahabharata and Bhagavad Gita."}
               </p>
 
               {/* =================================================
-                  SELECTED CHAT
+                  CURRENT CONVERSATION
               ================================================= */}
 
               {selectedConversation && (
@@ -1823,8 +2874,6 @@ function App() {
                 <div className="conversation">
 
                   <div className="conversation-turn">
-
-                    {/* USER QUESTION */}
 
                     <div className="question-box">
 
@@ -1840,8 +2889,6 @@ function App() {
 
                     </div>
 
-                    {/* AI ANSWER */}
-
                     <div className="answer-box">
 
                       <div className="answer-top-row">
@@ -1849,8 +2896,6 @@ function App() {
                         <div className="answer-title">
                           ✦ Navarathiri AI
                         </div>
-
-                        {/* SEPARATE LISTEN BUTTON */}
 
                         <button
                           className={`answer-voice-button ${
@@ -1860,18 +2905,22 @@ function App() {
                               ? "voice-playing"
                               : ""
                           }`}
-                          onClick={() =>
-                            handleAnswerVoice(
-                              selectedConversation
-                            )
-                          }
-                          title={
-                            isSpeaking &&
-                            speakingConversationId ===
-                              selectedConversation.id
-                              ? "Stop voice"
-                              : "Listen to answer"
-                          }
+                          onClick={() => {
+
+                            if (
+                              isSpeaking &&
+                              speakingConversationId ===
+                                selectedConversation.id
+                            ) {
+                              stopSpeaking();
+                            } else {
+                              speakAnswer(
+                                selectedConversation.answer,
+                                selectedConversation.id
+                              );
+                            }
+
+                          }}
                         >
 
                           <span>
@@ -1908,12 +2957,10 @@ function App() {
 
                             🔊{" "}
 
-                            {
-                              selectedConversation.language ===
-                              "tamil"
-                                ? "பதில் சொல்கிறேன்..."
-                                : "Speaking answer..."
-                            }
+                            {language ===
+                            "tamil"
+                              ? "பதில் சொல்கிறேன்..."
+                              : "Speaking answer..."}
 
                           </div>
 
@@ -1921,12 +2968,9 @@ function App() {
 
                     </div>
 
-                    {/* VISUAL */}
-
                     {selectedConversation.chart &&
-                      renderChart(
-                        selectedConversation.chart,
-                        selectedConversation.language
+                      renderVisual(
+                        selectedConversation.chart
                       )}
 
                   </div>
@@ -1969,13 +3013,11 @@ function App() {
                     "tamil"
                     ? "கேட்கிறேன்..."
                     : "Listening..."
-
                   : isSpeaking
                   ? language ===
                     "tamil"
                     ? "பதில் சொல்கிறேன்..."
                     : "Speaking..."
-
                   : language ===
                     "tamil"
                   ? "பேசுவதற்கு அழுத்தவும்"
@@ -1989,20 +3031,19 @@ function App() {
 
               <div className="suggestions">
 
-                {SUGGESTIONS.map(
-                  (item) => (
-
+                {suggestions.map(
+                  ([icon, text]) => (
                     <button
-                      key={item.label}
+                      key={text}
                       onClick={() =>
-                        handleSuggestion(
-                          item.query
+                        findAnswer(
+                          text
                         )
                       }
                     >
-                      {item.label}
+                      {icon}{" "}
+                      {text}
                     </button>
-
                   )
                 )}
 
@@ -2011,8 +3052,6 @@ function App() {
             </div>
 
           </main>
-
-          {/* FOOTER */}
 
           <footer>
 

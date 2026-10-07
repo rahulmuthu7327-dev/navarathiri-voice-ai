@@ -1,0 +1,397 @@
+{
+  "project": "Sundarakanda Voice AI Chatbot",
+  "version": "1.0",
+  "note": "Sundarakanda narrative summaries and key episodes converted into the flat bilingual entry format. The narratives are condensed summaries, not a verse-by-verse translation.",
+  "entry_count": 22,
+  "entries": [
+    {
+      "id": "sundara_001",
+      "category": "Sundarakanda Narrative",
+      "title": "Introduction and Setting",
+      "keywords": [
+        "sundarakanda",
+        "introduction",
+        "hanuman",
+        "ramayana",
+        "சுந்தரகாண்டம்",
+        "அனுமன்"
+      ],
+      "tamil": "சுந்தரகாண்டம் வால்மீகி இராமாயணத்தின் ஐந்தாவது காண்டம் ஆகும். இராவணனால் சீதை கடத்தப்பட்ட பிறகு, இராமனும் லட்சுமணனும் சுக்ரீவன் மற்றும் வானரர்களின் உதவியுடன் அவளைத் தேடுகின்றனர். தேடல் குழு தெற்குக் கடற்கரையை அடைந்து பெருங்கடலை எதிர்கொள்கிறது. ஜாம்பவான் அனுமனுக்கு அவனது அபார சக்திகளை நினைவூட்டுகிறார். வாயு புத்திரனான அனுமன் கடலைக் கடந்து சீதையைக் கண்டுபிடிக்கும் பணியை ஏற்றுக்கொள்கிறார்.",
+      "english": "Sundarakanda is the fifth book of Valmiki’s Ramayana. After Sita is abducted by Ravana, Rama and Lakshmana search for her with the help of Sugriva and the vanaras. The search party reaches the southern shore and faces the vast ocean. Jambavan reminds Hanuman of his immense powers. Hanuman, the son of Vayu, accepts the mission to cross the ocean and find Sita.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 1
+    },
+    {
+      "id": "sundara_002",
+      "category": "Sundarakanda Narrative",
+      "title": "The Great Leap",
+      "keywords": [
+        "hanuman leap",
+        "ocean crossing",
+        "mainaka",
+        "surasa",
+        "simhika",
+        "கடல் தாண்டல்"
+      ],
+      "tamil": "அனுமன் தன் உருவை மிகப் பெரிதாக்கி, தேவர்களுக்கு வணக்கம் செலுத்தி, மகேந்திர மலையிலிருந்து குதிக்கிறார். பறக்கும்போது மைநாக மலை ஓய்வுக்காக எழுகிறது; நாகாக்களின் தாய் சுரசா அவன் வாயில் நுழைய வேண்டும் என சோதிக்கிறாள்; நிழலைப் பிடிக்கும் அரக்கி சிம்ஹிகா தடை செய்கிறாள். புத்தி மற்றும் வீரத்தால் அனுமன் எல்லாத் தடைகளையும் வென்று இலங்கையின் திரிகூட சிகரத்தில் இறங்குகிறார்.",
+      "english": "Hanuman enlarges his form to a gigantic size, bows to the gods, and leaps from Mount Mahendra. During the flight he encounters Mainaka mountain, which rises to offer rest; Surasa, the mother of nagas, who tests him by demanding he enter her mouth; and Simhika, a shadow-catching demoness. Using intelligence and strength, Hanuman overcomes all obstacles and lands on the peak of Trikuta in Lanka.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 2
+    },
+    {
+      "id": "sundara_003",
+      "category": "Sundarakanda Narrative",
+      "title": "Entry into Lanka",
+      "keywords": [
+        "entry into lanka",
+        "lankini",
+        "lanka",
+        "hanuman",
+        "இலங்கை நுழைவு"
+      ],
+      "tamil": "இரவில் அனுமன் சிறு உருவம் எடுத்து, உயர்ந்த மதில்கள், அகழிகள் மற்றும் கொடிய காவலர்களால் பாதுகாக்கப்பட்ட அழகிய இலங்கை நகரை ஆராய்ந்தார். காவல் தெய்வமான லங்கினி அவனை எதிர்கொள்கிறாள். அனுமன் முஷ்டியால் அவளை அடிக்கிறார். ஒரு வானரனின் அடி இலங்கையின் செழிப்புக்கு முடிவு என்று பிரம்மாவின் வரத்தை நினைவுகூர்ந்து லங்கினி அவனை உள்ளே விடுகிறாள். அனுமன் மெதுவாக நகருக்குள் நுழைகிறார்.",
+      "english": "At night Hanuman assumes a tiny form and surveys the magnificent city of Lanka, protected by high walls, moats and fierce guards. The guardian deity Lankini confronts him. Hanuman strikes her with his fist. Recalling Brahma’s boon that a vanara’s blow would signal the end of Lanka’s prosperity, Lankini allows him to enter. Hanuman quietly enters the city.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 3
+    },
+    {
+      "id": "sundara_004",
+      "category": "Sundarakanda Narrative",
+      "title": "Search through the City",
+      "keywords": [
+        "search lanka",
+        "pushpaka",
+        "ashoka grove",
+        "mandodari",
+        "நகரத் தேடல்"
+      ],
+      "tamil": "அனுமன் ஒவ்வொரு அரண்மனை, மாளிகை மற்றும் தோட்டத்தையும் தேடுகிறார். இராவணனின் அற்புதமான அரண்மனை, புஷ்பக விமானம், தூங்கும் பெண்கள் நிறைந்த அந்தப்புரம் ஆகியவற்றைக் காண்கிறார். ஒரு கணம் மண்டோதரியை சீதையாகத் தவறாக நினைத்துவிட்டு உடனே உண்மையை உணர்கிறார். சீதையைக் காணாமல் மனமுடைந்து, பின்னர் அசோகவனத்தைக் கண்டு அங்கு தேட முடிவு செய்கிறார்.",
+      "english": "Hanuman searches every palace, mansion and garden. He sees Ravana’s magnificent palace, the celestial Pushpaka vimana, and the harem filled with sleeping women. Mistaking Mandodari for Sita for a moment, he quickly realizes his error. Unable to find Sita, he becomes despondent but then notices the Ashoka grove and decides to search there.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 4
+    },
+    {
+      "id": "sundara_005",
+      "category": "Sundarakanda Narrative",
+      "title": "Finding Sita in Ashoka Vatika",
+      "keywords": [
+        "finding sita",
+        "ashoka vatika",
+        "sita",
+        "ravana",
+        "trijata",
+        "அசோகவனம்",
+        "சீதை"
+      ],
+      "tamil": "அசோகவனத்தில் அனுமன் இறுதியாக சீதையைக் காண்கிறார் – மெலிந்த, துயர்மிக்க, கொடிய ராக்ஷசிகளால் காவல் செய்யப்பட்டு, ஒரு மரத்தடியில் அமர்ந்திருக்கிறாள். இராவணன் வந்து அவளை இணங்கச் சொல்லி மிரட்டுவதை அனுமன் பார்க்கிறார். சீதை உறுதியாக நிராகரிக்கிறாள். ராக்ஷசிகள் அவளைத் துன்புறுத்துகின்றனர். சீதை உயிரை மாய்த்துக்கொள்ள எண்ணுகிறாள். திரிஜடை நல்ல கனவைச் சொல்லி நம்பிக்கை அளிக்கிறாள். அனுமன் தன்னை வெளிப்படுத்த வேண்டிய நேரம் வந்துவிட்டது என முடிவு செய்கிறார்.",
+      "english": "In the Ashoka grove Hanuman finally sees Sita – emaciated, sorrowful, guarded by fierce rakshasis, sitting under a tree. He observes Ravana arrive and try to persuade and threaten her. Sita firmly rejects him. The rakshasis torment her. Sita contemplates ending her life. Trijata narrates an auspicious dream that gives Sita some hope. Hanuman decides the time has come to reveal himself.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 5
+    },
+    {
+      "id": "sundara_006",
+      "category": "Sundarakanda Narrative",
+      "title": "Meeting with Sita",
+      "keywords": [
+        "hanuman meets sita",
+        "rama ring",
+        "chudamani",
+        "sita",
+        "சீதையுடன் சந்திப்பு"
+      ],
+      "tamil": "அனுமன் மெல்ல இராமனின் கதையைச் சொல்கிறார். குரங்கு தன் கணவனைப் பற்றிப் பேசுவதைக் கண்டு சீதை வியக்கிறாள். அனுமன் தான் இராமனின் தூதன் என அறிவித்து, இராமனின் மோதிரத்தைக் காட்டி, இராமன்-லட்சுமணனை விவரிக்கிறார். சீதை மகிழ்ச்சியுடன் தன் சூடாமணியை அனுமனுக்கு அடையாளமாகக் கொடுக்கிறாள். அனுமன் அவளைத் தூக்கிச் செல்ல முன்வருகிறார். ஆனால் சீதை மறுத்து, தர்மத்தையும் தன் மானத்தையும் காக்க இராமனே வந்து இராவணனை வெல்ல வேண்டும் என வலியுறுத்துகிறாள்.",
+      "english": "Hanuman softly narrates the story of Rama. Sita is astonished to see a monkey speaking of her husband. Hanuman reveals himself as Rama’s messenger, shows Rama’s signet ring, and describes Rama and Lakshmana. Sita is filled with joy and gives Hanuman her chudamani (crest jewel) as a token. Hanuman offers to carry her back, but Sita refuses, insisting that Rama himself must come and defeat Ravana to uphold dharma and her honour.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 6
+    },
+    {
+      "id": "sundara_007",
+      "category": "Sundarakanda Narrative",
+      "title": "Destruction and Battles",
+      "keywords": [
+        "ashoka grove destruction",
+        "aksha",
+        "indrajit",
+        "battles",
+        "அழிவு",
+        "போர்"
+      ],
+      "tamil": "தன் வலிமையைக் காட்டவும் குழப்பத்தை ஏற்படுத்தவும் அனுமன் அசோகவனத்தை அழிக்கிறார். கிங்கரர்கள், ஜம்புமாலி, அமைச்சர் மகன்கள், ஐந்து சேனாபதிகள், இறுதியாக அட்சகுமாரன் என பல அரக்கப் படைகள் அனுமனை எதிர்த்து வருகின்றன. அனுமன் அனைவரையும் வீழ்த்துகிறார். இந்திரஜித் (மேகநாதன்) பிரம்மாஸ்திரத்தால் அவனைப் பிடிக்கிறான். கட்டப்பட்ட அனுமன் இராவணனின் அவையில் கொண்டுவரப்படுகிறார்.",
+      "english": "To demonstrate his power and create chaos, Hanuman destroys the Ashoka garden. Waves of rakshasa warriors are sent against him – kinkaras, Jambumali, the ministers’ sons, five generals, and finally Prince Aksha. Hanuman defeats them all. Indrajit (Meghanada) finally captures him using the Brahmastra. Bound, Hanuman is taken to Ravana’s court.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 7
+    },
+    {
+      "id": "sundara_008",
+      "category": "Sundarakanda Narrative",
+      "title": "In Ravana's Court",
+      "keywords": [
+        "ravana court",
+        "rama messenger",
+        "vibhishana",
+        "burning tail",
+        "இராவணன் அவை"
+      ],
+      "tamil": "அவையில் அனுமன் தைரியமாகத் தான் இராமனின் தூதன் என அறிவித்து, சீதையைத் திருப்பிக் கொடுத்து இராமனிடம் சரணடையுமாறு இராவணனுக்கு அறிவுரை கூறுகிறார். கோபமடைந்த இராவணன் அவனைக் கொல்ல உத்தரவிடுகிறான். விபீஷணன் தூதனின் பாதுகாப்பை நினைவுபடுத்தித் தலையிடுகிறான். தண்டனையாக அனுமனின் வால் துணியால் சுற்றப்பட்டு தீயிடப்படுகிறது. சீதை தீ அவனைத் தீண்டக்கூடாது என வேண்டுகிறாள். தீ அனுமனை எரிக்கவில்லை.",
+      "english": "In the assembly Hanuman boldly declares himself Rama’s messenger and advises Ravana to return Sita and seek refuge in Rama. Ravana, enraged, orders his death. Vibhishana intervenes, citing the inviolability of a messenger. As punishment, Hanuman’s tail is wrapped in cloth and set on fire. Sita prays that the fire should not harm him. The fire does not burn Hanuman.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 8
+    },
+    {
+      "id": "sundara_009",
+      "category": "Sundarakanda Narrative",
+      "title": "Burning of Lanka and Return",
+      "keywords": [
+        "burning lanka",
+        "return from lanka",
+        "chudamani",
+        "rama",
+        "இலங்கை எரிப்பு"
+      ],
+      "tamil": "எரியும் வாலுடன் அனுமன் கூரைக்குக் கூரை தாவி முழு இலங்கை நகரத்தையும் தீயிட்டு எரிக்கிறார். பின்னர் கடலில் தீயை அணைத்து, மீண்டும் சீதையைச் சந்தித்து ஆசீர்வாதம் பெற்று, கடலைத் தாண்டி திரும்புகிறார். மகேந்திர மலையில் வானரர்களுடன் இணைந்து எல்லாவற்றையும் விவரித்து, பின்னர் சீதையின் சூடாமணியை இராமனிடம் சமர்ப்பிக்கிறார். இராமனுக்கு நம்பிக்கையும் யுத்த உறுதியும் பிறக்கிறது.",
+      "english": "With his burning tail Hanuman leaps from roof to roof and sets the entire city of Lanka ablaze. He then extinguishes the fire in the ocean, meets Sita once more, receives her blessings, and makes the return leap across the ocean. He rejoins the vanaras on Mount Mahendra, recounts everything, and later presents Sita’s chudamani to Rama, filling him with hope and resolve for the coming war.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 9
+    },
+    {
+      "id": "sundara_010",
+      "category": "Sundarakanda Narrative",
+      "title": "Significance of Sundarakanda",
+      "keywords": [
+        "sundarakanda significance",
+        "hanuman devotion",
+        "parayana",
+        "courage",
+        "முக்கியத்துவம்"
+      ],
+      "tamil": "சுந்தரகாண்டம் இராமாயணத்தின் இதயமாகக் கருதப்படுகிறது. இது அனுமனின் பக்தி, புத்தி, வலிமை மற்றும் பணிவை வெளிப்படுத்துகிறது. சுந்தரகாண்டத்தைப் படிப்பது அல்லது கேட்பது தடைகளை நீக்கி, நம்பிக்கையைத் தந்து, துணிவை அளிக்கும் என்பது பாரம்பரிய நம்பிக்கை. செவ்வாய், சனிக்கிழமைகளிலும், இக்கட்டான காலங்களிலும் இது சிறப்பாகப் பாராயணம் செய்யப்படுகிறது.",
+      "english": "Sundarakanda is regarded as the heart of the Ramayana. It showcases Hanuman’s devotion (bhakti), intelligence (buddhi), strength (bala) and humility. Traditional belief holds that reading or listening to Sundarakanda removes obstacles, brings hope in despair, and grants courage. It is especially recited on Tuesdays and Saturdays and during times of difficulty.",
+      "visual_type": "story_timeline",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 10
+    },
+    {
+      "id": "sundara_episode_01",
+      "category": "Sundarakanda Key Episode",
+      "title": "Hanuman's Resolve & Leap",
+      "keywords": [
+        "hanuman's resolve & leap",
+        "sundarakanda",
+        "ramayana",
+        "அனுமனின் உறுதியும் குதிப்பும்"
+      ],
+      "tamil": "ஜாம்பவான் அனுமனின் சக்திகளை எழுப்புகிறார். அனுமன் பெருவுரு எடுத்து நூறு யோஜனை கடலைத் தாண்டுகிறார்.",
+      "english": "Jambavan awakens Hanuman’s powers. Hanuman grows huge and leaps across the 100-yojana ocean.",
+      "visual_type": "episode",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 1
+    },
+    {
+      "id": "sundara_episode_02",
+      "category": "Sundarakanda Key Episode",
+      "title": "Obstacles in the Sky",
+      "keywords": [
+        "obstacles in the sky",
+        "sundarakanda",
+        "ramayana",
+        "வானில் தடைகள்"
+      ],
+      "tamil": "மைநாகன் ஓய்வு தருகிறான், சுரசா சோதிக்கிறாள், சிம்ஹிகா நிழலைப் பிடிக்க முயல்கிறாள். அனுமன் எல்லாம் வெல்கிறார்.",
+      "english": "Mainaka offers rest, Surasa tests him, Simhika tries to seize his shadow. Hanuman overcomes all.",
+      "visual_type": "episode",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 2
+    },
+    {
+      "id": "sundara_episode_03",
+      "category": "Sundarakanda Key Episode",
+      "title": "Conquest of Lankini",
+      "keywords": [
+        "conquest of lankini",
+        "sundarakanda",
+        "ramayana",
+        "லங்கினி வெற்றி"
+      ],
+      "tamil": "காவல் தேவி லங்கினி அனுமனால் அடிக்கப்பட்டு, பிரம்ம வரத்தை நினைத்து உள்ளே விடுகிறாள்.",
+      "english": "Guardian goddess Lankini is struck by Hanuman and permits entry, recalling Brahma’s boon.",
+      "visual_type": "episode",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 3
+    },
+    {
+      "id": "sundara_episode_04",
+      "category": "Sundarakanda Key Episode",
+      "title": "Search of Lanka",
+      "keywords": [
+        "search of lanka",
+        "sundarakanda",
+        "ramayana",
+        "இலங்கைத் தேடல்"
+      ],
+      "tamil": "அனுமன் அரண்மனைகளைத் தேடி, புஷ்பகம், அந்தப்புரம் காண்கிறார். இறுதியில் அசோகவனம் தேட முடிவு செய்கிறார்.",
+      "english": "Hanuman searches palaces, sees Pushpaka, harem, and finally decides to explore Ashoka grove.",
+      "visual_type": "episode",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 4
+    },
+    {
+      "id": "sundara_episode_05",
+      "category": "Sundarakanda Key Episode",
+      "title": "Discovery of Sita",
+      "keywords": [
+        "discovery of sita",
+        "sundarakanda",
+        "ramayana",
+        "சீதை காண்கை"
+      ],
+      "tamil": "அசோகவனத்தில் மரத்தடியில் துயருற்ற சீதையை ராக்ஷசிகள் காவலில் அனுமன் காண்கிறார்.",
+      "english": "Hanuman finds the sorrowful Sita in Ashoka Vatika under a tree, guarded by rakshasis.",
+      "visual_type": "episode",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 5
+    },
+    {
+      "id": "sundara_episode_06",
+      "category": "Sundarakanda Key Episode",
+      "title": "Ravana’s Courtship & Rejection",
+      "keywords": [
+        "ravana’s courtship & rejection",
+        "sundarakanda",
+        "ramayana",
+        "இராவணன் வேண்டுதலும் மறுப்பும்"
+      ],
+      "tamil": "இராவணன் சீதையை இணங்கச் சொல்கிறான்; அவள் மறுக்கிறாள். ராக்ஷசிகள் துன்புறுத்துகின்றனர். திரிஜடை கனவு நம்பிக்கை தருகிறது.",
+      "english": "Ravana tries to win Sita; she firmly rejects him. Rakshasis torment her. Trijata’s dream gives hope.",
+      "visual_type": "episode",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 6
+    },
+    {
+      "id": "sundara_episode_07",
+      "category": "Sundarakanda Key Episode",
+      "title": "Hanuman Reveals Himself",
+      "keywords": [
+        "hanuman reveals himself",
+        "sundarakanda",
+        "ramayana",
+        "அனுமன் தன்னை வெளிப்படுத்துதல்"
+      ],
+      "tamil": "அனுமன் இராம கதை சொல்லி மோதிரம் காட்டுகிறார். சூடாமணி பெறுகிறார். சீதையை மீட்க முன்வருகிறார்.",
+      "english": "Hanuman narrates Rama’s story, shows the ring, receives the chudamani, and offers to rescue Sita.",
+      "visual_type": "episode",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 7
+    },
+    {
+      "id": "sundara_episode_08",
+      "category": "Sundarakanda Key Episode",
+      "title": "Sita’s Refusal to Leave",
+      "keywords": [
+        "sita’s refusal to leave",
+        "sundarakanda",
+        "ramayana",
+        "சீதையின் மறுப்பு"
+      ],
+      "tamil": "சீதை அனுமனால் தூக்கிச் செல்லப்பட மறுத்து, இராமனே வந்து வெல்ல வேண்டும் என வலியுறுத்துகிறாள்.",
+      "english": "Sita refuses to be carried away by Hanuman, insisting Rama must come and defeat Ravana himself.",
+      "visual_type": "episode",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 8
+    },
+    {
+      "id": "sundara_episode_09",
+      "category": "Sundarakanda Key Episode",
+      "title": "Garden Destruction & Battles",
+      "keywords": [
+        "garden destruction & battles",
+        "sundarakanda",
+        "ramayana",
+        "வன அழிவும் போர்களும்"
+      ],
+      "tamil": "அனுமன் வனத்தை அழித்து அட்சன் உள்ளிட்ட பலரைக் கொன்று, இந்திரஜித்தால் பிடிக்கப்படுகிறார்.",
+      "english": "Hanuman destroys the grove, kills many warriors including Aksha, and is finally captured by Indrajit.",
+      "visual_type": "episode",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 9
+    },
+    {
+      "id": "sundara_episode_10",
+      "category": "Sundarakanda Key Episode",
+      "title": "Tail Set on Fire",
+      "keywords": [
+        "tail set on fire",
+        "sundarakanda",
+        "ramayana",
+        "வால் தீயிடுதல்"
+      ],
+      "tamil": "அவையில் அனுமன் அறிவுரை கூறுகிறார். தண்டனையாக வால் தீயிடப்படுகிறது; சீதையின் வேண்டுதல் காக்கிறது.",
+      "english": "In court Hanuman advises Ravana. As punishment his tail is set on fire; Sita’s prayer protects him.",
+      "visual_type": "episode",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 10
+    },
+    {
+      "id": "sundara_episode_11",
+      "category": "Sundarakanda Key Episode",
+      "title": "Lanka Burns",
+      "keywords": [
+        "lanka burns",
+        "sundarakanda",
+        "ramayana",
+        "இலங்கை எரிதல்"
+      ],
+      "tamil": "எரியும் வாலால் முழு நகரத்தையும் எரித்து, பின்னர் கடலில் தீயை அணைக்கிறார்.",
+      "english": "Hanuman uses the burning tail to set the whole city on fire and then extinguishes it in the sea.",
+      "visual_type": "episode",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 11
+    },
+    {
+      "id": "sundara_episode_12",
+      "category": "Sundarakanda Key Episode",
+      "title": "Return & Report",
+      "keywords": [
+        "return & report",
+        "sundarakanda",
+        "ramayana",
+        "திரும்பி அறிவித்தல்"
+      ],
+      "tamil": "அனுமன் திரும்பி வானரர்களுக்கு எல்லாம் சொல்லி, சீதையின் ஆபரணத்தை இராமனிடம் சமர்ப்பிக்கிறார்.",
+      "english": "Hanuman returns, narrates everything to the vanaras, and presents Sita’s jewel to Rama.",
+      "visual_type": "episode",
+      "epic": "Ramayana",
+      "book": "Sundarakanda",
+      "sequence": 12
+    }
+  ]
+}

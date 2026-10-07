@@ -22,20 +22,154 @@ button {
 }
 
 /* =====================================================
-   APP
+   APP  (far background layer)
+   Sidebar width variable is used by all background layers
+   so the Golu is centred in the MAIN area, not behind the sidebar
 ===================================================== */
 
 .app {
+  --sb: 270px;
+
   width: 100%;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+
   background:
+    /* ---------- floor diya 1 ---------- */
+    radial-gradient(
+      ellipse 4px 8px at calc(50% + var(--sb) / 2 - 250px) calc(100% - 70px),
+      #fff4c2 0,
+      #ffb13b 45%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 13px 5px at calc(50% + var(--sb) / 2 - 250px) calc(100% - 60px),
+      #c98a2e 0 55%,
+      #6b4210 80%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle 70px at calc(50% + var(--sb) / 2 - 250px) calc(100% - 72px),
+      rgba(255, 160, 60, 0.34),
+      rgba(255, 130, 40, 0.1) 55%,
+      transparent 100%
+    ),
+
+    /* ---------- floor diya 2 ---------- */
+    radial-gradient(
+      ellipse 4px 8px at calc(50% + var(--sb) / 2 - 95px) calc(100% - 70px),
+      #fff4c2 0,
+      #ffb13b 45%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 13px 5px at calc(50% + var(--sb) / 2 - 95px) calc(100% - 60px),
+      #c98a2e 0 55%,
+      #6b4210 80%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle 70px at calc(50% + var(--sb) / 2 - 95px) calc(100% - 72px),
+      rgba(255, 160, 60, 0.34),
+      rgba(255, 130, 40, 0.1) 55%,
+      transparent 100%
+    ),
+
+    /* ---------- floor diya 3 ---------- */
+    radial-gradient(
+      ellipse 4px 8px at calc(50% + var(--sb) / 2 + 95px) calc(100% - 70px),
+      #fff4c2 0,
+      #ffb13b 45%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 13px 5px at calc(50% + var(--sb) / 2 + 95px) calc(100% - 60px),
+      #c98a2e 0 55%,
+      #6b4210 80%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle 70px at calc(50% + var(--sb) / 2 + 95px) calc(100% - 72px),
+      rgba(255, 160, 60, 0.34),
+      rgba(255, 130, 40, 0.1) 55%,
+      transparent 100%
+    ),
+
+    /* ---------- floor diya 4 ---------- */
+    radial-gradient(
+      ellipse 4px 8px at calc(50% + var(--sb) / 2 + 250px) calc(100% - 70px),
+      #fff4c2 0,
+      #ffb13b 45%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 13px 5px at calc(50% + var(--sb) / 2 + 250px) calc(100% - 60px),
+      #c98a2e 0 55%,
+      #6b4210 80%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle 70px at calc(50% + var(--sb) / 2 + 250px) calc(100% - 72px),
+      rgba(255, 160, 60, 0.34),
+      rgba(255, 130, 40, 0.1) 55%,
+      transparent 100%
+    ),
+
+    /* ---------- rangoli rings on the floor ---------- */
+    radial-gradient(
+      ellipse 340px 56px at calc(50% + var(--sb) / 2) calc(100% - 46px),
+      rgba(255, 140, 50, 0) 0 18%,
+      rgba(255, 140, 50, 0.3) 19% 21%,
+      transparent 22% 34%,
+      rgba(230, 70, 50, 0.3) 35% 38%,
+      transparent 39% 52%,
+      rgba(255, 190, 80, 0.28) 53% 55%,
+      transparent 56% 66%,
+      rgba(230, 70, 50, 0.26) 67% 70%,
+      transparent 71% 82%,
+      rgba(255, 150, 60, 0.24) 83% 86%,
+      transparent 87%
+    ),
+    radial-gradient(
+      ellipse 340px 56px at calc(50% + var(--sb) / 2) calc(100% - 46px),
+      rgba(255, 150, 60, 0.16),
+      transparent 70%
+    ),
+
+    /* ---------- warm ambient light behind the Golu ---------- */
+    radial-gradient(
+      ellipse 620px 380px at calc(50% + var(--sb) / 2) 76%,
+      rgba(255, 170, 80, 0.13),
+      transparent 70%
+    ),
+
+    /* ---------- cyan AI glows (kept from original theme) ---------- */
     radial-gradient(
       circle at 65% 30%,
       rgba(0, 191, 255, 0.09),
       transparent 32%
     ),
+    radial-gradient(
+      circle at 12% 12%,
+      rgba(0, 160, 220, 0.07),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 95% 60%,
+      rgba(0, 150, 210, 0.06),
+      transparent 28%
+    ),
+
+    /* ---------- warm floor tone ---------- */
+    linear-gradient(
+      180deg,
+      transparent 60%,
+      rgba(60, 22, 10, 0.35) 100%
+    ),
+
+    /* ---------- deep base ---------- */
     linear-gradient(
       135deg,
       #02070b 0%,
@@ -45,31 +179,322 @@ button {
 }
 
 /* =====================================================
-   BACKGROUND GLOW
+   GOLU STEPS + DOLLS  (middle layer)
+   One repeating doll tile, clipped into a stepped pyramid
+===================================================== */
+
+.app::before {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+
+  width: min(84vh, calc(100vw - var(--sb) - 40px));
+  height: 60vh;
+  left: calc(var(--sb) + (100vw - var(--sb)) / 2);
+  bottom: calc(42px + 2.5vh);
+  transform: translateX(-50%);
+
+  /* 5 stepped tiers (top is narrowest) */
+  clip-path: polygon(
+    32% 0, 68% 0,
+    68% 20%, 76% 20%,
+    76% 40%, 84% 40%,
+    84% 60%, 92% 60%,
+    92% 80%, 100% 80%,
+    100% 100%, 0 100%,
+    0 80%, 8% 80%,
+    8% 60%, 16% 60%,
+    16% 40%, 24% 40%,
+    24% 20%, 32% 20%
+  );
+
+  opacity: 0.82;
+  filter: blur(0.5px) saturate(0.95);
+
+  box-shadow:
+    inset 0 -9vh 8vh -4vh rgba(255, 130, 40, 0.16),
+    inset 0 6vh 8vh rgba(2, 8, 13, 0.5);
+
+  background-image:
+    /* cloth ledges under each doll row (gold border + violet cloth) */
+    linear-gradient(
+      180deg,
+      transparent 0 9.4vh,
+      rgba(232, 184, 96, 0.9) 9.4vh 9.75vh,
+      rgba(54, 40, 108, 0.92) 9.75vh 11.55vh,
+      rgba(232, 184, 96, 0.75) 11.55vh 11.8vh,
+      rgba(30, 22, 64, 0.95) 11.8vh 12vh,
+      transparent 12vh 21.4vh,
+      rgba(232, 184, 96, 0.9) 21.4vh 21.75vh,
+      rgba(54, 40, 108, 0.92) 21.75vh 23.55vh,
+      rgba(232, 184, 96, 0.75) 23.55vh 23.8vh,
+      rgba(30, 22, 64, 0.95) 23.8vh 24vh
+    ),
+
+    /* ---- row 1, left doll (magenta) ---- */
+    radial-gradient(ellipse 0.8vh 1vh at 3.1vh 2.7vh, rgba(255, 208, 112, 0.95) 0 70%, transparent 100%),
+    radial-gradient(circle at 3.1vh 3.75vh, rgba(226, 172, 122, 0.95) 0 0.78vh, transparent 0.92vh),
+    radial-gradient(ellipse 1.65vh 2.9vh at 3.1vh 6.6vh, rgba(190, 38, 100, 0.92) 0 88%, transparent 100%),
+    radial-gradient(ellipse 2.5vh 3.4vh at 3.1vh 5.4vh, rgba(255, 196, 96, 0.24) 0 85%, transparent 100%),
+
+    /* ---- row 1, right doll (saffron red) ---- */
+    radial-gradient(ellipse 0.8vh 1vh at 9.3vh 2.7vh, rgba(255, 208, 112, 0.95) 0 70%, transparent 100%),
+    radial-gradient(circle at 9.3vh 3.75vh, rgba(226, 172, 122, 0.95) 0 0.78vh, transparent 0.92vh),
+    radial-gradient(ellipse 1.65vh 2.9vh at 9.3vh 6.6vh, rgba(216, 88, 32, 0.92) 0 88%, transparent 100%),
+    radial-gradient(ellipse 2.5vh 3.4vh at 9.3vh 5.4vh, rgba(255, 196, 96, 0.24) 0 85%, transparent 100%),
+
+    /* ---- row 2, left doll (teal) ---- */
+    radial-gradient(ellipse 0.8vh 1vh at 3.1vh 14.7vh, rgba(255, 208, 112, 0.95) 0 70%, transparent 100%),
+    radial-gradient(circle at 3.1vh 15.75vh, rgba(226, 172, 122, 0.95) 0 0.78vh, transparent 0.92vh),
+    radial-gradient(ellipse 1.65vh 2.9vh at 3.1vh 18.6vh, rgba(18, 128, 144, 0.92) 0 88%, transparent 100%),
+    radial-gradient(ellipse 2.5vh 3.4vh at 3.1vh 17.4vh, rgba(255, 196, 96, 0.24) 0 85%, transparent 100%),
+
+    /* ---- row 2, right doll (magenta) ---- */
+    radial-gradient(ellipse 0.8vh 1vh at 9.3vh 14.7vh, rgba(255, 208, 112, 0.95) 0 70%, transparent 100%),
+    radial-gradient(circle at 9.3vh 15.75vh, rgba(226, 172, 122, 0.95) 0 0.78vh, transparent 0.92vh),
+    radial-gradient(ellipse 1.65vh 2.9vh at 9.3vh 18.6vh, rgba(190, 38, 100, 0.92) 0 88%, transparent 100%),
+    radial-gradient(ellipse 2.5vh 3.4vh at 9.3vh 17.4vh, rgba(255, 196, 96, 0.24) 0 85%, transparent 100%);
+
+  background-size: 12.4vh 24vh;
+  background-repeat: repeat;
+  background-position: 50% 100%;
+}
+
+/* =====================================================
+   FLOWER GARLANDS  (hang from the top, fade downward)
+===================================================== */
+
+.app::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+
+  top: 0;
+  left: var(--sb);
+  right: 0;
+  height: 36vh;
+
+  opacity: 0.6;
+
+  background:
+    /* thread */
+    linear-gradient(
+      90deg,
+      transparent calc(50% - 0.5px),
+      rgba(255, 205, 130, 0.28) calc(50% - 0.5px) calc(50% + 0.5px),
+      transparent calc(50% + 0.5px)
+    ) 0 0 / 53px 100% repeat-x,
+
+    /* marigold orange */
+    radial-gradient(circle at 50% 50%, #ffa21f 0 3.4px, #d9650b 4.2px, transparent 5px)
+      0 0 / 53px 11px repeat,
+
+    /* marigold yellow */
+    radial-gradient(circle at 50% 50%, #ffd23f 0 3px, #e0a117 3.8px, transparent 4.6px)
+      17px 5px / 71px 12px repeat,
+
+    /* pink */
+    radial-gradient(circle at 50% 50%, #ef5a98 0 3px, #b52563 3.8px, transparent 4.6px)
+      41px 3px / 97px 11px repeat,
+
+    /* jasmine white */
+    radial-gradient(circle at 50% 50%, #ffffff 0 2.4px, #d9e6e8 3px, transparent 3.6px)
+      9px 2px / 41px 9px repeat,
+
+    /* red rose */
+    radial-gradient(circle at 50% 50%, #d92d3f 0 3px, #8e1424 3.8px, transparent 4.6px)
+      70px 6px / 131px 12px repeat;
+
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    #000 0,
+    #000 40%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    180deg,
+    #000 0,
+    #000 40%,
+    transparent 100%
+  );
+}
+
+/* =====================================================
+   BRASS LAMPS (kuthuvilakku)
+   .glow-one = left lamp, .glow-two = right lamp
 ===================================================== */
 
 .glow {
   position: fixed;
-  border-radius: 50%;
-  filter: blur(100px);
+  bottom: 0;
+  width: 132px;
+  height: 56vh;
   pointer-events: none;
   z-index: 0;
+  border-radius: 0;
+  filter: none;
+  opacity: 0.9;
+  animation: lampFlicker 4.2s ease-in-out infinite;
 }
 
 .glow-one {
-  width: 320px;
-  height: 320px;
-  background: rgba(0, 191, 255, 0.11);
-  top: 5%;
-  left: -140px;
+  left: calc(var(--sb) + 18px);
 }
 
 .glow-two {
-  width: 380px;
-  height: 380px;
-  background: rgba(0, 140, 255, 0.09);
-  bottom: -180px;
-  right: -120px;
+  right: 14px;
+  animation-delay: -1.7s;
+}
+
+.glow-one,
+.glow-two {
+  background:
+    /* small flames - bottom tier (3) */
+    radial-gradient(ellipse 3.5px 8px at 16% 35.6%, #fff1b8 0, #ffb347 45%, rgba(255, 120, 30, 0) 100%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 3.5px 8px at 50% 35.6%, #fff1b8 0, #ffb347 45%, rgba(255, 120, 30, 0) 100%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 3.5px 8px at 84% 35.6%, #fff1b8 0, #ffb347 45%, rgba(255, 120, 30, 0) 100%) 0 0 / 100% 100% no-repeat,
+
+    /* small flames - middle tier (2) */
+    radial-gradient(ellipse 3.5px 8px at 32% 19.7%, #fff1b8 0, #ffb347 45%, rgba(255, 120, 30, 0) 100%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 3.5px 8px at 68% 19.7%, #fff1b8 0, #ffb347 45%, rgba(255, 120, 30, 0) 100%) 0 0 / 100% 100% no-repeat,
+
+    /* oil cups - top, middle (2), bottom (3) */
+    radial-gradient(ellipse 22px 5.5px at 50% 7%, rgba(214, 160, 70, 0.95) 0 60%, rgba(110, 72, 22, 0.95) 80%, transparent 100%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 17px 5px at 32% 22%, rgba(214, 160, 70, 0.95) 0 60%, rgba(110, 72, 22, 0.95) 80%, transparent 100%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 17px 5px at 68% 22%, rgba(214, 160, 70, 0.95) 0 60%, rgba(110, 72, 22, 0.95) 80%, transparent 100%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 17px 5px at 16% 38%, rgba(214, 160, 70, 0.95) 0 60%, rgba(110, 72, 22, 0.95) 80%, transparent 100%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 17px 5px at 50% 38%, rgba(214, 160, 70, 0.95) 0 60%, rgba(110, 72, 22, 0.95) 80%, transparent 100%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 17px 5px at 84% 38%, rgba(214, 160, 70, 0.95) 0 60%, rgba(110, 72, 22, 0.95) 80%, transparent 100%) 0 0 / 100% 100% no-repeat,
+
+    /* arms */
+    linear-gradient(180deg, rgba(247, 214, 128, 0.95) 0, rgba(214, 160, 70, 0.95) 40%, rgba(110, 72, 22, 0.95) 100%) 50% 22.4% / 36% 4px no-repeat,
+    linear-gradient(180deg, rgba(247, 214, 128, 0.95) 0, rgba(214, 160, 70, 0.95) 40%, rgba(110, 72, 22, 0.95) 100%) 50% 38.4% / 68% 4px no-repeat,
+
+    /* knobs on the stem */
+    radial-gradient(ellipse 9px 6px at 50% 55%, rgba(247, 214, 128, 0.95) 0, rgba(214, 160, 70, 0.95) 60%, transparent 100%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 11px 7px at 50% 70%, rgba(247, 214, 128, 0.95) 0, rgba(214, 160, 70, 0.95) 60%, transparent 100%) 0 0 / 100% 100% no-repeat,
+
+    /* stem */
+    linear-gradient(
+      90deg,
+      transparent 0 46.5%,
+      rgba(110, 72, 22, 0.95) 46.5% 48%,
+      rgba(247, 214, 128, 0.95) 48% 50%,
+      rgba(214, 160, 70, 0.95) 50% 52%,
+      rgba(110, 72, 22, 0.95) 52% 53.5%,
+      transparent 53.5%
+    ) 0 100% / 100% 93% no-repeat,
+
+    /* base + flare */
+    radial-gradient(ellipse 22px 38px at 50% 90%, rgba(214, 160, 70, 0.95), rgba(110, 72, 22, 0.95) 70%, transparent 100%) 0 0 / 100% 100% no-repeat,
+    radial-gradient(ellipse 56px 12px at 50% 99%, rgba(247, 214, 128, 0.95) 0 25%, rgba(214, 160, 70, 0.95) 55%, rgba(110, 72, 22, 0.95) 80%, transparent 100%) 0 0 / 100% 100% no-repeat,
+
+    /* soft warm light around the lamp */
+    radial-gradient(ellipse 80px 150px at 50% 25%, rgba(255, 160, 60, 0.18), transparent 70%) 0 0 / 100% 100% no-repeat;
+}
+
+/* main flame */
+.glow-one::before,
+.glow-two::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: calc(7% - 36px);
+  width: 15px;
+  height: 34px;
+  margin-left: -7px;
+  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
+  background:
+    radial-gradient(
+      ellipse at 50% 72%,
+      #fff6c8 0,
+      #ffd36a 30%,
+      #ff8a1f 62%,
+      transparent 74%
+    );
+  transform-origin: 50% 90%;
+  animation: flameFlicker 1.9s ease-in-out infinite;
+}
+
+/* flame halo */
+.glow-one::after,
+.glow-two::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: calc(7% - 130px);
+  width: 260px;
+  height: 260px;
+  margin-left: -130px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 170, 70, 0.42) 0,
+      rgba(255, 130, 40, 0.16) 38%,
+      transparent 70%
+    );
+  animation: haloPulse 3.6s ease-in-out infinite;
+}
+
+.glow-two::before {
+  animation-delay: -0.8s;
+}
+
+.glow-two::after {
+  animation-delay: -1.4s;
+}
+
+@keyframes lampFlicker {
+  0%,
+  100% {
+    filter: brightness(0.96);
+  }
+
+  25% {
+    filter: brightness(1.06);
+  }
+
+  50% {
+    filter: brightness(0.92);
+  }
+
+  75% {
+    filter: brightness(1.04);
+  }
+}
+
+@keyframes flameFlicker {
+  0%,
+  100% {
+    transform: scale(1, 1) rotate(-1deg);
+    opacity: 0.95;
+  }
+
+  30% {
+    transform: scale(0.92, 1.08) rotate(1.5deg);
+    opacity: 1;
+  }
+
+  60% {
+    transform: scale(1.06, 0.94) rotate(-1.5deg);
+    opacity: 0.85;
+  }
+}
+
+@keyframes haloPulse {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
 }
 
 /* =====================================================
@@ -1180,6 +1605,7 @@ footer {
     height: 45px;
   }
 }
+
 /* =====================================================
    AI ANSWER HEADER + LISTEN BUTTON
 ===================================================== */
@@ -1350,5 +1776,154 @@ footer {
 
   .answer-voice-button span:first-child {
     font-size: 16px;
+  }
+}
+
+/* =====================================================
+   GOLU x AI  -  READABILITY LAYERS
+   (scrim + particles live inside .main-area, behind content)
+===================================================== */
+
+.main-header {
+  position: relative;
+  z-index: 10;
+}
+
+/* dark scrim + vignette: centre darker, edges clear so lamps stay bright */
+.main-area::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 50%,
+      transparent 55%,
+      rgba(0, 0, 0, 0.45) 100%
+    ),
+    radial-gradient(
+      ellipse 60% 70% at 50% 40%,
+      rgba(2, 8, 13, 0.58) 0,
+      rgba(2, 8, 13, 0.38) 55%,
+      rgba(2, 8, 13, 0) 100%
+    );
+}
+
+/* slow cyan + gold particles */
+.main-area::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.4;
+
+  background:
+    radial-gradient(circle at 60px 80px, rgba(94, 220, 255, 0.9) 0 1.2px, transparent 2.2px),
+    radial-gradient(circle at 250px 190px, rgba(255, 200, 120, 0.8) 0 1.2px, transparent 2.2px),
+    radial-gradient(circle at 140px 300px, rgba(94, 220, 255, 0.7) 0 1.5px, transparent 2.6px),
+    radial-gradient(circle at 90px 60px, rgba(255, 190, 100, 0.8) 0 1.2px, transparent 2.2px),
+    radial-gradient(circle at 170px 170px, rgba(94, 220, 255, 0.7) 0 1px, transparent 2px);
+
+  background-size:
+    360px 360px,
+    360px 360px,
+    360px 360px,
+    240px 240px,
+    240px 240px;
+
+  animation: sparkDrift 70s linear infinite;
+}
+
+@keyframes sparkDrift {
+  from {
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+
+  to {
+    background-position:
+      0 -720px,
+      0 -720px,
+      0 -720px,
+      0 -720px,
+      0 -720px;
+  }
+}
+
+/* soft dark glass behind cards so text stays readable over the Golu.
+   Delete this block if you want the original fully transparent cards. */
+.answer-box,
+.visual-card {
+  background-color: rgba(3, 10, 16, 0.68);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.question-box {
+  background-color: rgba(3, 12, 18, 0.62);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.suggestions button {
+  background-color: rgba(3, 10, 16, 0.62);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.hero > p,
+.mic-text {
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.9);
+}
+
+.hero h1,
+.hero h2 {
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.65);
+}
+
+/* =====================================================
+   GOLU x AI  -  RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+  .app {
+    --sb: 220px;
+  }
+}
+
+@media (max-width: 700px) {
+  .app {
+    --sb: 0px;
+  }
+
+  .glow-one {
+    display: none;
+  }
+
+  .glow-two {
+    opacity: 0.5;
+  }
+
+  .app::after {
+    height: 26vh;
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow,
+  .glow-one::before,
+  .glow-two::before,
+  .glow-one::after,
+  .glow-two::after,
+  .main-area::after {
+    animation: none;
   }
 }

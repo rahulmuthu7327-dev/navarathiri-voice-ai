@@ -1,41 +1,42 @@
+
+App · CSS
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
+ 
 html,
 body,
 #root {
   width: 100%;
   min-height: 100%;
 }
-
+ 
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: #02070b;
   color: white;
 }
-
+ 
 button {
   font-family: inherit;
 }
-
+ 
 /* =====================================================
    APP  (far background layer)
-   Sidebar width variable is used by all background layers
-   so the Golu is centred in the MAIN area, not behind the sidebar
+   --sb = sidebar width, so the Golu is centred in the MAIN area
 ===================================================== */
-
+ 
 .app {
   --sb: 270px;
-
+ 
   width: 100%;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
   isolation: isolate;
-
+ 
   background:
     /* ---------- floor diya 1 ---------- */
     radial-gradient(
@@ -51,12 +52,12 @@ button {
       transparent 100%
     ),
     radial-gradient(
-      circle 70px at calc(50% + var(--sb) / 2 - 250px) calc(100% - 72px),
-      rgba(255, 160, 60, 0.34),
-      rgba(255, 130, 40, 0.1) 55%,
+      circle 80px at calc(50% + var(--sb) / 2 - 250px) calc(100% - 72px),
+      rgba(255, 165, 65, 0.5),
+      rgba(255, 130, 40, 0.16) 55%,
       transparent 100%
     ),
-
+ 
     /* ---------- floor diya 2 ---------- */
     radial-gradient(
       ellipse 4px 8px at calc(50% + var(--sb) / 2 - 95px) calc(100% - 70px),
@@ -71,12 +72,12 @@ button {
       transparent 100%
     ),
     radial-gradient(
-      circle 70px at calc(50% + var(--sb) / 2 - 95px) calc(100% - 72px),
-      rgba(255, 160, 60, 0.34),
-      rgba(255, 130, 40, 0.1) 55%,
+      circle 80px at calc(50% + var(--sb) / 2 - 95px) calc(100% - 72px),
+      rgba(255, 165, 65, 0.5),
+      rgba(255, 130, 40, 0.16) 55%,
       transparent 100%
     ),
-
+ 
     /* ---------- floor diya 3 ---------- */
     radial-gradient(
       ellipse 4px 8px at calc(50% + var(--sb) / 2 + 95px) calc(100% - 70px),
@@ -91,12 +92,12 @@ button {
       transparent 100%
     ),
     radial-gradient(
-      circle 70px at calc(50% + var(--sb) / 2 + 95px) calc(100% - 72px),
-      rgba(255, 160, 60, 0.34),
-      rgba(255, 130, 40, 0.1) 55%,
+      circle 80px at calc(50% + var(--sb) / 2 + 95px) calc(100% - 72px),
+      rgba(255, 165, 65, 0.5),
+      rgba(255, 130, 40, 0.16) 55%,
       transparent 100%
     ),
-
+ 
     /* ---------- floor diya 4 ---------- */
     radial-gradient(
       ellipse 4px 8px at calc(50% + var(--sb) / 2 + 250px) calc(100% - 70px),
@@ -111,64 +112,64 @@ button {
       transparent 100%
     ),
     radial-gradient(
-      circle 70px at calc(50% + var(--sb) / 2 + 250px) calc(100% - 72px),
-      rgba(255, 160, 60, 0.34),
-      rgba(255, 130, 40, 0.1) 55%,
+      circle 80px at calc(50% + var(--sb) / 2 + 250px) calc(100% - 72px),
+      rgba(255, 165, 65, 0.5),
+      rgba(255, 130, 40, 0.16) 55%,
       transparent 100%
     ),
-
+ 
     /* ---------- rangoli rings on the floor ---------- */
     radial-gradient(
       ellipse 340px 56px at calc(50% + var(--sb) / 2) calc(100% - 46px),
       rgba(255, 140, 50, 0) 0 18%,
-      rgba(255, 140, 50, 0.3) 19% 21%,
+      rgba(255, 140, 50, 0.42) 19% 21%,
       transparent 22% 34%,
-      rgba(230, 70, 50, 0.3) 35% 38%,
+      rgba(230, 70, 50, 0.42) 35% 38%,
       transparent 39% 52%,
-      rgba(255, 190, 80, 0.28) 53% 55%,
+      rgba(255, 190, 80, 0.4) 53% 55%,
       transparent 56% 66%,
-      rgba(230, 70, 50, 0.26) 67% 70%,
+      rgba(230, 70, 50, 0.36) 67% 70%,
       transparent 71% 82%,
-      rgba(255, 150, 60, 0.24) 83% 86%,
+      rgba(255, 150, 60, 0.34) 83% 86%,
       transparent 87%
     ),
     radial-gradient(
       ellipse 340px 56px at calc(50% + var(--sb) / 2) calc(100% - 46px),
-      rgba(255, 150, 60, 0.16),
+      rgba(255, 150, 60, 0.24),
       transparent 70%
     ),
-
+ 
     /* ---------- warm ambient light behind the Golu ---------- */
     radial-gradient(
-      ellipse 620px 380px at calc(50% + var(--sb) / 2) 76%,
-      rgba(255, 170, 80, 0.13),
+      ellipse 700px 420px at calc(50% + var(--sb) / 2) 76%,
+      rgba(255, 170, 80, 0.22),
       transparent 70%
     ),
-
-    /* ---------- cyan AI glows (kept from original theme) ---------- */
+ 
+    /* ---------- cyan AI glows ---------- */
     radial-gradient(
       circle at 65% 30%,
-      rgba(0, 191, 255, 0.09),
+      rgba(0, 191, 255, 0.1),
       transparent 32%
     ),
     radial-gradient(
       circle at 12% 12%,
-      rgba(0, 160, 220, 0.07),
+      rgba(0, 160, 220, 0.08),
       transparent 30%
     ),
     radial-gradient(
       circle at 95% 60%,
-      rgba(0, 150, 210, 0.06),
+      rgba(0, 150, 210, 0.07),
       transparent 28%
     ),
-
+ 
     /* ---------- warm floor tone ---------- */
     linear-gradient(
       180deg,
       transparent 60%,
-      rgba(60, 22, 10, 0.35) 100%
+      rgba(70, 26, 12, 0.4) 100%
     ),
-
+ 
     /* ---------- deep base ---------- */
     linear-gradient(
       135deg,
@@ -177,24 +178,24 @@ button {
       #010407 100%
     );
 }
-
+ 
 /* =====================================================
    GOLU STEPS + DOLLS  (middle layer)
    One repeating doll tile, clipped into a stepped pyramid
 ===================================================== */
-
+ 
 .app::before {
   content: "";
   position: fixed;
   z-index: 0;
   pointer-events: none;
-
+ 
   width: min(84vh, calc(100vw - var(--sb) - 40px));
   height: 60vh;
   left: calc(var(--sb) + (100vw - var(--sb)) / 2);
   bottom: calc(42px + 2.5vh);
   transform: translateX(-50%);
-
+ 
   /* 5 stepped tiers (top is narrowest) */
   clip-path: polygon(
     32% 0, 68% 0,
@@ -208,14 +209,15 @@ button {
     16% 40%, 24% 40%,
     24% 20%, 32% 20%
   );
-
-  opacity: 0.82;
-  filter: blur(0.5px) saturate(0.95);
-
+ 
+  /* BRIGHT */
+  opacity: 1;
+  filter: blur(0.3px) saturate(1.5) brightness(2);
+ 
   box-shadow:
-    inset 0 -9vh 8vh -4vh rgba(255, 130, 40, 0.16),
-    inset 0 6vh 8vh rgba(2, 8, 13, 0.5);
-
+    inset 0 -9vh 8vh -4vh rgba(255, 150, 60, 0.45),
+    inset 0 4vh 8vh rgba(2, 8, 13, 0.1);
+ 
   background-image:
     /* cloth ledges under each doll row (gold border + violet cloth) */
     linear-gradient(
@@ -231,53 +233,55 @@ button {
       rgba(232, 184, 96, 0.75) 23.55vh 23.8vh,
       rgba(30, 22, 64, 0.95) 23.8vh 24vh
     ),
-
+ 
     /* ---- row 1, left doll (magenta) ---- */
     radial-gradient(ellipse 0.8vh 1vh at 3.1vh 2.7vh, rgba(255, 208, 112, 0.95) 0 70%, transparent 100%),
     radial-gradient(circle at 3.1vh 3.75vh, rgba(226, 172, 122, 0.95) 0 0.78vh, transparent 0.92vh),
     radial-gradient(ellipse 1.65vh 2.9vh at 3.1vh 6.6vh, rgba(190, 38, 100, 0.92) 0 88%, transparent 100%),
     radial-gradient(ellipse 2.5vh 3.4vh at 3.1vh 5.4vh, rgba(255, 196, 96, 0.24) 0 85%, transparent 100%),
-
+ 
     /* ---- row 1, right doll (saffron red) ---- */
     radial-gradient(ellipse 0.8vh 1vh at 9.3vh 2.7vh, rgba(255, 208, 112, 0.95) 0 70%, transparent 100%),
     radial-gradient(circle at 9.3vh 3.75vh, rgba(226, 172, 122, 0.95) 0 0.78vh, transparent 0.92vh),
     radial-gradient(ellipse 1.65vh 2.9vh at 9.3vh 6.6vh, rgba(216, 88, 32, 0.92) 0 88%, transparent 100%),
     radial-gradient(ellipse 2.5vh 3.4vh at 9.3vh 5.4vh, rgba(255, 196, 96, 0.24) 0 85%, transparent 100%),
-
+ 
     /* ---- row 2, left doll (teal) ---- */
     radial-gradient(ellipse 0.8vh 1vh at 3.1vh 14.7vh, rgba(255, 208, 112, 0.95) 0 70%, transparent 100%),
     radial-gradient(circle at 3.1vh 15.75vh, rgba(226, 172, 122, 0.95) 0 0.78vh, transparent 0.92vh),
     radial-gradient(ellipse 1.65vh 2.9vh at 3.1vh 18.6vh, rgba(18, 128, 144, 0.92) 0 88%, transparent 100%),
     radial-gradient(ellipse 2.5vh 3.4vh at 3.1vh 17.4vh, rgba(255, 196, 96, 0.24) 0 85%, transparent 100%),
-
+ 
     /* ---- row 2, right doll (magenta) ---- */
     radial-gradient(ellipse 0.8vh 1vh at 9.3vh 14.7vh, rgba(255, 208, 112, 0.95) 0 70%, transparent 100%),
     radial-gradient(circle at 9.3vh 15.75vh, rgba(226, 172, 122, 0.95) 0 0.78vh, transparent 0.92vh),
     radial-gradient(ellipse 1.65vh 2.9vh at 9.3vh 18.6vh, rgba(190, 38, 100, 0.92) 0 88%, transparent 100%),
     radial-gradient(ellipse 2.5vh 3.4vh at 9.3vh 17.4vh, rgba(255, 196, 96, 0.24) 0 85%, transparent 100%);
-
+ 
   background-size: 12.4vh 24vh;
   background-repeat: repeat;
   background-position: 50% 100%;
 }
-
+ 
 /* =====================================================
    FLOWER GARLANDS  (hang from the top, fade downward)
 ===================================================== */
-
+ 
 .app::after {
   content: "";
   position: fixed;
   z-index: 0;
   pointer-events: none;
-
+ 
   top: 0;
   left: var(--sb);
   right: 0;
   height: 36vh;
-
-  opacity: 0.6;
-
+ 
+  /* BRIGHT */
+  opacity: 1;
+  filter: brightness(1.3) saturate(1.2);
+ 
   background:
     /* thread */
     linear-gradient(
@@ -286,27 +290,27 @@ button {
       rgba(255, 205, 130, 0.28) calc(50% - 0.5px) calc(50% + 0.5px),
       transparent calc(50% + 0.5px)
     ) 0 0 / 53px 100% repeat-x,
-
+ 
     /* marigold orange */
     radial-gradient(circle at 50% 50%, #ffa21f 0 3.4px, #d9650b 4.2px, transparent 5px)
       0 0 / 53px 11px repeat,
-
+ 
     /* marigold yellow */
     radial-gradient(circle at 50% 50%, #ffd23f 0 3px, #e0a117 3.8px, transparent 4.6px)
       17px 5px / 71px 12px repeat,
-
+ 
     /* pink */
     radial-gradient(circle at 50% 50%, #ef5a98 0 3px, #b52563 3.8px, transparent 4.6px)
       41px 3px / 97px 11px repeat,
-
+ 
     /* jasmine white */
     radial-gradient(circle at 50% 50%, #ffffff 0 2.4px, #d9e6e8 3px, transparent 3.6px)
       9px 2px / 41px 9px repeat,
-
+ 
     /* red rose */
     radial-gradient(circle at 50% 50%, #d92d3f 0 3px, #8e1424 3.8px, transparent 4.6px)
       70px 6px / 131px 12px repeat;
-
+ 
   -webkit-mask-image: linear-gradient(
     180deg,
     #000 0,
@@ -320,12 +324,12 @@ button {
     transparent 100%
   );
 }
-
+ 
 /* =====================================================
    BRASS LAMPS (kuthuvilakku)
    .glow-one = left lamp, .glow-two = right lamp
 ===================================================== */
-
+ 
 .glow {
   position: fixed;
   bottom: 0;
@@ -335,19 +339,19 @@ button {
   z-index: 0;
   border-radius: 0;
   filter: none;
-  opacity: 0.9;
+  opacity: 1;
   animation: lampFlicker 4.2s ease-in-out infinite;
 }
-
+ 
 .glow-one {
   left: calc(var(--sb) + 18px);
 }
-
+ 
 .glow-two {
   right: 14px;
   animation-delay: -1.7s;
 }
-
+ 
 .glow-one,
 .glow-two {
   background:
@@ -355,11 +359,11 @@ button {
     radial-gradient(ellipse 3.5px 8px at 16% 35.6%, #fff1b8 0, #ffb347 45%, rgba(255, 120, 30, 0) 100%) 0 0 / 100% 100% no-repeat,
     radial-gradient(ellipse 3.5px 8px at 50% 35.6%, #fff1b8 0, #ffb347 45%, rgba(255, 120, 30, 0) 100%) 0 0 / 100% 100% no-repeat,
     radial-gradient(ellipse 3.5px 8px at 84% 35.6%, #fff1b8 0, #ffb347 45%, rgba(255, 120, 30, 0) 100%) 0 0 / 100% 100% no-repeat,
-
+ 
     /* small flames - middle tier (2) */
     radial-gradient(ellipse 3.5px 8px at 32% 19.7%, #fff1b8 0, #ffb347 45%, rgba(255, 120, 30, 0) 100%) 0 0 / 100% 100% no-repeat,
     radial-gradient(ellipse 3.5px 8px at 68% 19.7%, #fff1b8 0, #ffb347 45%, rgba(255, 120, 30, 0) 100%) 0 0 / 100% 100% no-repeat,
-
+ 
     /* oil cups - top, middle (2), bottom (3) */
     radial-gradient(ellipse 22px 5.5px at 50% 7%, rgba(214, 160, 70, 0.95) 0 60%, rgba(110, 72, 22, 0.95) 80%, transparent 100%) 0 0 / 100% 100% no-repeat,
     radial-gradient(ellipse 17px 5px at 32% 22%, rgba(214, 160, 70, 0.95) 0 60%, rgba(110, 72, 22, 0.95) 80%, transparent 100%) 0 0 / 100% 100% no-repeat,
@@ -367,15 +371,15 @@ button {
     radial-gradient(ellipse 17px 5px at 16% 38%, rgba(214, 160, 70, 0.95) 0 60%, rgba(110, 72, 22, 0.95) 80%, transparent 100%) 0 0 / 100% 100% no-repeat,
     radial-gradient(ellipse 17px 5px at 50% 38%, rgba(214, 160, 70, 0.95) 0 60%, rgba(110, 72, 22, 0.95) 80%, transparent 100%) 0 0 / 100% 100% no-repeat,
     radial-gradient(ellipse 17px 5px at 84% 38%, rgba(214, 160, 70, 0.95) 0 60%, rgba(110, 72, 22, 0.95) 80%, transparent 100%) 0 0 / 100% 100% no-repeat,
-
+ 
     /* arms */
     linear-gradient(180deg, rgba(247, 214, 128, 0.95) 0, rgba(214, 160, 70, 0.95) 40%, rgba(110, 72, 22, 0.95) 100%) 50% 22.4% / 36% 4px no-repeat,
     linear-gradient(180deg, rgba(247, 214, 128, 0.95) 0, rgba(214, 160, 70, 0.95) 40%, rgba(110, 72, 22, 0.95) 100%) 50% 38.4% / 68% 4px no-repeat,
-
+ 
     /* knobs on the stem */
     radial-gradient(ellipse 9px 6px at 50% 55%, rgba(247, 214, 128, 0.95) 0, rgba(214, 160, 70, 0.95) 60%, transparent 100%) 0 0 / 100% 100% no-repeat,
     radial-gradient(ellipse 11px 7px at 50% 70%, rgba(247, 214, 128, 0.95) 0, rgba(214, 160, 70, 0.95) 60%, transparent 100%) 0 0 / 100% 100% no-repeat,
-
+ 
     /* stem */
     linear-gradient(
       90deg,
@@ -386,15 +390,15 @@ button {
       rgba(110, 72, 22, 0.95) 52% 53.5%,
       transparent 53.5%
     ) 0 100% / 100% 93% no-repeat,
-
+ 
     /* base + flare */
     radial-gradient(ellipse 22px 38px at 50% 90%, rgba(214, 160, 70, 0.95), rgba(110, 72, 22, 0.95) 70%, transparent 100%) 0 0 / 100% 100% no-repeat,
     radial-gradient(ellipse 56px 12px at 50% 99%, rgba(247, 214, 128, 0.95) 0 25%, rgba(214, 160, 70, 0.95) 55%, rgba(110, 72, 22, 0.95) 80%, transparent 100%) 0 0 / 100% 100% no-repeat,
-
+ 
     /* soft warm light around the lamp */
-    radial-gradient(ellipse 80px 150px at 50% 25%, rgba(255, 160, 60, 0.18), transparent 70%) 0 0 / 100% 100% no-repeat;
+    radial-gradient(ellipse 90px 160px at 50% 25%, rgba(255, 160, 60, 0.28), transparent 70%) 0 0 / 100% 100% no-repeat;
 }
-
+ 
 /* main flame */
 .glow-one::before,
 .glow-two::before {
@@ -417,8 +421,8 @@ button {
   transform-origin: 50% 90%;
   animation: flameFlicker 1.9s ease-in-out infinite;
 }
-
-/* flame halo */
+ 
+/* flame halo (BRIGHT) */
 .glow-one::after,
 .glow-two::after {
   content: "";
@@ -432,75 +436,75 @@ button {
   background:
     radial-gradient(
       circle,
-      rgba(255, 170, 70, 0.42) 0,
-      rgba(255, 130, 40, 0.16) 38%,
-      transparent 70%
+      rgba(255, 180, 80, 0.75) 0,
+      rgba(255, 140, 50, 0.32) 40%,
+      transparent 72%
     );
   animation: haloPulse 3.6s ease-in-out infinite;
 }
-
+ 
 .glow-two::before {
   animation-delay: -0.8s;
 }
-
+ 
 .glow-two::after {
   animation-delay: -1.4s;
 }
-
+ 
 @keyframes lampFlicker {
   0%,
   100% {
     filter: brightness(0.96);
   }
-
+ 
   25% {
     filter: brightness(1.06);
   }
-
+ 
   50% {
     filter: brightness(0.92);
   }
-
+ 
   75% {
     filter: brightness(1.04);
   }
 }
-
+ 
 @keyframes flameFlicker {
   0%,
   100% {
     transform: scale(1, 1) rotate(-1deg);
     opacity: 0.95;
   }
-
+ 
   30% {
     transform: scale(0.92, 1.08) rotate(1.5deg);
     opacity: 1;
   }
-
+ 
   60% {
     transform: scale(1.06, 0.94) rotate(-1.5deg);
     opacity: 0.85;
   }
 }
-
+ 
 @keyframes haloPulse {
   0%,
   100% {
     opacity: 0.8;
     transform: scale(1);
   }
-
+ 
   50% {
     opacity: 1;
     transform: scale(1.06);
   }
 }
-
+ 
 /* =====================================================
    MAIN APP LAYOUT
 ===================================================== */
-
+ 
 .app-layout {
   width: 100%;
   height: 100vh;
@@ -510,11 +514,11 @@ button {
   position: relative;
   z-index: 2;
 }
-
+ 
 /* =====================================================
    LEFT SIDEBAR
 ===================================================== */
-
+ 
 .history-sidebar {
   height: 100vh;
   display: flex;
@@ -531,11 +535,11 @@ button {
   position: relative;
   z-index: 10;
 }
-
+ 
 /* =====================================================
    SIDEBAR BRAND
 ===================================================== */
-
+ 
 .sidebar-brand {
   display: flex;
   align-items: center;
@@ -543,7 +547,7 @@ button {
   padding: 4px 8px 24px;
   border-bottom: 1px solid rgba(120, 220, 255, 0.07);
 }
-
+ 
 .sidebar-logo-icon {
   width: 40px;
   height: 40px;
@@ -558,24 +562,24 @@ button {
   border: 1px solid rgba(94, 220, 255, 0.15);
   box-shadow: 0 0 25px rgba(94, 220, 255, 0.06);
 }
-
+ 
 .sidebar-brand h2 {
   color: #e9fbff;
   font-size: 15px;
   font-weight: 700;
   margin-bottom: 4px;
 }
-
+ 
 .sidebar-brand span {
   color: #5e717c;
   font-size: 9px;
   letter-spacing: 0.4px;
 }
-
+ 
 /* =====================================================
    HISTORY HEADING
 ===================================================== */
-
+ 
 .history-heading {
   display: flex;
   align-items: center;
@@ -586,7 +590,7 @@ button {
   font-weight: 700;
   letter-spacing: 1.4px;
 }
-
+ 
 .history-count {
   min-width: 22px;
   height: 20px;
@@ -600,35 +604,35 @@ button {
   border: 1px solid rgba(94, 220, 255, 0.1);
   font-size: 10px;
 }
-
+ 
 /* =====================================================
    HISTORY LIST
 ===================================================== */
-
+ 
 .history-list {
   flex: 1;
   min-height: 0;
   overflow-y: auto;
   padding-right: 3px;
 }
-
+ 
 .history-list::-webkit-scrollbar {
   width: 4px;
 }
-
+ 
 .history-list::-webkit-scrollbar-track {
   background: transparent;
 }
-
+ 
 .history-list::-webkit-scrollbar-thumb {
   background: rgba(94, 220, 255, 0.12);
   border-radius: 10px;
 }
-
+ 
 /* =====================================================
    EMPTY HISTORY
 ===================================================== */
-
+ 
 .empty-history {
   margin: 25px 5px;
   padding: 22px 12px;
@@ -637,23 +641,23 @@ button {
   border: 1px dashed rgba(120, 220, 255, 0.09);
   background: rgba(255, 255, 255, 0.012);
 }
-
+ 
 .empty-history-icon {
   font-size: 25px;
   margin-bottom: 10px;
   opacity: 0.7;
 }
-
+ 
 .empty-history p {
   color: #566871;
   font-size: 11px;
   line-height: 1.6;
 }
-
+ 
 /* =====================================================
    HISTORY ITEM
 ===================================================== */
-
+ 
 .history-item {
   width: 100%;
   min-height: 48px;
@@ -670,13 +674,13 @@ button {
   cursor: pointer;
   transition: 0.22s ease;
 }
-
+ 
 .history-item:hover {
   background: rgba(94, 220, 255, 0.045);
   border-color: rgba(94, 220, 255, 0.08);
   color: #c9eaf1;
 }
-
+ 
 .history-item.history-active {
   background:
     linear-gradient(
@@ -690,7 +694,7 @@ button {
     inset 3px 0 0 #5edcff,
     0 8px 25px rgba(0, 0, 0, 0.12);
 }
-
+ 
 .history-item-icon {
   width: 27px;
   height: 27px;
@@ -702,7 +706,7 @@ button {
   background: rgba(255, 255, 255, 0.025);
   font-size: 13px;
 }
-
+ 
 .history-item-text {
   flex: 1;
   overflow: hidden;
@@ -711,20 +715,20 @@ button {
   font-size: 11px;
   line-height: 1.4;
 }
-
+ 
 /* =====================================================
    SIDEBAR BOTTOM
 ===================================================== */
-
+ 
 .sidebar-bottom {
   padding-top: 15px;
   border-top: 1px solid rgba(120, 220, 255, 0.07);
 }
-
+ 
 /* =====================================================
    CLEAR HISTORY
 ===================================================== */
-
+ 
 .clear-history {
   width: 100%;
   display: flex;
@@ -740,22 +744,22 @@ button {
   cursor: pointer;
   transition: 0.25s ease;
 }
-
+ 
 .clear-history:hover:not(:disabled) {
   color: #ff8d8d;
   border-color: rgba(255, 120, 120, 0.2);
   background: rgba(255, 100, 100, 0.035);
 }
-
+ 
 .clear-history:disabled {
   opacity: 0.35;
   cursor: not-allowed;
 }
-
+ 
 /* =====================================================
    SIDEBAR LANGUAGE
 ===================================================== */
-
+ 
 .sidebar-language {
   display: flex;
   justify-content: center;
@@ -765,7 +769,7 @@ button {
   color: #42545e;
   font-size: 11px;
 }
-
+ 
 .sidebar-language button {
   border: none;
   background: transparent;
@@ -775,20 +779,20 @@ button {
   font-size: 11px;
   transition: 0.2s ease;
 }
-
+ 
 .sidebar-language button:hover {
   color: #8be8ff;
 }
-
+ 
 .sidebar-language .sidebar-lang-active {
   color: #65ddff;
   font-weight: 700;
 }
-
+ 
 /* =====================================================
    MAIN AREA
 ===================================================== */
-
+ 
 .main-area {
   min-width: 0;
   height: 100vh;
@@ -798,11 +802,11 @@ button {
   position: relative;
   z-index: 2;
 }
-
+ 
 /* =====================================================
    MAIN HEADER
 ===================================================== */
-
+ 
 .main-header {
   height: 76px;
   flex-shrink: 0;
@@ -814,7 +818,7 @@ button {
   background: rgba(2, 8, 13, 0.35);
   backdrop-filter: blur(15px);
 }
-
+ 
 .main-header-label {
   display: block;
   color: #5edcff;
@@ -823,13 +827,13 @@ button {
   letter-spacing: 1.8px;
   margin-bottom: 4px;
 }
-
+ 
 .main-header h1 {
   color: #e8faff;
   font-size: 18px;
   font-weight: 700;
 }
-
+ 
 .header-status {
   display: flex;
   align-items: center;
@@ -841,7 +845,7 @@ button {
   color: #71838d;
   font-size: 10px;
 }
-
+ 
 .status-dot {
   width: 6px;
   height: 6px;
@@ -849,11 +853,11 @@ button {
   background: #5edcff;
   box-shadow: 0 0 10px rgba(94, 220, 255, 0.8);
 }
-
+ 
 /* =====================================================
    MAIN
 ===================================================== */
-
+ 
 .main {
   flex: 1;
   min-height: 0;
@@ -865,24 +869,24 @@ button {
   padding: 45px 35px 65px;
   position: relative;
 }
-
+ 
 .main::-webkit-scrollbar {
   width: 6px;
 }
-
+ 
 .main::-webkit-scrollbar-track {
   background: transparent;
 }
-
+ 
 .main::-webkit-scrollbar-thumb {
   background: rgba(94, 220, 255, 0.1);
   border-radius: 10px;
 }
-
+ 
 /* =====================================================
    HERO / CENTER AREA
 ===================================================== */
-
+ 
 .hero {
   width: 100%;
   max-width: 900px;
@@ -890,11 +894,11 @@ button {
   position: relative;
   z-index: 2;
 }
-
+ 
 /* =====================================================
    BADGE
 ===================================================== */
-
+ 
 .badge {
   display: inline-block;
   color: #65ddff;
@@ -906,11 +910,11 @@ button {
   letter-spacing: 1.5px;
   margin-bottom: 22px;
 }
-
+ 
 /* =====================================================
    HERO TITLE
 ===================================================== */
-
+ 
 .hero h1,
 .hero h2 {
   font-size: clamp(35px, 5vw, 62px);
@@ -918,26 +922,28 @@ button {
   letter-spacing: -2.5px;
   font-weight: 700;
   color: #f2fcff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.65);
 }
-
+ 
 .hero h1 span,
 .hero h2 span {
   color: #5edcff;
   text-shadow: 0 0 35px rgba(94, 220, 255, 0.25);
 }
-
+ 
 .hero > p {
   max-width: 620px;
   margin: 20px auto 32px;
   color: #83939e;
   font-size: 15px;
   line-height: 1.7;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.9);
 }
-
+ 
 /* =====================================================
    CONVERSATION
 ===================================================== */
-
+ 
 .conversation {
   width: 100%;
   max-width: 850px;
@@ -947,30 +953,30 @@ button {
   gap: 30px;
   text-align: left;
 }
-
+ 
 .conversation-turn {
   display: flex;
   flex-direction: column;
   gap: 14px;
   animation: conversationIn 0.45s ease;
 }
-
+ 
 @keyframes conversationIn {
   from {
     opacity: 0;
     transform: translateY(15px);
   }
-
+ 
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
+ 
 /* =====================================================
    QUESTION BOX
 ===================================================== */
-
+ 
 .question-box {
   align-self: flex-end;
   max-width: 75%;
@@ -981,24 +987,27 @@ button {
   border-radius: 16px 16px 4px 16px;
   border: 1px solid rgba(94, 220, 255, 0.14);
   background: rgba(94, 220, 255, 0.045);
+  background-color: rgba(3, 12, 18, 0.45);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   color: #d9f8ff;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
 }
-
+ 
 .question-box span {
   color: #5edcff;
   font-size: 16px;
 }
-
+ 
 .question-box p {
   line-height: 1.6;
   font-size: 14px;
 }
-
+ 
 /* =====================================================
    ANSWER BOX
 ===================================================== */
-
+ 
 .answer-box {
   width: 100%;
   padding: 22px 24px;
@@ -1010,11 +1019,14 @@ button {
       rgba(255, 255, 255, 0.035),
       rgba(255, 255, 255, 0.012)
     );
+  background-color: rgba(3, 10, 16, 0.5);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   box-shadow:
     0 15px 45px rgba(0, 0, 0, 0.25),
     inset 0 1px 0 rgba(255, 255, 255, 0.025);
 }
-
+ 
 .answer-title {
   color: #64ddff;
   font-size: 13px;
@@ -1022,23 +1034,23 @@ button {
   margin-bottom: 13px;
   letter-spacing: 0.4px;
 }
-
+ 
 .answer-box p {
   color: #c3d0d6;
   font-size: 15px;
   line-height: 1.8;
 }
-
+ 
 /* =====================================================
    SPEAKING
 ===================================================== */
-
+ 
 .speaking-status {
   margin-top: 14px;
   color: #65ddff;
   font-size: 12px;
 }
-
+ 
 .stop-speaking {
   margin-top: 12px;
   padding: 8px 13px;
@@ -1048,16 +1060,16 @@ button {
   color: #9aaab2;
   cursor: pointer;
 }
-
+ 
 .stop-speaking:hover {
   color: #65ddff;
   border-color: rgba(101, 221, 255, 0.25);
 }
-
+ 
 /* =====================================================
    VISUAL / CHART CARD
 ===================================================== */
-
+ 
 .visual-card {
   width: 100%;
   border: 1px solid rgba(94, 220, 255, 0.1);
@@ -1070,9 +1082,13 @@ button {
       transparent 35%
     ),
     rgba(255, 255, 255, 0.018);
+  /* UPDATED: darker card so text is clearer */
+  background-color: rgba(3, 10, 16, 0.8);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
 }
-
+ 
 .visual-header {
   display: flex;
   align-items: center;
@@ -1083,13 +1099,13 @@ button {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
+ 
 .visual-main {
   display: flex;
   align-items: center;
   gap: 15px;
 }
-
+ 
 .visual-icon {
   width: 52px;
   height: 52px;
@@ -1102,28 +1118,28 @@ button {
   border: 1px solid rgba(94, 220, 255, 0.12);
   font-size: 25px;
 }
-
+ 
 .visual-main h3 {
   font-size: 20px;
   margin-bottom: 5px;
 }
-
+ 
 .visual-main p {
   color: #71818a;
   font-size: 12px;
 }
-
+ 
 /* =====================================================
    9 DAY NAVARATHIRI GRID
 ===================================================== */
-
+ 
 .nine-day-preview {
   margin-top: 22px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
-
+ 
 .day-item {
   min-height: 175px;
   padding: 16px;
@@ -1132,13 +1148,13 @@ button {
   background: rgba(255, 255, 255, 0.018);
   transition: 0.25s ease;
 }
-
+ 
 .day-item:hover {
   transform: translateY(-3px);
   border-color: rgba(94, 220, 255, 0.25);
   background: rgba(94, 220, 255, 0.035);
 }
-
+ 
 .day-item > span {
   display: inline-flex;
   align-items: center;
@@ -1152,31 +1168,31 @@ button {
   font-size: 12px;
   margin-bottom: 10px;
 }
-
+ 
 .day-item strong {
   display: block;
   color: #e2faff;
   font-size: 14px;
   margin-bottom: 5px;
 }
-
+ 
 .day-item small {
   display: block;
   color: #5edcff;
   font-size: 11px;
   margin-bottom: 8px;
 }
-
+ 
 .day-item p {
   color: #81919a;
   font-size: 11px;
   line-height: 1.55;
 }
-
+ 
 /* =====================================================
    SINGLE NAVARATHIRI DAY
 ===================================================== */
-
+ 
 .single-day-visual {
   display: flex;
   align-items: flex-start;
@@ -1186,7 +1202,7 @@ button {
   background: rgba(94, 220, 255, 0.025);
   border: 1px solid rgba(94, 220, 255, 0.1);
 }
-
+ 
 .single-day-number {
   min-width: 70px;
   height: 70px;
@@ -1200,36 +1216,40 @@ button {
   background: rgba(94, 220, 255, 0.06);
   border: 1px solid rgba(94, 220, 255, 0.15);
 }
-
+ 
 .single-day-content {
   flex: 1;
   text-align: left;
 }
-
+ 
+/* UPDATED: brighter label */
 .single-day-label {
-  color: #6a808b;
+  color: #a9bec8;
   font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
+ 
 .single-day-content h3 {
   margin-top: 6px;
   font-size: 23px;
   color: #e6fbff;
 }
-
+ 
+/* UPDATED: brighter, slightly bigger description */
 .single-day-content p {
   margin-top: 7px;
-  color: #809099;
-  font-size: 12px;
-  line-height: 1.6;
+  color: #d4e2e8;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.7;
 }
-
+ 
 /* =====================================================
    DAY SIGNIFICANCE
 ===================================================== */
-
+ 
 .day-significance {
   margin-top: 16px;
   padding: 14px 16px;
@@ -1237,7 +1257,7 @@ button {
   background: rgba(94, 220, 255, 0.035);
   border: 1px solid rgba(94, 220, 255, 0.08);
 }
-
+ 
 .day-significance span {
   display: block;
   color: #65ddff;
@@ -1245,24 +1265,24 @@ button {
   font-weight: 700;
   margin-bottom: 7px;
 }
-
+ 
 .day-significance p {
   margin-top: 0;
   color: #b8c9d0;
   font-size: 13px;
   line-height: 1.7;
 }
-
+ 
 /* =====================================================
    EPIC VISUAL
 ===================================================== */
-
+ 
 .epic-visual {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-
+ 
 .epic-icon {
   min-width: 58px;
   height: 58px;
@@ -1274,23 +1294,23 @@ button {
   border: 1px solid rgba(94, 220, 255, 0.12);
   font-size: 28px;
 }
-
+ 
 .epic-content {
   width: 100%;
 }
-
+ 
 .epic-content h3 {
   margin-bottom: 15px;
   font-size: 20px;
 }
-
+ 
 .epic-flow {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 9px;
 }
-
+ 
 .epic-flow span {
   padding: 8px 11px;
   border-radius: 9px;
@@ -1299,52 +1319,52 @@ button {
   color: #b9c9cf;
   font-size: 11px;
 }
-
+ 
 .epic-flow b {
   color: #5edcff;
   font-size: 12px;
 }
-
+ 
 .epic-content p {
   margin-top: 13px;
   color: #75868f;
   font-size: 12px;
 }
-
+ 
 /* =====================================================
    TOPIC STATS
 ===================================================== */
-
+ 
 .visual-stats {
   margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
-
+ 
 .stat {
   padding: 15px;
   border-radius: 13px;
   border: 1px solid rgba(120, 220, 255, 0.07);
   background: rgba(255, 255, 255, 0.018);
 }
-
+ 
 .stat strong {
   display: block;
   color: #dffaff;
   font-size: 15px;
   margin-bottom: 5px;
 }
-
+ 
 .stat span {
   color: #657780;
   font-size: 11px;
 }
-
+ 
 /* =====================================================
    MICROPHONE
 ===================================================== */
-
+ 
 .mic-button {
   width: 100px;
   height: 100px;
@@ -1359,7 +1379,7 @@ button {
     0 0 50px rgba(94, 220, 255, 0.12);
   transition: 0.3s ease;
 }
-
+ 
 .mic-button:hover {
   transform: scale(1.08);
   background: rgba(94, 220, 255, 0.12);
@@ -1367,76 +1387,96 @@ button {
     0 0 0 16px rgba(94, 220, 255, 0.035),
     0 0 70px rgba(94, 220, 255, 0.2);
 }
-
+ 
 .mic-button.listening {
   animation: micPulse 1.3s infinite;
 }
-
+ 
 @keyframes micPulse {
   0% {
     box-shadow:
       0 0 0 10px rgba(94, 220, 255, 0.03),
       0 0 35px rgba(94, 220, 255, 0.15);
   }
-
+ 
   50% {
     box-shadow:
       0 0 0 22px rgba(94, 220, 255, 0.06),
       0 0 80px rgba(94, 220, 255, 0.3);
   }
-
+ 
   100% {
     box-shadow:
       0 0 0 10px rgba(94, 220, 255, 0.03),
       0 0 35px rgba(94, 220, 255, 0.15);
   }
 }
-
+ 
 .mic-icon {
   font-size: 35px;
 }
-
+ 
+/* UPDATED: mic text as a clear dark pill */
 .mic-text {
+  display: inline-block;
   margin-top: 18px;
-  color: #61717b;
+  padding: 7px 16px;
+  border-radius: 20px;
+  background: rgba(4, 12, 20, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(94, 220, 255, 0.3);
+  color: #e6faff;
   font-size: 13px;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 }
-
+ 
 /* =====================================================
-   SUGGESTIONS
+   SUGGESTIONS  (UPDATED: bold + clearly visible)
 ===================================================== */
-
+ 
 .suggestions {
   margin: 40px auto 10px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 9px;
+  gap: 10px;
   max-width: 850px;
 }
-
+ 
 .suggestions button {
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(120, 220, 255, 0.1);
-  color: #9eabb2;
-  padding: 11px 14px;
+  background: rgba(4, 12, 20, 0.88);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 200, 110, 0.35);
+  color: #ffffff;
+  padding: 11px 16px;
   border-radius: 12px;
   cursor: pointer;
-  transition: 0.25s;
-  font-size: 12px;
+  transition: 0.25s ease;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95);
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
-
+ 
 .suggestions button:hover {
-  color: #6ee4ff;
-  border-color: rgba(110, 228, 255, 0.3);
-  background: rgba(110, 228, 255, 0.05);
+  color: #1a0f00;
+  text-shadow: none;
+  border-color: #ffd27a;
+  background: linear-gradient(135deg, #ffd27a, #ffa53d);
+  box-shadow: 0 6px 20px rgba(255, 165, 60, 0.45);
   transform: translateY(-2px);
 }
-
+ 
 /* =====================================================
    FOOTER
 ===================================================== */
-
+ 
 footer {
   height: 42px;
   flex-shrink: 0;
@@ -1449,39 +1489,39 @@ footer {
   border-top: 1px solid rgba(120, 220, 255, 0.06);
   background: rgba(2, 7, 11, 0.4);
 }
-
+ 
 /* =====================================================
    MOBILE
 ===================================================== */
-
+ 
 @media (max-width: 900px) {
   .app-layout {
     grid-template-columns: 220px minmax(0, 1fr);
   }
-
+ 
   .history-sidebar {
     padding-left: 12px;
     padding-right: 12px;
   }
-
+ 
   .main-header {
     padding: 0 25px;
   }
-
+ 
   .main {
     padding-left: 22px;
     padding-right: 22px;
   }
-
+ 
   .nine-day-preview {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
+ 
 /* =====================================================
    SMALL MOBILE
 ===================================================== */
-
+ 
 @media (max-width: 700px) {
   .app-layout {
     height: auto;
@@ -1489,7 +1529,7 @@ footer {
     display: flex;
     flex-direction: column;
   }
-
+ 
   .history-sidebar {
     width: 100%;
     height: auto;
@@ -1498,118 +1538,118 @@ footer {
     border-right: none;
     border-bottom: 1px solid rgba(120, 220, 255, 0.09);
   }
-
+ 
   .sidebar-brand {
     padding-bottom: 15px;
   }
-
+ 
   .history-heading {
     padding-top: 15px;
   }
-
+ 
   .history-list {
     max-height: 100px;
   }
-
+ 
   .sidebar-bottom {
     margin-top: 10px;
   }
-
+ 
   .main-area {
     height: auto;
     min-height: calc(100vh - 260px);
     overflow: visible;
   }
-
+ 
   .main-header {
     height: 68px;
     padding: 0 18px;
   }
-
+ 
   .main-header h1 {
     font-size: 16px;
   }
-
+ 
   .header-status {
     display: none;
   }
-
+ 
   .main {
     min-height: auto;
     overflow: visible;
     padding: 35px 14px 55px;
   }
-
+ 
   .hero h1,
   .hero h2 {
     font-size: clamp(32px, 10vw, 48px);
     letter-spacing: -2px;
   }
-
+ 
   .hero > p {
     font-size: 14px;
   }
-
+ 
   .conversation {
     margin-top: 25px;
   }
-
+ 
   .question-box {
     max-width: 90%;
   }
-
+ 
   .answer-box {
     padding: 18px;
   }
-
+ 
   .nine-day-preview {
     grid-template-columns: 1fr;
   }
-
+ 
   .day-item {
     min-height: auto;
   }
-
+ 
   .single-day-visual {
     align-items: flex-start;
     flex-direction: column;
   }
-
+ 
   .epic-visual {
     align-items: flex-start;
     flex-direction: column;
   }
-
+ 
   .epic-flow {
     flex-direction: column;
     align-items: flex-start;
   }
-
+ 
   .epic-flow b {
     transform: rotate(90deg);
   }
-
+ 
   .visual-stats {
     grid-template-columns: 1fr;
   }
-
+ 
   .suggestions {
     padding: 0 5px;
   }
-
+ 
   .suggestions button {
     width: 100%;
   }
-
+ 
   footer {
     height: 45px;
   }
 }
-
+ 
 /* =====================================================
    AI ANSWER HEADER + LISTEN BUTTON
 ===================================================== */
-
+ 
 .answer-top-row {
   width: 100%;
   display: flex;
@@ -1618,45 +1658,45 @@ footer {
   gap: 15px;
   margin-bottom: 13px;
 }
-
+ 
 .answer-top-row .answer-title {
   margin-bottom: 0;
 }
-
+ 
 /* =====================================================
    ANSWER LISTEN BUTTON
 ===================================================== */
-
+ 
 .answer-voice-button {
   flex-shrink: 0;
-
+ 
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
+ 
   gap: 7px;
-
+ 
   min-width: 82px;
-
+ 
   padding: 8px 12px;
-
+ 
   border-radius: 10px;
-
+ 
   border: 1px solid rgba(100, 221, 255, 0.16);
-
+ 
   background: rgba(100, 221, 255, 0.045);
-
+ 
   color: #78dff7;
-
+ 
   cursor: pointer;
-
+ 
   font-family: inherit;
-
+ 
   font-size: 11px;
   font-weight: 700;
-
+ 
   letter-spacing: 0.2px;
-
+ 
   transition:
     background 0.25s ease,
     border-color 0.25s ease,
@@ -1664,153 +1704,161 @@ footer {
     transform 0.2s ease,
     color 0.25s ease;
 }
-
+ 
 .answer-voice-button:hover {
   background: rgba(100, 221, 255, 0.09);
-
+ 
   border-color: rgba(100, 221, 255, 0.34);
-
+ 
   box-shadow:
     0 0 18px rgba(100, 221, 255, 0.08);
-
+ 
   transform: translateY(-1px);
 }
-
+ 
 .answer-voice-button:active {
   transform: scale(0.96);
 }
-
+ 
 .answer-voice-button span:first-child {
   font-size: 14px;
   line-height: 1;
 }
-
+ 
 .answer-voice-button span:last-child {
   line-height: 1;
 }
-
+ 
 /* =====================================================
    PLAYING STATE
 ===================================================== */
-
+ 
 .answer-voice-button.voice-playing {
   background: rgba(100, 221, 255, 0.1);
-
+ 
   border-color: rgba(100, 221, 255, 0.4);
-
+ 
   color: #9aeaff;
-
+ 
   box-shadow:
     0 0 20px rgba(100, 221, 255, 0.1);
-
+ 
   animation: voiceButtonPulse 1.4s ease-in-out infinite;
 }
-
+ 
 @keyframes voiceButtonPulse {
   0%,
   100% {
     box-shadow:
       0 0 10px rgba(100, 221, 255, 0.06);
   }
-
+ 
   50% {
     box-shadow:
       0 0 22px rgba(100, 221, 255, 0.18);
   }
 }
-
+ 
 /* =====================================================
    SPEAKING STATUS
 ===================================================== */
-
+ 
 .speaking-status {
   margin-top: 14px;
-
+ 
   display: inline-flex;
   align-items: center;
-
+ 
   padding: 7px 11px;
-
+ 
   border-radius: 8px;
-
+ 
   border: 1px solid rgba(100, 221, 255, 0.12);
-
+ 
   background: rgba(100, 221, 255, 0.035);
-
+ 
   color: #75dcf7;
-
+ 
   font-size: 11px;
   font-weight: 600;
-
+ 
   animation: speakingStatusPulse 1.5s ease-in-out infinite;
 }
-
+ 
 @keyframes speakingStatusPulse {
   0%,
   100% {
     opacity: 0.65;
   }
-
+ 
   50% {
     opacity: 1;
   }
 }
-
+ 
 /* =====================================================
    MOBILE
 ===================================================== */
-
+ 
 @media (max-width: 600px) {
   .answer-top-row {
     gap: 10px;
   }
-
+ 
   .answer-voice-button {
     min-width: auto;
     padding: 8px 10px;
   }
-
+ 
   .answer-voice-button span:last-child {
     display: none;
   }
-
+ 
   .answer-voice-button span:first-child {
     font-size: 16px;
   }
 }
-
+ 
 /* =====================================================
-   GOLU x AI  -  READABILITY LAYERS
-   (scrim + particles live inside .main-area, behind content)
+   GOLU x AI  -  LIGHT WASH + PARTICLES  (inside .main-area, behind content)
 ===================================================== */
-
+ 
 .main-header {
   position: relative;
   z-index: 10;
 }
-
-/* dark scrim + vignette: centre darker, edges clear so lamps stay bright */
+ 
+/* light wash: warm glow from the floor, soft blue lift, very light scrim */
 .main-area::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-
+ 
   background:
     radial-gradient(
-      ellipse at 50% 50%,
-      transparent 55%,
-      rgba(0, 0, 0, 0.45) 100%
+      ellipse 75% 55% at 50% 100%,
+      rgba(255, 170, 80, 0.3),
+      transparent 70%
     ),
     radial-gradient(
-      ellipse 60% 70% at 50% 40%,
-      rgba(2, 8, 13, 0.58) 0,
-      rgba(2, 8, 13, 0.38) 55%,
+      ellipse 80% 60% at 50% 38%,
+      rgba(30, 85, 125, 0.28),
+      transparent 75%
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 50% 0%,
+      rgba(0, 191, 255, 0.14),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 55% 60% at 50% 40%,
+      rgba(2, 8, 13, 0.18) 0,
       rgba(2, 8, 13, 0) 100%
     );
 }
-
+ 
 /* slow cyan + gold particles */
 .main-area::after {
   content: "";
@@ -1818,25 +1866,25 @@ footer {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.4;
-
+  opacity: 0.85;
+ 
   background:
     radial-gradient(circle at 60px 80px, rgba(94, 220, 255, 0.9) 0 1.2px, transparent 2.2px),
     radial-gradient(circle at 250px 190px, rgba(255, 200, 120, 0.8) 0 1.2px, transparent 2.2px),
     radial-gradient(circle at 140px 300px, rgba(94, 220, 255, 0.7) 0 1.5px, transparent 2.6px),
     radial-gradient(circle at 90px 60px, rgba(255, 190, 100, 0.8) 0 1.2px, transparent 2.2px),
     radial-gradient(circle at 170px 170px, rgba(94, 220, 255, 0.7) 0 1px, transparent 2px);
-
+ 
   background-size:
     360px 360px,
     360px 360px,
     360px 360px,
     240px 240px,
     240px 240px;
-
+ 
   animation: sparkDrift 70s linear infinite;
 }
-
+ 
 @keyframes sparkDrift {
   from {
     background-position:
@@ -1846,7 +1894,7 @@ footer {
       0 0,
       0 0;
   }
-
+ 
   to {
     background-position:
       0 -720px,
@@ -1856,67 +1904,36 @@ footer {
       0 -720px;
   }
 }
-
-/* soft dark glass behind cards so text stays readable over the Golu.
-   Delete this block if you want the original fully transparent cards. */
-.answer-box,
-.visual-card {
-  background-color: rgba(3, 10, 16, 0.68);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-}
-
-.question-box {
-  background-color: rgba(3, 12, 18, 0.62);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-}
-
-.suggestions button {
-  background-color: rgba(3, 10, 16, 0.62);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-}
-
-.hero > p,
-.mic-text {
-  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.9);
-}
-
-.hero h1,
-.hero h2 {
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.65);
-}
-
+ 
 /* =====================================================
    GOLU x AI  -  RESPONSIVE
 ===================================================== */
-
+ 
 @media (max-width: 900px) {
   .app {
     --sb: 220px;
   }
 }
-
+ 
 @media (max-width: 700px) {
   .app {
     --sb: 0px;
   }
-
+ 
   .glow-one {
     display: none;
   }
-
+ 
   .glow-two {
     opacity: 0.5;
   }
-
+ 
   .app::after {
     height: 26vh;
     opacity: 0.5;
   }
 }
-
+ 
 @media (prefers-reduced-motion: reduce) {
   .glow,
   .glow-one::before,
@@ -1927,3 +1944,5 @@ footer {
     animation: none;
   }
 }
+ 
+
